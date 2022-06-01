@@ -1,0 +1,44 @@
+{
+  "welcome": [
+    {
+      "code_name": "mickey",
+      "name": "Міккі",
+      "text": "Привіт, мене звуть Міккі.",
+      "background": "school_yard",
+      "image": "mickey_mk",
+      "position": "right"
+    },
+    {
+      "code_name": "ayame",
+      "name": "Аяме",
+      "text": "Привіт Міккі, а мене звуть Аяме.",
+      "background": "[oldvalue]",
+      "image": "ayame_a",
+      "position": "left"
+    },
+    {
+      "code_name": "mickey",
+      "name": "Міккі",
+      "text": "Як твої справи?",
+      "background": "classroom_day",
+      "image": "mickey_mk",
+      "position": "right"
+    },
+    {
+      "code_name": "ayame",
+      "name": "Аяме",
+      "text": "Відмінно, а як щодо тебе?",
+      "background": "[oldvalue]",
+      "image": "ayame_a",
+      "position": "left"
+    },
+    {
+      "code_name": "mickey",
+      "name": "Міккі",
+      "text": "Відмінно!",
+      "background": "[oldvalue]",
+      "image": "mickey_mk2",
+      "position": "center"
+    }
+  ]
+}

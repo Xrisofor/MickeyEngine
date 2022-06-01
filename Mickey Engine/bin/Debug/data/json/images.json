@@ -1,0 +1,44 @@
+{
+  "images": [
+    {
+      "name": "textbox",
+      "image": "images/gui/textbox.png",
+      "archive": "true"
+    },
+    {
+      "name": "choice_idle",
+      "image": "images/gui/choice_idle.png",
+      "archive": "true"
+    },
+    {
+      "name": "choice_hover",
+      "image": "images/gui/choice_hover.png",
+      "archive": "true"
+    },
+    {
+      "name": "school_yard",
+      "image": "images/backgrounds/school_yard.png",
+      "archive": "true"
+    },
+    {
+      "name": "classroom_day",
+      "image": "images/backgrounds/classroom_day.png",
+      "archive": "true"
+    },
+    {
+      "name": "mickey_mk",
+      "image": "images/characters/mk.png",
+      "archive": "true"
+    },
+    {
+      "name": "mickey_mk2",
+      "image": "images/characters/mk2.png",
+      "archive": "true"
+    },
+    {
+      "name": "ayame_a",
+      "image": "images/characters/a.png",
+      "archive": "true"
+    }
+  ]
+}

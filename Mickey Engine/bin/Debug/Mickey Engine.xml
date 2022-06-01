@@ -1,0 +1,566 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Mickey Engine</name>
+    </assembly>
+    <members>
+        <member name="T:Mickey_Engine.Choice">
+            <summary>
+            Class variables for storing selections
+            </summary>
+        </member>
+        <member name="F:Mickey_Engine.Choice.text">
+            <summary>
+            The text to be displayed on the screen
+            </summary>
+        </member>
+        <member name="F:Mickey_Engine.Choice.script">
+            <summary>
+            A new dialog script to continue the plot
+            </summary>
+        </member>
+        <member name="T:Mickey_Engine.Sounds">
+            <summary>
+            Variable class for storing game sounds
+            </summary>
+        </member>
+        <member name="F:Mickey_Engine.Sounds.name">
+            <summary>
+            Sound code name
+            </summary>
+        </member>
+        <member name="F:Mickey_Engine.Sounds.sound">
+            <summary>
+            Sound
+            </summary>
+        </member>
+        <member name="M:Mickey_Engine.Sounds.#ctor(System.String,SFML.Audio.SoundBuffer)">
+            <summary>
+            Creating a new sound
+            </summary>
+            <param name="_name">Sound code name</param>
+            <param name="_soundbuffer">Sound buffer</param>
+        </member>
+        <member name="M:Mickey_Engine.Sounds.playSound(System.String,System.Boolean)">
+            <summary>
+            Sound playback function
+            </summary>
+            <param name="name">Sound code name</param>
+            <param name="loop">Sound looping variable (not optional parameter)</param>
+        </member>
+        <member name="M:Mickey_Engine.Sounds.pauseSound(System.String)">
+            <summary>
+            Sound pause function
+            </summary>
+            <param name="name">Sound code name</param>
+        </member>
+        <member name="M:Mickey_Engine.Sounds.stopSound(System.String)">
+            <summary>
+            Sound stop function
+            </summary>
+            <param name="name">Sound code name</param>
+        </member>
+        <member name="M:Mickey_Engine.Sounds.getStatus(System.String)">
+            <summary>
+            Sound status function
+            </summary>
+            <param name="name">Sound code name</param>
+            <returns>Sound status</returns>
+        </member>
+        <member name="M:Mickey_Engine.Sounds.setVolume(System.String,System.Single)">
+            <summary>
+            Sound set volume function
+            </summary>
+            <param name="name">Sound code name</param>
+            <param name="volume">Sound volume values</param>
+        </member>
+        <member name="T:Mickey_Engine.Config">
+            <summary>
+            Application configuration class
+            </summary>
+        </member>
+        <member name="P:Mickey_Engine.Config.title">
+            <summary>
+            Application Window Text
+            </summary>
+        </member>
+        <member name="P:Mickey_Engine.Config.width">
+            <summary>
+            Width of the application window
+            </summary>
+        </member>
+        <member name="P:Mickey_Engine.Config.height">
+            <summary>
+            Height of the application window
+            </summary>
+        </member>
+        <member name="P:Mickey_Engine.Config.style">
+            <summary>
+            Game window style (default/fullscreen mode)
+            </summary>
+        </member>
+        <member name="P:Mickey_Engine.Config.icon">
+            <summary>
+            The path to the icon file from the configuration file
+            </summary>
+        </member>
+        <member name="P:Mickey_Engine.Config.vertical_sync">
+            <summary>
+            Vertical synchronization addition variable
+            </summary>
+        </member>
+        <member name="P:Mickey_Engine.Config.console">
+            <summary>
+            Console window display variable
+            </summary>
+        </member>
+        <member name="P:Mickey_Engine.Config.archive">
+            <summary>
+            The path to the archive file from the configuration file
+            </summary>
+        </member>
+        <member name="P:Mickey_Engine.Config.language">
+            <summary>
+            Interface language
+            </summary>
+        </member>
+        <member name="P:Mickey_Engine.Config.saving_path">
+            <summary>
+            The path to saving the game files
+            </summary>
+        </member>
+        <member name="P:Mickey_Engine.Config.fps_limit">
+            <summary>
+            Variable frame limit per second
+            </summary>
+        </member>
+        <member name="T:Mickey_Engine.Dialog">
+            <summary>
+            Variable class for storing game dialogs
+            </summary>
+        </member>
+        <member name="F:Mickey_Engine.Dialog.code_name">
+            <summary>
+            Character code name
+            </summary>
+        </member>
+        <member name="F:Mickey_Engine.Dialog.name">
+            <summary>
+            Character Name
+            </summary>
+        </member>
+        <member name="F:Mickey_Engine.Dialog.text">
+            <summary>
+            The text that the character says
+            </summary>
+        </member>
+        <member name="F:Mickey_Engine.Dialog.img">
+            <summary>
+            Character Sprite
+            </summary>
+        </member>
+        <member name="F:Mickey_Engine.Dialog.background">
+            <summary>
+            Background
+            </summary>
+        </member>
+        <member name="F:Mickey_Engine.Dialog.pos">
+            <summary>
+            The position of the character from existing
+            </summary>
+        </member>
+        <member name="F:Mickey_Engine.Dialog.choices">
+            <summary>
+            List of all the choices of this dialog
+            </summary>
+        </member>
+        <member name="M:Mickey_Engine.Dialog.#ctor(System.String,System.String,System.String,SFML.Graphics.Image,System.String,SFML.Graphics.Image,System.Collections.Generic.List{Mickey_Engine.Choice})">
+            <summary>
+            Creating a new dialog/character
+            </summary>
+            <param name="_code_name">Character code name</param>
+            <param name="_name">Character Name</param>
+            <param name="_text">The text that the character says</param>
+            <param name="_img">Character Sprite</param>
+            <param name="_pos">The position of the character from existing</param>
+            <param name="_background">Background</param>
+            <param name="_choices">List of all the choices of this dialog</param>
+        </member>
+        <member name="M:Mickey_Engine.Dialog.GetID">
+            <summary>
+            Dialog ID return function
+            </summary>
+            <returns>Dialog ID</returns>
+        </member>
+        <member name="T:Mickey_Engine.Fonts">
+            <summary>
+            Variable class for storing game fonts
+            </summary>
+        </member>
+        <member name="F:Mickey_Engine.Fonts.name">
+            <summary>
+            Font code name
+            </summary>
+        </member>
+        <member name="F:Mickey_Engine.Fonts.font">
+            <summary>
+            Font
+            </summary>
+        </member>
+        <member name="F:Mickey_Engine.Fonts.character_size">
+            <summary>
+            Font character size
+            </summary>
+        </member>
+        <member name="M:Mickey_Engine.Fonts.#ctor(System.String,SFML.Graphics.Font,System.UInt32)">
+            <summary>
+            Creating a new font
+            </summary>
+            <param name="_name">Font code name</param>
+            <param name="_font">Font</param>
+            <param name="_character_size">Font character size</param>
+        </member>
+        <member name="M:Mickey_Engine.Fonts.GetID">
+            <summary>
+            Font ID return function
+            </summary>
+            <returns>Font ID</returns>
+        </member>
+        <member name="T:Mickey_Engine.Images">
+            <summary>
+            Variable class for storing game images
+            </summary>
+        </member>
+        <member name="F:Mickey_Engine.Images.name">
+            <summary>
+            Image code name
+            </summary>
+        </member>
+        <member name="F:Mickey_Engine.Images.image">
+            <summary>
+            Image
+            </summary>
+        </member>
+        <member name="M:Mickey_Engine.Images.#ctor(System.String,SFML.Graphics.Image)">
+            <summary>
+            Creating a new image
+            </summary>
+            <param name="_name">Image code name</param>
+            <param name="_image">Image</param>
+        </member>
+        <member name="T:Mickey_Engine.Musics">
+            <summary>
+            Variable class for storing game musics
+            </summary>
+        </member>
+        <member name="F:Mickey_Engine.Musics.name">
+            <summary>
+            Music code name
+            </summary>
+        </member>
+        <member name="F:Mickey_Engine.Musics.music">
+            <summary>
+            Music
+            </summary>
+        </member>
+        <member name="M:Mickey_Engine.Musics.#ctor(System.String,SFML.Audio.Music)">
+            <summary>
+            Creating a new music
+            </summary>
+            <param name="_name">Music code name</param>
+            <param name="_music">Music</param>
+        </member>
+        <member name="M:Mickey_Engine.Musics.playMusic(System.String,System.Boolean)">
+            <summary>
+            Music playback function
+            </summary>
+            <param name="name">Music code name</param>
+            <param name="loop">Music looping variable (not optional parameter)</param>
+        </member>
+        <member name="M:Mickey_Engine.Musics.pauseMusic(System.String)">
+            <summary>
+            Music pause function
+            </summary>
+            <param name="name">Music code name</param>
+        </member>
+        <member name="M:Mickey_Engine.Musics.stopMusic(System.String)">
+            <summary>
+            Music stop function
+            </summary>
+            <param name="name">Music code name</param>
+        </member>
+        <member name="M:Mickey_Engine.Musics.getStatus(System.String)">
+            <summary>
+            Music status function
+            </summary>
+            <param name="name">Music code name</param>
+            <returns>Sound status</returns>
+        </member>
+        <member name="M:Mickey_Engine.Musics.setVolume(System.String,System.Single)">
+            <summary>
+            Music set volume function
+            </summary>
+            <param name="name">Music code name</param>
+            <param name="volume">Music volume values</param>
+        </member>
+        <member name="T:Mickey_Engine.Objects">
+            <summary>
+            Variable class for storing game objects
+            </summary>
+        </member>
+        <member name="F:Mickey_Engine.Objects.name">
+            <summary>
+            The code name of the object
+            </summary>
+        </member>
+        <member name="F:Mickey_Engine.Objects.type">
+            <summary>
+            The type of your object
+            </summary>
+        </member>
+        <member name="F:Mickey_Engine.Objects.visible">
+            <summary>
+            The variable responsible for the visibility of the object
+            </summary>
+        </member>
+        <member name="F:Mickey_Engine.Objects.sprite">
+            <summary>
+            Object Sprite
+            </summary>
+        </member>
+        <member name="F:Mickey_Engine.Objects.text">
+            <summary>
+            Object Text
+            </summary>
+        </member>
+        <member name="F:Mickey_Engine.Objects.transparency">
+            <summary>
+            Transparency of the object for animation effects (Initial value 255 - opaque, 0 - transparent)
+            </summary>
+        </member>
+        <member name="M:Mickey_Engine.Objects.#ctor(System.String,System.String,System.Boolean)">
+            <summary>
+            Creating a new object
+            </summary>
+            <param name="_name">The code name of the object</param>
+            <param name="_type">The type of your object (currently there are sprite and text)</param>
+            <param name="_visible">The variable responsible for the visibility of the object</param>
+        </member>
+        <member name="M:Mickey_Engine.Objects.GetID">
+            <summary>
+            Object ID return function
+            </summary>
+            <returns>Object ID</returns>
+        </member>
+        <member name="T:Mickey_Engine.Drawing">
+            <summary>
+            Drawing class for elements and animations
+            </summary>
+        </member>
+        <member name="M:Mickey_Engine.Drawing.Draw(System.String)">
+            <summary>
+            Function of drawing objects by name
+            </summary>
+            <param name="name">Name of the object from list objects</param>
+        </member>
+        <member name="M:Mickey_Engine.Drawing.DrawText(System.String)">
+            <summary>
+            Function of drawing texts by name
+            </summary>
+            <param name="name">Name of the text from the list objects</param>
+        </member>
+        <member name="T:Mickey_Engine.Archive">
+            <summary>
+            Class of working with the archive of application files
+            </summary>
+        </member>
+        <member name="P:Mickey_Engine.Archive.ZipPath">
+            <summary>
+            The path to the archive with the application files
+            </summary>
+        </member>
+        <member name="F:Mickey_Engine.Archive.ZipPass">
+            <summary>
+            Password for the archive with the application files (if you do not have a password, leave the field empty!)
+            </summary>
+        </member>
+        <member name="M:Mickey_Engine.Archive.GetFile(System.String)">
+            <summary>
+            The function of extracting files from the archive and writing them to MemoryStream
+            </summary>
+            <param name="FileName">The name of the file to be written to memory</param>
+            <returns>Memory cell for MemoryStream</returns>
+            <example>MemoryStream mFile = Archive.GetFile("file.txt");</example>
+        </member>
+        <member name="T:Mickey_Engine.Debug">
+            <summary>
+            Application Debugger class
+            </summary>
+        </member>
+        <member name="F:Mickey_Engine.Debug.fps_count">
+            <summary>
+            Variable number of frames per second in the game
+            </summary>
+        </member>
+        <member name="M:Mickey_Engine.Debug.Log(System.String,System.ConsoleColor)">
+            <summary>
+            Text output to the console using Console.WriteLine
+            </summary>
+            <param name="text">Messages to output to the console</param>
+            <param name="color">Text color for all messages in the console (optional parameter)</param>
+        </member>
+        <member name="M:Mickey_Engine.Debug.Error(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Error text output to the console using Console.WriteLine
+            </summary>
+            <param name="message">Error messages to output to the console</param>
+            <param name="data">Error in function/application data</param>
+            <param name="source">Error Class/Library</param>
+            <param name="logFile">Error file creation variable (enabled by default)</param>
+        </member>
+        <member name="T:Mickey_Engine.Parse">
+            <summary>
+            File processing class
+            </summary>
+        </member>
+        <member name="M:Mickey_Engine.Parse.objectList(System.String,System.String,System.Boolean)">
+            <summary>
+            Parsing an object class from a json file
+            </summary>
+            <param name="array_name">Name of the array of objects (non-optional parameter)</param>
+            <param name="path">The path to the json file with the objects files</param>
+            <param name="archive">Variable for working with files from the archive</param>
+        </member>
+        <member name="M:Mickey_Engine.Parse.imagesList(System.String,System.String,System.Boolean)">
+            <summary>
+            Parsing a class of images from a json file
+            </summary>
+            <param name="array_name">Name of the array of images (non-optional parameter)</param>
+            <param name="path">The path to the json file with the images files</param>
+            <param name="archive">Variable for working with files from the archive</param>
+        </member>
+        <member name="M:Mickey_Engine.Parse.fontsList(System.String,System.String,System.Boolean)">
+            <summary>
+            Parsing a class of fonts from a json file
+            </summary>
+            <param name="array_name">Name of the array of fonts (non-optional parameter)</param>
+            <param name="path">The path to the json file with the fonts files</param>
+            <param name="archive">Variable for working with files from the archive</param>
+        </member>
+        <member name="M:Mickey_Engine.Parse.dialogsList(System.String,System.String,System.Boolean)">
+            <summary>
+            Parsing a class of dialogs from a json file
+            </summary>
+            <param name="path">The path to the dialog file</param>
+            <param name="array_name">Name of the array of dialogs (non-optional parameter)</param>
+            <param name="archive">Variable for working with files from the archive</param>
+        </member>
+        <member name="M:Mickey_Engine.Parse.languagesFile(System.String,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="path"></param>
+            <param name="archive"></param>
+        </member>
+        <member name="F:Mickey_Engine.Parse.max_line_length">
+            <summary>
+            Maximum text length
+            </summary>
+        </member>
+        <member name="M:Mickey_Engine.Parse.dialog">
+            <summary>
+            Dialog/character processing function
+            </summary>
+        </member>
+        <member name="M:Mickey_Engine.Parse.getColor(System.String[])">
+            <summary>
+            The function of creating a color scheme for SFML by RGBA
+            </summary>
+            <param name="cl">RGBA color scheme variable</param>
+            <returns>Color scheme for SFML</returns>
+            <example>string[] color = { "255", "255", "255", "255" }
+            Program.textBoxName.Color = getColor(color);</example>
+        </member>
+        <member name="M:Mickey_Engine.Parse.WrapText(System.String)">
+            <summary>
+            Text Length Processing
+            </summary>
+            <param name="text">The text to be processed</param>
+            <returns>Text with adding new line separations</returns>
+        </member>
+        <member name="T:Mickey_Engine.Language">
+            <summary>
+            The main class for storing/processing languages
+            </summary>
+        </member>
+        <member name="F:Mickey_Engine.Language.code_name">
+            <summary>
+            Language code name
+            </summary>
+        </member>
+        <member name="F:Mickey_Engine.Language.name">
+            <summary>
+            Language name
+            </summary>
+        </member>
+        <member name="F:Mickey_Engine.Language.script">
+            <summary>
+            Path to the script file
+            </summary>
+        </member>
+        <member name="F:Mickey_Engine.Language.array_name">
+            <summary>
+            Name of the dialog array
+            </summary>
+        </member>
+        <member name="F:Mickey_Engine.Language.developer">
+            <summary>
+            Language Developer
+            </summary>
+        </member>
+        <member name="M:Mickey_Engine.Language.#ctor(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Creating a new language
+            </summary>
+            <param name="_code_name">Language code name</param>
+            <param name="_name">Language name</param>
+            <param name="_script">Path to the script file</param>
+            <param name="_array_name">Name of the dialog array</param>
+            <param name="_developer">Language Developer</param>
+        </member>
+        <member name="T:Mickey_Engine.StringExtensions">
+            <summary>
+            String Extensions
+            </summary>
+        </member>
+        <member name="M:Mickey_Engine.StringExtensions.ToUTF8(System.String)">
+            <summary>
+            Text encoding changes
+            </summary>
+            <param name="text">The text to be changed</param>
+            <returns>Text with a new encoding</returns>
+        </member>
+        <member name="T:Mickey_Engine.temp_position">
+            <summary>
+            Temporary variable class for storing game positions of characters
+            </summary>
+        </member>
+        <member name="F:Mickey_Engine.temp_position.code_name">
+            <summary>
+            Character code name
+            </summary>
+        </member>
+        <member name="F:Mickey_Engine.temp_position.pos">
+            <summary>
+            Position (left, center, right)
+            </summary>
+        </member>
+        <member name="M:Mickey_Engine.temp_position.#ctor(System.String,System.String)">
+            <summary>
+            Creating a new temporary position
+            </summary>
+            <param name="_code_name">Character code name</param>
+            <param name="_pos">Position (left, center, right)</param>
+        </member>
+    </members>
+</doc>
