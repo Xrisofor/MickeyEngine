@@ -39,6 +39,14 @@
       "background": "[oldvalue]",
       "image": "mickey_mk2",
       "position": "center"
+    },
+    {
+      "code_name": "mickey",
+      "name": "Микки",
+      "text": "Отлично!",
+      "background": "[oldvalue]",
+      "image": "mickey_mk2",
+      "position": "center"
     }
   ]
 }

@@ -6,6 +6,7 @@ using System.Text;
 //SFML
 using SFML.Graphics;
 using SFML.System;
+using SFML.Audio;
 //Newtonsoft.Json
 using Newtonsoft.Json;
 using  Newtonsoft.Json.Linq;
@@ -24,7 +25,7 @@ namespace Mickey_Engine
         /// <param name="path">The path to the json file with the objects files</param>
         /// <param name="archive">Variable for working with files from the archive</param>
         [Obsolete]
-        public static void objectList(string path = "data/json/objects.json", string array_name = "objects", bool archive = false)
+        public static void objectList(string path = "config/object.json", string array_name = "game", bool archive = false)
         {
             string json;
             if (archive)
@@ -37,15 +38,17 @@ namespace Mickey_Engine
             }
             else
             {
-                json = File.ReadAllText(Environment.CurrentDirectory + $"/{path}");
+                json = File.ReadAllText(Environment.CurrentDirectory + $"/../{path}");
             }
 
             dynamic jsonData = JsonConvert.DeserializeObject(json);
             foreach (var data in jsonData[array_name])
             {
-                string name = data.name, fnt = data.font, color = data.color, position = data.position, visible = data.visible;
+                string name = data.name, fnt = data.font, color = data.color, position = data.position, visible = data.visible, type = data.type;
                 string[] pos = position.Replace(" ", "").Split(','); //The position of the object in the form of a text format
                 float posX = 0, posY = 0; //The position of the object in the form of non-integers
+
+                Program.objects.Add(new Objects(name, type));
 
                 //Processing keywords in object positions
                 if (pos[0] != "[center]")
@@ -75,7 +78,7 @@ namespace Mickey_Engine
                     {
                         string[] col = color.Replace(" ", "").Split(',');
                         Program.objects.Find(item => item.name == name).text.Position = new Vector2f(posX, posY);
-                        Program.objects.Find(item => item.name == name).text.Color = getColor(col);
+                        Program.objects.Find(item => item.name == name).text.FillColor = getColor(col);
                         Fonts font = Program.fonts.Find(item => item.name == fnt);
                         Program.objects.Find(item => item.name == name).text.Font = font.font;
                         Program.objects.Find(item => item.name == name).text.CharacterSize = font.character_size;
@@ -92,7 +95,7 @@ namespace Mickey_Engine
         /// <param name="array_name">Name of the array of images (non-optional parameter)</param>
         /// <param name="path">The path to the json file with the images files</param>
         /// <param name="archive">Variable for working with files from the archive</param>
-        public static void imagesList(string path = "data/json/images.json", string array_name = "images", bool archive = false)
+        public static void imagesList(string path = "config/image.json", string array_name = "images", bool archive = false)
         {
             string json;
             if (archive)
@@ -105,7 +108,7 @@ namespace Mickey_Engine
             }
             else
             {
-                json = File.ReadAllText(Environment.CurrentDirectory + $"/{path}");
+                json = File.ReadAllText(Environment.CurrentDirectory + $"/../{path}");
             }
 
             dynamic jsonData = JsonConvert.DeserializeObject(json);
@@ -122,7 +125,7 @@ namespace Mickey_Engine
                 }
                 else
                 {
-                    image = new Image(Environment.CurrentDirectory + $"/{img}");
+                    image = new Image(Environment.CurrentDirectory + $"/../{img}");
                 }
 
                 Program.images.Add(new Images(name, image));
@@ -140,7 +143,7 @@ namespace Mickey_Engine
         /// <param name="array_name">Name of the array of fonts (non-optional parameter)</param>
         /// <param name="path">The path to the json file with the fonts files</param>
         /// <param name="archive">Variable for working with files from the archive</param>
-        public static void fontsList(string path = "data/json/fonts.json", string array_name = "fonts", bool archive = false)
+        public static void fontsList(string path = "config/font.json", string array_name = "fonts", bool archive = false)
         {
             string json;
             if (archive)
@@ -153,7 +156,7 @@ namespace Mickey_Engine
             }
             else
             {
-                json = File.ReadAllText(Environment.CurrentDirectory + $"/{path}");
+                json = File.ReadAllText(Environment.CurrentDirectory + $"/../{path}");
             }
 
             dynamic jsonData = JsonConvert.DeserializeObject(json);
@@ -199,7 +202,7 @@ namespace Mickey_Engine
             }
             else
             {
-                json = File.ReadAllText(Environment.CurrentDirectory + $"/{path}", Encoding.Default);
+                json = File.ReadAllText(Environment.CurrentDirectory + $"/../{path}", Encoding.Default);
             }
 
             dynamic jsonData = JsonConvert.DeserializeObject(json);
@@ -273,10 +276,10 @@ namespace Mickey_Engine
         }
 
         /// <summary>
-        /// 
+        /// Parsing a class of languages from a json file
         /// </summary>
-        /// <param name="path"></param>
-        /// <param name="archive"></param>
+        /// <param name="path">The path to the language file</param>
+        /// <param name="archive">Variable for working with files from the archive</param>
         public static void languagesFile(string path, bool archive = false)
         {
             string json;
@@ -290,7 +293,7 @@ namespace Mickey_Engine
             }
             else
             {
-                json = File.ReadAllText(Environment.CurrentDirectory + $"/{path}");
+                json = File.ReadAllText(Environment.CurrentDirectory + $"/../{path}");
             }
 
             dynamic jsonData = JsonConvert.DeserializeObject(json);
@@ -302,7 +305,128 @@ namespace Mickey_Engine
                 Program.languages.Add(new Language(code_name, name, fl[0], fl[1], developer));
             }
         }
-        
+
+        /// <summary>
+        /// Parsing a class of inputs from a json file
+        /// </summary>
+        /// <param name="path">The path to the input file</param>
+        /// <param name="archive">Variable for working with files from the archive</param>
+        [Obsolete]
+        public static void inputFile(string path, bool archive = false)
+        {
+            string json;
+            if (archive)
+            {
+                MemoryStream mFile = Archive.GetFile(path);
+                using (StreamReader sr = new StreamReader(mFile))
+                {
+                    json = sr.ReadToEnd();
+                }
+            }
+            else
+            {
+                json = File.ReadAllText(Environment.CurrentDirectory + $"/../{path}");
+            }
+
+            dynamic jsonData = JsonConvert.DeserializeObject(json);
+            foreach (var data in jsonData["input"])
+            {
+                string code_name = data.code_name, key = data.key, action = data.action;
+
+                Program.inputs.Add(new Input(code_name, key, action));
+            }
+        }
+
+        /// <summary>
+        /// Parsing a class of audio from a json file
+        /// </summary>
+        /// <param name="path">The path to the audio file</param>
+        /// <param name="array_name">Name of the array of audios (non-optional parameter)</param>
+        /// <param name="archive">Variable for working with files from the archive</param>
+        public static void audioList(string path = "config/audio.json", string array_name = "sound", bool archive = false)
+        {
+            string json;
+            if (archive)
+            {
+                MemoryStream mFile = Archive.GetFile(path);
+                using (StreamReader sr = new StreamReader(mFile))
+                {
+                    json = sr.ReadToEnd();
+                }
+            }
+            else
+            {
+                json = File.ReadAllText(Environment.CurrentDirectory + $"/../{path}");
+            }
+
+            dynamic jsonData = JsonConvert.DeserializeObject(json);
+            foreach (var data in jsonData[array_name])
+            {
+                string code_name = data.code_name, file = data.file, arc = data.archive;
+
+                if(file != "")
+                {
+                    if (array_name == "sound")
+                    {
+                        if (Convert.ToBoolean(arc))
+                        {
+                            MemoryStream mFile = Archive.GetFile(file);
+                            SoundBuffer soundBuffer = new SoundBuffer(mFile);
+                            Program.sounds.Add(new Sounds(code_name, soundBuffer));
+                        }
+                        else
+                        {
+                            SoundBuffer soundBuffer = new SoundBuffer(Environment.CurrentDirectory + $"/../{file}");
+                            Program.sounds.Add(new Sounds(code_name, soundBuffer));
+                        }
+                    }
+                    if (array_name == "music")
+                    {
+                        if (Convert.ToBoolean(arc))
+                        {
+                            MemoryStream mFile = Archive.GetFile(file);
+                            Music music = new Music(mFile);
+                            Program.musics.Add(new Musics(code_name, music));
+                        }
+                        else
+                        {
+                            Music music = new Music(Environment.CurrentDirectory + $"/../{file}");
+                            Program.musics.Add(new Musics(code_name, music));
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Parsing a class of menu from a json file
+        /// </summary>
+        /// <param name="path">The path to the menu file</param>
+        /// <param name="archive">Variable for working with files from the archive</param>
+        public static void menuList(string path = "data/menu/main.json", bool archive = false)
+        {
+            string json;
+            if (archive)
+            {
+                MemoryStream mFile = Archive.GetFile(path);
+                using (StreamReader sr = new StreamReader(mFile))
+                {
+                    json = sr.ReadToEnd();
+                }
+            }
+            else
+            {
+                json = File.ReadAllText(Environment.CurrentDirectory + $"/../{path}");
+            }
+
+            dynamic jsonData = JsonConvert.DeserializeObject(json);
+            foreach (var data in jsonData["menu"])
+            {
+                string code_name = data.name, showCursor = data.cursor, primaryMenu = data.primary;
+
+                Program.menus.Add(new Menu(code_name, Convert.ToBoolean(showCursor), Convert.ToBoolean(primaryMenu)));
+            }
+        }
 
         private static string dialogCharacterLastPos;
         private static List<temp_position> temp_Positions = new List<temp_position>();
@@ -359,15 +483,15 @@ namespace Mickey_Engine
                         string[] cl = { "0", "0", "0", "0" };
                         if (dialogCharacterLastPos == "left")
                         {
-                            Program.objects.Find(item => item.name == "left").sprite.Texture = new Texture(new Image(1, 1, getColor(cl)));
+                            Program.objects.Find(item => item.name == "left_pos").sprite.Texture = new Texture(new Image(1, 1, getColor(cl)));
                         }
                         else if (dialogCharacterLastPos == "center")
                         {
-                            Program.objects.Find(item => item.name == "center").sprite.Texture = new Texture(new Image(1, 1, getColor(cl)));
+                            Program.objects.Find(item => item.name == "center_pos").sprite.Texture = new Texture(new Image(1, 1, getColor(cl)));
                         }
                         else if (dialogCharacterLastPos == "right")
                         {
-                            Program.objects.Find(item => item.name == "right").sprite.Texture = new Texture(new Image(1, 1, getColor(cl)));
+                            Program.objects.Find(item => item.name == "right_pos").sprite.Texture = new Texture(new Image(1, 1, getColor(cl)));
                         }
                     }
                 }
@@ -375,15 +499,15 @@ namespace Mickey_Engine
 
             if (pos == "left")
             {
-                Program.objects.Find(item => item.name == "left").sprite.Texture = new Texture(img);
+                Program.objects.Find(item => item.name == "left_pos").sprite.Texture = new Texture(img);
             }
             else if (pos == "center")
             {
-                Program.objects.Find(item => item.name == "center").sprite.Texture = new Texture(img);
+                Program.objects.Find(item => item.name == "center_pos").sprite.Texture = new Texture(img);
             }
             else if (pos == "right")
             {
-                Program.objects.Find(item => item.name == "right").sprite.Texture = new Texture(img);
+                Program.objects.Find(item => item.name == "right_pos").sprite.Texture = new Texture(img);
             }
 
             Program.objects.Find(item => item.name == "textbox_name").text.DisplayedString = name;

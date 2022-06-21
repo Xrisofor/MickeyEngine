@@ -1,0 +1,64 @@
+{
+  "game": [
+    {
+      "name": "background",
+      "type": "sprite",
+      "position": "0, 0",
+      "visible": true
+    },
+    {
+      "name": "left_pos",
+      "type": "sprite",
+      "position": "70, 160",
+      "visible": true
+    },
+    {
+      "name": "center_pos",
+      "type": "sprite",
+      "position": "[center], 160",
+      "visible": true
+    },
+    {
+      "name": "right_pos",
+      "type": "sprite",
+      "position": "1000, 160",
+      "visible": true
+    },
+    {
+      "name": "textbox",
+      "type": "sprite",
+      "position": "0, 520",
+      "visible": true
+    },
+    {
+      "name": "choice",
+      "type": "sprite",
+      "position": "50, [center]",
+      "visible": false
+    },
+    {
+      "name": "fps_text",
+      "type": "text",
+      "position": "0, 0",
+      "font": "arial_tx",
+      "color": "255, 255, 255, 255",
+      "visible": true
+    },
+    {
+      "name": "textbox_name",
+      "type": "text",
+      "position": "150, 480",
+      "font": "arial",
+      "color": "88, 166, 255, 255",
+      "visible": true
+    },
+    {
+      "name": "textbox_text",
+      "type": "text",
+      "position": "160, 540",
+      "font": "arial_tx",
+      "color": "255, 255, 255, 255",
+      "visible": true
+    }
+  ]
+}

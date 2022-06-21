@@ -1,0 +1,29 @@
+{
+  "input": [
+    {
+      "code_nama": "FurtherAlongTheScript",
+      "key": "Space",
+      "action": "Dialog.Move"
+    },
+    {
+      "code_nama": "QuitKey",
+      "key": "Escape",
+      "action": "Quit"
+    },
+    {
+      "code_nama": "ConsoleKey",
+      "key": "Tilde",
+      "action": "OpenConsole"
+    },
+    {
+      "code_nama": "SaveKey",
+      "key": "F5",
+      "action": "SaveGame"
+    },
+    {
+      "code_nama": "LoadKey",
+      "key": "F6",
+      "action": "LoadGame"
+    }
+  ]
+}

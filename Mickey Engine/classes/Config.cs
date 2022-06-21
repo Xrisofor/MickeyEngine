@@ -53,6 +53,10 @@ namespace Mickey_Engine
         /// </summary>
         public string saving_path { get; set; }
         /// <summary>
+        /// Variable of the fps counter display in the game
+        /// </summary>
+        public bool fps_show { get; set; } = false;
+        /// <summary>
         /// Variable frame limit per second
         /// </summary>
         public uint fps_limit { get; set; } = 60;

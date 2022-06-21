@@ -1,0 +1,16 @@
+{
+  "sound": [
+    {
+      "code_name": "test",
+      "file": "",
+      "archive": false
+    }
+  ],
+  "music": [
+    {
+      "code_name": "test",
+      "file": "",
+      "archive": false
+    }
+  ]
+}

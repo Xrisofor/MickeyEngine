@@ -13,32 +13,35 @@ namespace Mickey_Engine
     {
         //Importing a DLL
         [DllImport("kernel32.dll")]
-        static extern IntPtr GetConsoleWindow();
+        public static extern IntPtr GetConsoleWindow();
 
         [DllImport("user32.dll")]
-        static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+        public static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
 
         //Console Status Variables
-        const int SW_HIDE = 0;
-        const int SW_SHOW = 5;
-        const int SW_Min = 2;
-        const int SW_Max = 3;
-        const int SW_Norm = 4;
+        public const int SW_HIDE = 0;
+        public const int SW_SHOW = 5;
+        public const int SW_Min = 2;
+        public const int SW_Max = 3;
+        public const int SW_Norm = 4;
 
         //Variables are available for modification
         public static RenderWindow window; //Screen Visualization Window
         public static Config config = new Config(); //Creating a config variable
-        public static int scriptPos = 0;
+        public static int scriptPos = 0; //The position of the dialog script
+        public static bool isMenu = false; /* Is the player in the menu? */ public static string menuName; //Code name of the main menu
 
         //Variables that are not recommended to be changed
         public static List<Language> languages = new List<Language>();
-
+        public static List<Input> inputs = new List<Input>();
+        
         public static List<Objects> objects = new List<Objects>();
         public static List<Images> images = new List<Images>();
         public static List<Dialog> dialogs = new List<Dialog>();
         public static List<Fonts> fonts = new List<Fonts>();
         public static List<Sounds> sounds = new List<Sounds>();
         public static List<Musics> musics = new List<Musics>();
+        public static List<Menu> menus = new List<Menu>();
 
         //Private variables
         static VideoMode mode;
@@ -57,17 +60,23 @@ namespace Mickey_Engine
                 if (!config.console) ShowWindow(handle, SW_HIDE); //Hiding the console
 
                 //Setting the path to the archive with files
-                Archive.ZipPath = Environment.CurrentDirectory + $"/{config.archive}";
+                Archive.ZipPath = Environment.CurrentDirectory + $"/../{config.archive}";
 
                 Debug.Log("Creating a video mode function");
                 mode = new VideoMode(config.width, config.height);
                 Debug.Log("Creating a visualization window");
                 window = new RenderWindow(mode, config.title, config.style);
                 window.SetVerticalSyncEnabled(config.vertical_sync);
-                //window.SetMouseCursor
                 window.SetFramerateLimit(config.fps_limit);
+                //Creating a new camera
+                Camera camera = new Camera(new Vector2f(config.width / 2, config.height / 2), new Vector2f(config.width, config.height));
+                window.SetView(camera.camera);
                 //Creating a function for processing keystrokes
                 window.KeyPressed += Window_KeyPressed;
+                window.JoystickConnected += Window_JoystickConnected;
+                window.JoystickDisconnected += Window_JoystickDisconnected;
+                window.JoystickButtonPressed += Window_JoystickButtonPressed;
+                window.Closed += Window_Closed;
 
                 //Checking for empty icons in the configuration file
                 if (config.icon != "")
@@ -81,30 +90,30 @@ namespace Mickey_Engine
                     }
                     else
                     {
-                        image = new Image(config.icon); //Changes to the application icon via the path to the file
+                        image = new Image(Environment.CurrentDirectory + "/../config.icon"); //Changes to the application icon via the path to the file
                     }
                     Debug.Log("Changes to the app icon");
                     window.SetIcon(image.Size.X, image.Size.Y, image.Pixels);
                 }
 
-                //Create new objects
-                objects.Add(new Objects("background"));
-                objects.Add(new Objects("left"));
-                objects.Add(new Objects("center"));
-                objects.Add(new Objects("right"));
-                objects.Add(new Objects("choice"));
-                objects.Add(new Objects("textbox"));
-                objects.Add(new Objects("textbox_name", "text"));
-                objects.Add(new Objects("textbox_text", "text"));
-                objects.Add(new Objects("fps_text", "text"));
+                //Debug.Log(UUID.NewGuid().ToString());
+
+                if(!Directory.Exists(config.saving_path))
+                {
+                    Directory.CreateDirectory(config.saving_path);
+                }
 
                 //Parsing of json configuration files
-                Parse.languagesFile("data/languages.json");
-                Parse.imagesList();
-                Parse.fontsList();
-                Parse.objectList();
+                Parse.languagesFile("data/languages.json"); //Language file
+                Parse.inputFile("config/input.json"); //Input File
+                Parse.fontsList(); //Font File
+                Parse.objectList(); //Object File
+                Parse.imagesList(); //Image File
+                Parse.audioList("config/audio.json", "sound"); //Sound File
+                Parse.audioList("config/audio.json", "music"); //Music File
+                Parse.menuList(); //Menu File
 
-                for(int l = 0; l < languages.Count; l++)
+                for (int l = 0; l < languages.Count; l++)
                 {
                     if (config.language == languages[l].code_name)
                     {
@@ -116,6 +125,18 @@ namespace Mickey_Engine
                 
                 Parse.dialog();
 
+                for(int i = 0; i < menus.Count; i++)
+                {
+                    if(menus[i].primaryMenu)
+                    {
+                        //isMenu = true;
+                        menuName = menus[i].code_name;
+                        i = menus.Count;
+                    }
+                }
+
+                menus.Find(item => item.code_name == menuName).Show(window);
+
                 Clock clock = new Clock();
                 float lastTime = 0;
                 while (window.IsOpen)
@@ -123,23 +144,35 @@ namespace Mickey_Engine
                     float currentTime = clock.Restart().AsSeconds();
                     Debug.fps_count = Convert.ToInt32(1.0f / (currentTime - lastTime));
 
-                    objects.Find(item => item.name == "fps_text").text.DisplayedString = $"FPS: {Debug.fps_count.ToString()}";
+                    if(config.fps_show)
+                        objects.Find(item => item.name == "fps_text").text.DisplayedString = $"FPS: {Debug.fps_count.ToString()}";
 
                     window.DispatchEvents();
                     window.Clear(Color.Black);
 
-                    //Drawing objects
-                    Drawing.Draw("background");
-                    Drawing.Draw("left");
-                    Drawing.Draw("center");
-                    Drawing.Draw("right");
-                    Drawing.Draw("textbox");
-                    Drawing.Draw("choice");
+                    if(isMenu)
+                    {
+                        Drawing.MenuDraw("menu_bg");
+                        Drawing.MenuDrawText("game_name");
+                        Drawing.MenuDrawText("game_version");
+                    }
+                    else
+                    {
+                        //Drawing objects
+                        Drawing.Draw("background");
+                        Drawing.Draw("left_pos");
+                        Drawing.Draw("center_pos");
+                        Drawing.Draw("right_pos");
+                        Drawing.Draw("textbox");
+                        Drawing.Draw("choice");
 
-                    //Drawing texts
-                    Drawing.DrawText("textbox_name");
-                    Drawing.DrawText("textbox_text");
-                    Drawing.DrawText("fps_text");
+                        //Drawing texts
+                        Drawing.DrawText("textbox_name");
+                        Drawing.DrawText("textbox_text");
+                    }
+
+                    if (config.fps_show)
+                        Drawing.DrawText("fps_text");
 
                     window.Display();
                 }
@@ -151,13 +184,36 @@ namespace Mickey_Engine
             }
         }
 
+        //Close
+        private static void Window_Closed(object sender, EventArgs e)
+        {
+            Debug.Log("The application is closing...");
+            Environment.Exit(0);
+        }
+
+        //Keyboard
         private static void Window_KeyPressed(object sender, KeyEventArgs e)
         {
-            if (e.Code == Keyboard.Key.Escape)
+            if (e.Code == inputs.Find(item => item.action == "Quit").key)
             {
                 window.Close();
             }
-            else if(e.Code == Keyboard.Key.Space)
+            if (e.Code == inputs.Find(item => item.action == "OpenConsole").key && config.console)
+            {
+                Console.WriteLine("[Console] Enter the command:");
+                string com = Console.ReadLine();
+                functions.Console.Command(com);
+            }
+            if (e.Code == inputs.Find(item => item.action == "SaveGame").key && !isMenu)
+            {
+                Save.SaveGame(0, scriptPos);
+            }
+            if (e.Code == inputs.Find(item => item.action == "LoadGame").key && !isMenu)
+            {
+                scriptPos = Load.LoadGame(0) - 1;
+                Parse.dialog();
+            }
+            if (e.Code == inputs.Find(item => item.action == "Dialog.Move").key && !isMenu)
             {
                 if(scriptPos < dialogs.Count)
                 {
@@ -166,11 +222,37 @@ namespace Mickey_Engine
             }
         }
 
+        //Joystick
+        private static void Window_JoystickConnected(object sender, JoystickConnectEventArgs e)
+        {
+            Debug.Log($"A new joystick is connected");
+        }
+
+        private static void Window_JoystickDisconnected(object sender, JoystickConnectEventArgs e)
+        {
+            Debug.Log($"The joystick was disabled");
+        }
+
+        private static void Window_JoystickButtonPressed(object sender, JoystickButtonEventArgs e)
+        {
+            switch(e.Button)
+            {
+                case 0:
+                    if (scriptPos < dialogs.Count)
+                    {
+                        Parse.dialog();
+                    }
+                    break;
+            }
+        }
+
+
+        //Config
         static void ReadConfig()
         {
             Debug.Log("Reading the configuration file");
-            config_fl = File.ReadAllLines(Environment.CurrentDirectory + @"/config.ini");
-            string title, width, height, console, archive, icon, language, saving_path, vertical_sync, fullscreen;
+            config_fl = File.ReadAllLines(Environment.CurrentDirectory + @"/../config.ini");
+            string title, width, height, console, archive, icon, language, saving_path, vertical_sync, fullscreen, drawFPS;
 
             title = config_fl[1].Replace("Title=", "").Replace("\"", "");
             if (title == "")
@@ -196,11 +278,15 @@ namespace Mickey_Engine
             config.vertical_sync = Convert.ToBoolean(vertical_sync);
             console = config_fl[9].Replace("Console=", "");
             config.console = Convert.ToBoolean(console);
-            archive = config_fl[10].Replace("Archive=", "").Replace("\"", "");
+            drawFPS = config_fl[10].Replace("DrawFPS=", "");
+            config.fps_show = Convert.ToBoolean(drawFPS);
+            archive = config_fl[11].Replace("Archive=", "").Replace("\"", "");
             config.archive = archive;
-            language = config_fl[11].Replace("Language=", "").Replace("\"", "");
+            language = config_fl[12].Replace("Language=", "").Replace("\"", "");
             config.language = language;
-            saving_path = config_fl[12].Replace("SavingPath=", "").Replace("\"", "");
+            saving_path = config_fl[13].Replace("SavingPath=", "").Replace("\"", "");
+            if(saving_path.Contains("[appdata]"))
+                saving_path = saving_path.Replace("[appdata]", Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData));
             config.saving_path = saving_path;
         }
     }

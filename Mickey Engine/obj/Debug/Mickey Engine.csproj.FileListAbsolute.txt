@@ -20,3 +20,21 @@ F:\Visual Studio Projects\Mickey Engine\Mickey Engine\bin\Debug\Newtonsoft.Json.
 F:\Visual Studio Projects\Mickey Engine\Mickey Engine\bin\Debug\Newtonsoft.Json.xml
 F:\Visual Studio Projects\Mickey Engine\Mickey Engine\bin\Debug\System.Memory.dll
 F:\Visual Studio Projects\Mickey Engine\Mickey Engine\bin\Debug\Mickey Engine.xml
+F:\Visual Studio Projects\Mickey Engine\Mickey Engine\bin\Debug\bin\Mickey Engine.exe.config
+F:\Visual Studio Projects\Mickey Engine\Mickey Engine\bin\Debug\bin\Mickey Engine.exe
+F:\Visual Studio Projects\Mickey Engine\Mickey Engine\bin\Debug\bin\Mickey Engine.xml
+F:\Visual Studio Projects\Mickey Engine\Mickey Engine\bin\Debug\bin\DotNetZip.dll
+F:\Visual Studio Projects\Mickey Engine\Mickey Engine\bin\Debug\bin\Newtonsoft.Json.dll
+F:\Visual Studio Projects\Mickey Engine\Mickey Engine\bin\Debug\bin\SFML.Audio.dll
+F:\Visual Studio Projects\Mickey Engine\Mickey Engine\bin\Debug\bin\SFML.Graphics.dll
+F:\Visual Studio Projects\Mickey Engine\Mickey Engine\bin\Debug\bin\SFML.System.dll
+F:\Visual Studio Projects\Mickey Engine\Mickey Engine\bin\Debug\bin\SFML.Window.dll
+F:\Visual Studio Projects\Mickey Engine\Mickey Engine\bin\Debug\bin\System.Memory.dll
+F:\Visual Studio Projects\Mickey Engine\Mickey Engine\bin\Debug\bin\DotNetZip.pdb
+F:\Visual Studio Projects\Mickey Engine\Mickey Engine\bin\Debug\bin\DotNetZip.xml
+F:\Visual Studio Projects\Mickey Engine\Mickey Engine\bin\Debug\bin\Newtonsoft.Json.xml
+F:\Visual Studio Projects\Mickey Engine\Mickey Engine\bin\Debug\bin\SFML.Audio.xml
+F:\Visual Studio Projects\Mickey Engine\Mickey Engine\bin\Debug\bin\SFML.Graphics.xml
+F:\Visual Studio Projects\Mickey Engine\Mickey Engine\bin\Debug\bin\SFML.System.xml
+F:\Visual Studio Projects\Mickey Engine\Mickey Engine\bin\Debug\bin\SFML.Window.xml
+F:\Visual Studio Projects\Mickey Engine\Mickey Engine\bin\Debug\bin\System.Buffers.dll

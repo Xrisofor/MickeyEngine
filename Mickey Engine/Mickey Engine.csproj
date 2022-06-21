@@ -20,11 +20,11 @@
     <DebugSymbols>false</DebugSymbols>
     <DebugType>none</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>bin\Debug\bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\Mickey Engine.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\bin\Mickey Engine.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -36,7 +36,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>engine-icon.ico</ApplicationIcon>
+    <ApplicationIcon>icons8_rocket.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DotNetZip, Version=1.16.0.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
@@ -79,10 +83,16 @@
     <Compile Include="classes\Images.cs" />
     <Compile Include="classes\Musics.cs" />
     <Compile Include="classes\Objects.cs" />
+    <Compile Include="functions\Console.cs" />
+    <Compile Include="functions\Save.cs" />
+    <Compile Include="functions\UUID.cs" />
+    <Compile Include="special\Camera.cs" />
     <Compile Include="special\Drawing.cs" />
     <Compile Include="functions\Archive.cs" />
     <Compile Include="functions\Debug.cs" />
     <Compile Include="functions\Parse.cs" />
+    <Compile Include="special\Encryption.cs" />
+    <Compile Include="special\Input.cs" />
     <Compile Include="special\Language.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -95,6 +105,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="engine-icon.ico" />
+    <Content Include="icons8_rocket.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
