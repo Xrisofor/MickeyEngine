@@ -14,6 +14,10 @@
 
 ---
 
+<h3 align="center">Attention, this is a beta build of a new version of the engine! There may be bugs or some flaws in this build</h3>
+
+---
+
 ### ✒️ About the project:
 - A small project created in the C# programming language to create a simple visual novel
 - Fully open source engine code
@@ -35,7 +39,7 @@
 - Run Mickey Engine.sln in Visual Studio 2022
 - Open the project properties and change the build information
 - Open the config.ini file located on the path to the project_folder/bin/Debug/ and change the information about the game
-- Open the objects files.json, images.json, fonts.json on the path project_folder/bin/Debug/data/json and change the parameters you need or add something new
+- Open the objects.json, images.json, fonts.json on the path project_folder/bin/Debug/config and change the parameters you need or add something new
 
 ---
 
