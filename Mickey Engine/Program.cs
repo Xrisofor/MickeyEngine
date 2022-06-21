@@ -46,6 +46,47 @@ namespace Mickey_Engine
         //Private variables
         static VideoMode mode;
         static string[] config_fl;
+        static Sprite splashScreen, splashScreenProgressBar;
+
+        //Change the values of these variables if you don't want to write everywhere the path to your loading screen in the game
+        static string splashScreenFile = "data/splash/loading_pc.png", splashScreenProgressBarFile = "data/splash/loading_pc_progress_bar.png"; static bool splashScreenIsInTheArchive = false;
+        static void SplashScreen(string file, string progressFile, bool acrhive = false, int progress = 0)
+        {
+            if(splashScreen == null)
+            {
+                Image image_sp;
+                if (acrhive)
+                {
+                    MemoryStream mStream = Archive.GetFile(file);
+                    image_sp = new Image(mStream);
+                }
+                else
+                {
+                    image_sp = new Image(Environment.CurrentDirectory + $"/../{file}");
+                }
+                splashScreen = new Sprite(new Texture(image_sp));
+            }
+            if (splashScreenProgressBar == null)
+            {
+                Image image_sp_pb;
+                if (acrhive)
+                {
+                    MemoryStream mStream = Archive.GetFile(progressFile);
+                    image_sp_pb = new Image(mStream);
+                }
+                else
+                {
+                    image_sp_pb = new Image(Environment.CurrentDirectory + $"/../{progressFile}");
+                }
+                splashScreenProgressBar = new Sprite(new Texture(image_sp_pb));
+            }
+
+            splashScreenProgressBar.TextureRect = new IntRect(splashScreenProgressBar.TextureRect.Left, splashScreenProgressBar.TextureRect.Top, progress, splashScreenProgressBar.TextureRect.Height);
+
+            window.Draw(splashScreen);
+            window.Draw(splashScreenProgressBar);
+            window.Display();
+        }
 
         [Obsolete]
         static void Main(string[] args)
@@ -78,6 +119,9 @@ namespace Mickey_Engine
                 window.JoystickButtonPressed += Window_JoystickButtonPressed;
                 window.Closed += Window_Closed;
 
+                //Splash Screen
+                SplashScreen(splashScreenFile, splashScreenProgressBarFile, splashScreenIsInTheArchive, 150);
+
                 //Checking for empty icons in the configuration file
                 if (config.icon != "")
                 {
@@ -107,11 +151,14 @@ namespace Mickey_Engine
                 Parse.languagesFile("data/languages.json"); //Language file
                 Parse.inputFile("config/input.json"); //Input File
                 Parse.fontsList(); //Font File
+                SplashScreen(splashScreenFile, splashScreenProgressBarFile, splashScreenIsInTheArchive, 450);
                 Parse.objectList(); //Object File
                 Parse.imagesList(); //Image File
+                SplashScreen(splashScreenFile, splashScreenProgressBarFile, splashScreenIsInTheArchive, 790);
                 Parse.audioList("config/audio.json", "sound"); //Sound File
                 Parse.audioList("config/audio.json", "music"); //Music File
-                Parse.menuList(); //Menu File
+                Parse.menuList("menu/main.json", true); //Menu File
+                SplashScreen(splashScreenFile, splashScreenProgressBarFile, splashScreenIsInTheArchive, 1000);
 
                 for (int l = 0; l < languages.Count; l++)
                 {
@@ -124,12 +171,13 @@ namespace Mickey_Engine
                 }
                 
                 Parse.dialog();
+                SplashScreen(splashScreenFile, splashScreenProgressBarFile, splashScreenIsInTheArchive, 1280);
 
-                for(int i = 0; i < menus.Count; i++)
+                for (int i = 0; i < menus.Count; i++)
                 {
                     if(menus[i].primaryMenu)
                     {
-                        //isMenu = true;
+                        //isMenu = true; //Temprorarily disabled due to development
                         menuName = menus[i].code_name;
                         i = menus.Count;
                     }
@@ -152,7 +200,10 @@ namespace Mickey_Engine
 
                     if(isMenu)
                     {
+                        //Drawing objects
                         Drawing.MenuDraw("menu_bg");
+
+                        //Drawing texts
                         Drawing.MenuDrawText("game_name");
                         Drawing.MenuDrawText("game_version");
                     }

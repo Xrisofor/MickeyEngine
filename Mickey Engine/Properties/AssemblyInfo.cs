@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Mickey Engine")]
 [assembly: AssemblyDescription("Mickey Engine - an engine for creating visual novels in C#")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Xrisofor")]
+[assembly: AssemblyCompany("Crucial Experiment")]
 [assembly: AssemblyProduct("Mickey Engine")]
-[assembly: AssemblyCopyright("")]
+[assembly: AssemblyCopyright("Crucial Experiment 2022")]
 [assembly: AssemblyTrademark("Mickey Engine")]
 [assembly: AssemblyCulture("")]
 

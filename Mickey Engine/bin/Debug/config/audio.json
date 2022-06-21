@@ -2,8 +2,8 @@
   "sound": [
     {
       "code_name": "test",
-      "file": "",
-      "archive": false
+      "file": "audios/test.wav",
+      "archive": true
     }
   ],
   "music": [

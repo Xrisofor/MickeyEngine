@@ -60,7 +60,7 @@ namespace Mickey_Engine
         /// </summary>
         /// <param name="path">The path to the json file with the menu files</param>
         /// <param name="archive">Variable for working with files from the archive</param>
-        public void GetObjects(string path = "data/menu/main.json", bool archive = false)
+        public void GetObjects(string path = "menu/main.json", bool archive = true)
         {
             string json;
             if (archive)

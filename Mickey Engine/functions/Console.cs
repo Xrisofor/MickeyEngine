@@ -71,6 +71,10 @@ namespace Mickey_Engine.functions
                     case "clear":
                         System.Console.Clear();
                         break;
+                    case "restart":
+                        System.Diagnostics.Process.Start(System.AppDomain.CurrentDomain.FriendlyName);
+                        Environment.Exit(0);
+                        break;
                     case "exit":
                         Environment.Exit(0);
                         break;
