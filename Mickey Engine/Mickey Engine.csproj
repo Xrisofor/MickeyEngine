@@ -43,6 +43,9 @@
     </StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DiscordRPC, Version=1.0.175.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DiscordRichPresence.1.0.175\lib\net35\DiscordRPC.dll</HintPath>
+    </Reference>
     <Reference Include="DotNetZip, Version=1.16.0.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetZip.1.16.0\lib\net40\DotNetZip.dll</HintPath>
     </Reference>
@@ -61,11 +64,15 @@
     <Reference Include="SFML.Window, Version=2.5.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SFML.Window.2.5.0\lib\netstandard2.0\SFML.Window.dll</HintPath>
     </Reference>
+    <Reference Include="Steamworks.NET">
+      <HintPath>..\Steamworks.NET.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -87,6 +94,7 @@
     <Compile Include="functions\Save.cs" />
     <Compile Include="functions\UUID.cs" />
     <Compile Include="special\Camera.cs" />
+    <Compile Include="special\Discord.cs" />
     <Compile Include="special\Drawing.cs" />
     <Compile Include="functions\Archive.cs" />
     <Compile Include="functions\Debug.cs" />
@@ -96,6 +104,7 @@
     <Compile Include="special\Language.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="special\SteamworksApi.cs" />
     <Compile Include="special\StringExtensions.cs" />
     <Compile Include="temp\temp_position.cs" />
   </ItemGroup>
@@ -106,6 +115,7 @@
   <ItemGroup>
     <Content Include="engine-icon.ico" />
     <Content Include="icons8_rocket.ico" />
+    <Content Include="Welcome.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

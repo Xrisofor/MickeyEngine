@@ -1,0 +1,26 @@
+﻿Welcome to Mickey Engine!
+This project is distributed under an open source license.
+If you have any questions, ask them in issues on the project's github page
+
+Let me tell you how to edit the most important thing in the project.
+
+1. The main config of the game:
+	Open the project folder and go to /Mickey Engine/bin/Debug
+	Open the config.ini file
+	Change everything you need using the list at the bottom
+	Save the file and close it
+
+Designations of config variables:
+	The Title is the name of your game that will be displayed
+	Width and Height of the display window
+	Fullscreen mode forces the window to open either to full screen or to windowed mode
+	The Icon is displayed in the window next to the name or in the taskbar
+	Vertical synchronization is responsible for connecting discontinuous frames
+	The Сonsole is responsible for displaying the debug console
+	The DrawFPS is responsible for displaying the fps counter on the screen
+	The Archive is responsible for the archive file in which the game files are stored
+	The Language code of the game
+	The Path to saving game files
+
+2. The Program.cs file:
+	Read all the comments I have left

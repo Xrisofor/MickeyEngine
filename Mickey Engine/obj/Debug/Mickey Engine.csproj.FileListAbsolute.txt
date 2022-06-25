@@ -38,3 +38,7 @@ F:\Visual Studio Projects\Mickey Engine\Mickey Engine\bin\Debug\bin\SFML.Graphic
 F:\Visual Studio Projects\Mickey Engine\Mickey Engine\bin\Debug\bin\SFML.System.xml
 F:\Visual Studio Projects\Mickey Engine\Mickey Engine\bin\Debug\bin\SFML.Window.xml
 F:\Visual Studio Projects\Mickey Engine\Mickey Engine\bin\Debug\bin\System.Buffers.dll
+F:\Visual Studio Projects\Mickey Engine\Mickey Engine\bin\Debug\bin\DiscordRPC.dll
+F:\Visual Studio Projects\Mickey Engine\Mickey Engine\bin\Debug\bin\DiscordRPC.pdb
+F:\Visual Studio Projects\Mickey Engine\Mickey Engine\bin\Debug\bin\DiscordRPC.xml
+F:\Visual Studio Projects\Mickey Engine\Mickey Engine\bin\Debug\bin\Steamworks.NET.dll

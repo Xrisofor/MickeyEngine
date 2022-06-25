@@ -122,6 +122,13 @@ namespace Mickey_Engine
                 //Splash Screen
                 SplashScreen(splashScreenFile, splashScreenProgressBarFile, splashScreenIsInTheArchive, 150);
 
+                //480 is the ID of the valve test game created specifically for developers
+                SW_SteamAPI.Init("480"); //Steam initialization
+                //989807940007518238 is the ID of a test application created by the engine developer
+                Discord.Initialize("989807940007518238"); //Discord initialization
+                //Rich Presense Data Updates
+                Discord.Update("Testing the discord", "Dialog: welcome_en.json", "vs", "Visual Studio", "c-sharp", "C#");
+
                 //Checking for empty icons in the configuration file
                 if (config.icon != "")
                 {
@@ -140,10 +147,12 @@ namespace Mickey_Engine
                     window.SetIcon(image.Size.X, image.Size.Y, image.Pixels);
                 }
 
-                //Debug.Log(UUID.NewGuid().ToString());
+                //Debug.Log(UUID.NewGuid().ToString()); //Creating a test UUID
 
-                if(!Directory.Exists(config.saving_path))
+                //Checking the existence of the save folder
+                if (!Directory.Exists(config.saving_path))
                 {
+                    //Creating a save folder in case it is lost or deleted
                     Directory.CreateDirectory(config.saving_path);
                 }
 
@@ -184,6 +193,10 @@ namespace Mickey_Engine
                 }
 
                 menus.Find(item => item.code_name == menuName).Show(window);
+
+                //Testing of encryption and decryption of text
+                Debug.Log(Encryption.Encrypt("[Discord]\nApplicationID = 989807940007518238", "me2z1c4e8b!0akey27plx@m32dev927s0b1"));
+                Debug.Log(Encryption.Decrypt("DbBfYfMt9PdX60TagNW0VApwZfUPmkcsytJh3vuJnAJ7vVNOPMu5Zs5JkZ7ONwn/Gr2ut3sRpCeGw7pAdKmgxn4yeo3CYC5KNH8Tng4YJMjRpmajw+vuydJTIk+dpLs0", "me2z1c4e8b!0akey27plx@m32dev927s0b1"));
 
                 Clock clock = new Clock();
                 float lastTime = 0;
