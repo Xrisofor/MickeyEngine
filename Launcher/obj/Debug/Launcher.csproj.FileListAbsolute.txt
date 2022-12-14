@@ -1,0 +1,9 @@
+C:\Users\arabo\Documents\Visual Studio 2022\Durka Simulator\Launcher\bin\Debug\Launcher.exe.config
+C:\Users\arabo\Documents\Visual Studio 2022\Durka Simulator\Launcher\bin\Debug\Launcher.exe
+C:\Users\arabo\Documents\Visual Studio 2022\Durka Simulator\Launcher\bin\Debug\Launcher.pdb
+C:\Users\arabo\Documents\Visual Studio 2022\Durka Simulator\Launcher\obj\Debug\Launcher.csproj.AssemblyReference.cache
+C:\Users\arabo\Documents\Visual Studio 2022\Durka Simulator\Launcher\obj\Debug\Launcher.csproj.SuggestedBindingRedirects.cache
+C:\Users\arabo\Documents\Visual Studio 2022\Durka Simulator\Launcher\obj\Debug\Launcher.csproj.CoreCompileInputs.cache
+C:\Users\arabo\Documents\Visual Studio 2022\Durka Simulator\Launcher\obj\Debug\Launcher.exe
+C:\Users\arabo\Documents\Visual Studio 2022\Durka Simulator\Durka Simulator\bin\Debug\Launcher.exe.config
+C:\Users\arabo\Documents\Visual Studio 2022\Durka Simulator\Durka Simulator\bin\Debug\Launcher.exe

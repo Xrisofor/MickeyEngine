@@ -1,0 +1,60 @@
+{
+  "Localization": [
+    {
+      "Name": "PlayButton",
+      "Text": "Play"
+    },
+    {
+      "Name": "LoadButton",
+      "Text": "Load"
+    },
+    {
+      "Name": "ModsButton",
+      "Text": "Modifications"
+    },
+    {
+      "Name": "SettingsButton",
+      "Text": "Settings"
+    },
+    {
+      "Name": "AboutButton",
+      "Text": "About the game"
+    },
+    {
+      "Name": "ExitButton",
+      "Text": "Exit"
+    },
+    {
+      "Name": "ReturnButton",
+      "Text": "Return"
+    },
+	{
+      "Name": "ScreenMode",
+      "Text": "Screen mode"
+    },
+	{
+      "Name": "WindowMode",
+      "Text": "Window"
+    },
+	{
+      "Name": "FullScreenMode",
+      "Text": "FullScreen"
+    },
+	{
+      "Name": "LangMode",
+      "Text": "Language"
+    },
+	{
+      "Name": "EnglishLang",
+      "Text": "English"
+    },
+	{
+      "Name": "RussianLang",
+      "Text": "Russian"
+    },
+	{
+      "Name": "SkipMode",
+      "Text": "Skip"
+    }
+  ]
+}

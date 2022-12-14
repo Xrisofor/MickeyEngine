@@ -1,0 +1,14 @@
+{
+  "Language": [
+    {
+      "CodeName": "en",
+      "Name": "English",
+      "File": "English.json"
+    },
+    {
+      "CodeName": "ru",
+      "Name": "Russian",
+      "File": "Russian.json"
+    }
+  ]
+}

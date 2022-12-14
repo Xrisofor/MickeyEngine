@@ -1,0 +1,20 @@
+C:\Users\arabo\Documents\Visual Studio 2022\Durka Simulator\Durka Simulator\bin\Debug\Release\Durka Simulator.exe.config
+C:\Users\arabo\Documents\Visual Studio 2022\Durka Simulator\Durka Simulator\bin\Debug\Release\Durka Simulator.exe
+C:\Users\arabo\Documents\Visual Studio 2022\Durka Simulator\Durka Simulator\bin\Debug\Release\DotNetZip.dll
+C:\Users\arabo\Documents\Visual Studio 2022\Durka Simulator\Durka Simulator\bin\Debug\Release\Newtonsoft.Json.dll
+C:\Users\arabo\Documents\Visual Studio 2022\Durka Simulator\Durka Simulator\bin\Debug\Release\DotNetZip.pdb
+C:\Users\arabo\Documents\Visual Studio 2022\Durka Simulator\Durka Simulator\bin\Debug\Release\DotNetZip.xml
+C:\Users\arabo\Documents\Visual Studio 2022\Durka Simulator\Durka Simulator\bin\Debug\Release\Newtonsoft.Json.xml
+C:\Users\arabo\Documents\Visual Studio 2022\Durka Simulator\Durka Simulator\obj\Debug\Durka Simulator.csproj.AssemblyReference.cache
+C:\Users\arabo\Documents\Visual Studio 2022\Durka Simulator\Durka Simulator\obj\Debug\Durka Simulator.csproj.SuggestedBindingRedirects.cache
+C:\Users\arabo\Documents\Visual Studio 2022\Durka Simulator\Durka Simulator\obj\Debug\Durka Simulator.csproj.CoreCompileInputs.cache
+C:\Users\arabo\Documents\Visual Studio 2022\Durka Simulator\Durka Simulator\obj\Debug\Durka Simulator.csproj.CopyComplete
+C:\Users\arabo\Documents\Visual Studio 2022\Durka Simulator\Durka Simulator\obj\Debug\Durka Simulator.exe
+C:\Users\arabo\Documents\Visual Studio 2022\Durka Simulator\Durka Simulator\bin\Debug\Release\SFML.Audio.dll
+C:\Users\arabo\Documents\Visual Studio 2022\Durka Simulator\Durka Simulator\bin\Debug\Release\SFML.Graphics.dll
+C:\Users\arabo\Documents\Visual Studio 2022\Durka Simulator\Durka Simulator\bin\Debug\Release\SFML.System.dll
+C:\Users\arabo\Documents\Visual Studio 2022\Durka Simulator\Durka Simulator\bin\Debug\Release\SFML.Window.dll
+C:\Users\arabo\Documents\Visual Studio 2022\Durka Simulator\Durka Simulator\bin\Debug\Release\SFML.Audio.xml
+C:\Users\arabo\Documents\Visual Studio 2022\Durka Simulator\Durka Simulator\bin\Debug\Release\SFML.Graphics.xml
+C:\Users\arabo\Documents\Visual Studio 2022\Durka Simulator\Durka Simulator\bin\Debug\Release\SFML.System.xml
+C:\Users\arabo\Documents\Visual Studio 2022\Durka Simulator\Durka Simulator\bin\Debug\Release\SFML.Window.xml

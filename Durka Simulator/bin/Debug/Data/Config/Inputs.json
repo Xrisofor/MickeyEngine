@@ -1,0 +1,24 @@
+{
+  "Inputs": [
+    {
+      "UUID": "c2fff646-4921-4e4d-848c-74bf4972ad7d",
+      "Key": "Space",
+      "Action": "Dialog, Add"
+    },
+    {
+      "UUID": "ae2e446b-4fc2-44e9-ac75-0a666551684a",
+      "Key": "Escape",
+      "Action": "Quit"
+    },
+    {
+      "UUID": "01866516-e9a3-4177-afe2-e53931c3b0a7",
+      "Key": "F5",
+      "Action": "SaveGame"
+    },
+    {
+      "UUID": "31424a4c-190a-4edc-9c84-7644672018d3",
+      "Key": "F6",
+      "Action": "LoadGame"
+    }
+  ]
+}
