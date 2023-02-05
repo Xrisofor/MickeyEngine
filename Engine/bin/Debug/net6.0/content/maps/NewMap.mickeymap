@@ -1,0 +1,98 @@
+[
+  {
+    "Name": "Background",
+    "Components": [],
+    "Position": {
+      "X": 0.0,
+      "Y": 0.0
+    },
+    "Scale": {
+      "X": 1.1,
+      "Y": 1.1
+    },
+    "Rotation": 0.0,
+    "Collision": false,
+    "Visible": true,
+    "Texture": "$GAME_DATA\\resource\\Accel World - 10 - Large 03.jpg"
+  },
+  {
+    "Name": "TestGif",
+    "Components": [
+		{
+			"ComponentName": "Animation",
+			"Distance": 96,
+			"Speed": 10,
+			"Width": 96,
+			"Height": 96
+		}
+	],
+    "Position": {
+      "X": 400.0,
+      "Y": 400.0
+    },
+    "Scale": {
+      "X": 2.0,
+      "Y": 2.0
+    },
+    "Rotation": 0.0,
+    "Collision": false,
+    "Visible": true,
+    "Texture": "$GAME_DATA\\resource\\tree.png"
+  },
+  {
+    "Name": "Love",
+    "Components": [
+      {
+        "ComponentName": "Animation",
+        "Distance": 22,
+        "Speed": 8,
+        "Width": 22,
+        "Height": 39
+      }
+    ],
+    "Position": {
+      "X": 300.0,
+      "Y": 300.0
+    },
+    "Scale": {
+      "X": 2.8,
+      "Y": 2.8
+    },
+    "Rotation": 0.0,
+    "Collision": false,
+    "Visible": true,
+    "Texture": "$GAME_DATA\\resource\\player_idle.png"
+  },
+  {
+    "Name": "Player",
+    "Components": [
+      {
+        "Speed": 80.0,
+        "HorizontalController": "Horizontal",
+        "VerticalController": "null",
+        "ComponentName": "PlayerController",
+        "IdleAnim": "$GAME_DATA\\resource\\player_idle.png",
+        "MoveAnim": "$GAME_DATA\\resource\\player_run.png"
+      },
+      {
+        "ComponentName": "Animation",
+        "Distance": 22,
+        "Speed": 8,
+        "Width": 22,
+        "Height": 41
+      }
+    ],
+    "Position": {
+      "X": 100.0,
+      "Y": 100.0
+    },
+    "Scale": {
+      "X": 4.0,
+      "Y": 4.0
+    },
+    "Rotation": 0.0,
+    "Collision": true,
+    "Visible": true,
+    "Texture": "$GAME_DATA\\resource\\player_idle.png"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "Name": "Player",
+    "Components": [
+      {
+        "Speed": 80.0,
+        "HorizontalController": "Horizontal",
+        "VerticalController": "Vertical",
+        "ComponentName": "PlayerController"
+      },
+      {
+        "ComponentName": "Animation",
+        "Distance": 32,
+        "Speed": 3,
+        "Width": 25,
+        "Height": 48
+      }
+    ],
+    "Position": {
+      "X": 100.0,
+      "Y": 100.0
+    },
+    "Scale": {
+      "X": 3.0,
+      "Y": 3.0
+    },
+    "Rotation": 0.0,
+    "Collision": true,
+    "Visible": true,
+    "Texture": "$GAME_DATA\\resource\\spr_kanako_walk_32x64_4-frames.png"
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "GameInfo": {
+    "Title": "Mickey Engine 2",
+    "WindowSize": "1280; 720",
+    "VerticalSync": true,
+    "FramerateLimit": 60,
+    "WindowIcon": null,
+    "StartMap": "$GAME_DATA/maps/NewMap.mickeymap"
+  }
+}

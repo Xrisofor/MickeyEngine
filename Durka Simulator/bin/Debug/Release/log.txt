@@ -1,4 +1,0 @@
-[ERROR] Входная строка имела неверный формат.
-[ERROR DARA] System.Collections.ListDictionaryInternal
-[ERROR SOURCE] mscorlib - Line 0
-The error was detected 5/11/2022 in 12:26:7

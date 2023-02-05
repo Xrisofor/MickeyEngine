@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="App\About\AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="App\Forms\Inspector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="App\Forms\Editor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="App\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\BuildForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Components\AudioSound.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Components\DialogSystem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Components\LogicComponent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Components\PlayerController.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Components\ScriptComponent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\CreateObject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\EditScript.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
