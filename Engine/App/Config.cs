@@ -33,7 +33,7 @@ namespace Engine.App
         public static int FramesPerSecond { get; set; } //Number of frames per second
         public static Font GameFont { get; private set; } = new Font(Resources.EngineResource.Font); //Default game font
         public static Sound FileNotFound { get; private set; } = new Sound(new SoundBuffer(EngineResource.FileNotFound)); //Default game sound
-        public static string StartMap { get; private set; } public static bool ShowRectangleShape { get; set; } = true; //Responsible for displaying all RectangleShape on the object
+        public static string StartMap { get; set; } public static bool ShowRectangleShape { get; set; } = true; //Responsible for displaying all RectangleShape on the object
 
         //Reading all files related to the engine config
         public static void Init()

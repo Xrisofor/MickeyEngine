@@ -14,8 +14,8 @@ namespace Engine
                 File.WriteAllText($@"{Config.GameData}\maps\NewMap_Enc.mickeymap", a);
 
                 Config.ConsoleState(0);
-                Arguments.Init(args);
                 Config.Init();
+                Arguments.Init(args);
                 Window.Init();
             }
             catch(Exception ex) //Handling global engine errors
