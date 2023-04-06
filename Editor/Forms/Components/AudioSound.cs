@@ -22,7 +22,7 @@ namespace Editor.Forms.Components
 
         private void SelectFileButton_Click(object sender, EventArgs e)
         {
-            if(openFileDialog1.ShowDialog() == DialogResult.OK)
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 if (audioSource != null) audioSource.Stop(); StopButton.Enabled = false;
                 audioSource = new Engine.Classes.Components.AudioSource(comboBox1.Text, openFileDialog1.FileName);
@@ -73,7 +73,7 @@ namespace Editor.Forms.Components
             FileTextBox.Text = audioSource.File;
             comboBox1.Text = audioSource.Type;
             LoopCheckBox.Checked = audioSource.Loop;
-            if(FileTextBox.Text != string.Empty)
+            if (FileTextBox.Text != string.Empty)
                 PlayButton.Enabled = true;
         }
     }

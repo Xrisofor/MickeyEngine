@@ -1,67 +1,132 @@
 [
   {
-    "Name": "Background",
+    "Name": "GameObject",
     "Components": [],
     "Position": {
       "X": 0.0,
       "Y": 0.0
     },
     "Scale": {
-      "X": 1.1,
-      "Y": 1.1
+      "X": 0.7,
+      "Y": 0.7
     },
     "Rotation": 0.0,
-    "Collision": false,
     "Visible": true,
-    "Texture": "$GAME_DATA\\resource\\Accel World - 10 - Large 03.jpg"
+    "Collision": false,
+    "Texture": "C:\\Users\\arabo\\Изображения\\3494487.jpg"
   },
   {
-    "Name": "TestGif",
-    "Components": [
-		{
-			"ComponentName": "Animation",
-			"Distance": 96,
-			"Speed": 10,
-			"Width": 96,
-			"Height": 96
-		}
-	],
-    "Position": {
-      "X": 400.0,
-      "Y": 400.0
-    },
-    "Scale": {
-      "X": 2.0,
-      "Y": 2.0
-    },
-    "Rotation": 0.0,
-    "Collision": false,
-    "Visible": true,
-    "Texture": "$GAME_DATA\\resource\\tree.png"
-  },
-  {
-    "Name": "Love",
+    "Name": "Music",
     "Components": [
       {
-        "ComponentName": "Animation",
-        "Distance": 22,
-        "Speed": 8,
-        "Width": 22,
-        "Height": 39
+        "ComponentName": "AudioSource",
+        "Type": "Music",
+        "File": "C:\\Users\\arabo\\Music\\The Durka\\Opening.wav",
+        "Loop": false
       }
     ],
     "Position": {
-      "X": 300.0,
+      "X": 0.0,
+      "Y": 0.0
+    },
+    "Scale": {
+      "X": 1.0,
+      "Y": 1.0
+    },
+    "Rotation": 0.0,
+    "Visible": false,
+    "Collision": false,
+    "Texture": ""
+  },
+  {
+    "Name": "TestText",
+    "Components": [
+      {
+        "ComponentName": "GUIText",
+        "Text": {
+          "Color": {
+            "R": 255,
+            "G": 255,
+            "B": 255,
+            "A": 255
+          },
+          "FillColor": {
+            "R": 255,
+            "G": 255,
+            "B": 255,
+            "A": 255
+          },
+          "OutlineColor": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 255
+          },
+          "OutlineThickness": 0.0,
+          "DisplayedString": "Hello World!",
+          "Font": {
+            "CPointer": {
+              "value": 1962821826592
+            }
+          },
+          "CharacterSize": 50,
+          "LetterSpacing": 1.0,
+          "LineSpacing": 1.0,
+          "Style": 0,
+          "Position": {
+            "X": 100.0,
+            "Y": 300.0
+          },
+          "Rotation": 0.0,
+          "Scale": {
+            "X": 1.0,
+            "Y": 1.0
+          },
+          "Origin": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "Transform": {},
+          "InverseTransform": {},
+          "CPointer": {
+            "value": 1962930112832
+          }
+        }
+      }
+    ],
+    "Position": {
+      "X": 100.0,
       "Y": 300.0
     },
     "Scale": {
-      "X": 2.8,
-      "Y": 2.8
+      "X": 1.0,
+      "Y": 1.0
     },
     "Rotation": 0.0,
-    "Collision": false,
     "Visible": true,
-    "Texture": "$GAME_DATA\\resource\\player_idle.png"
+    "Collision": false,
+    "Texture": ""
+  },
+  {
+    "Name": "Script",
+    "Components": [
+      {
+        "ComponentName": "ScriptComponent",
+        "File": "C:\\Users\\arabo\\Documents\\MyMaps\\Script.lua"
+      }
+    ],
+    "Position": {
+      "X": 0.0,
+      "Y": 0.0
+    },
+    "Scale": {
+      "X": 1.0,
+      "Y": 1.0
+    },
+    "Rotation": 0.0,
+    "Visible": true,
+    "Collision": false,
+    "Texture": ""
   },
   {
     "Name": "Player",
@@ -94,5 +159,40 @@
     "Collision": true,
     "Visible": true,
     "Texture": "$GAME_DATA\\resource\\player_idle.png"
+  },
+  {
+    "Name": "Logic",
+    "Components": [
+      {
+        "Type": "Auto",
+        "ComponentName": "LogicComponent",
+        "LogicAction": [
+          {
+            "ObjectName": "Music",
+            "Action": "Play",
+            "Value": "None",
+            "Wait": 0
+          },
+          {
+            "ObjectName": "Player",
+            "Action": "Speed",
+            "Value": "10",
+            "Wait": 0
+          }
+        ]
+      }
+    ],
+    "Position": {
+      "X": 0.0,
+      "Y": 0.0
+    },
+    "Scale": {
+      "X": 1.0,
+      "Y": 1.0
+    },
+    "Rotation": 0.0,
+    "Visible": true,
+    "Collision": false,
+    "Texture": ""
   }
 ]

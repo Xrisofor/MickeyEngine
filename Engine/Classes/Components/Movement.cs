@@ -1,4 +1,5 @@
-﻿using SFML.Graphics;
+﻿using Engine.App;
+using SFML.Graphics;
 using SFML.System;
 
 namespace Engine.Classes.Components
@@ -17,9 +18,13 @@ namespace Engine.Classes.Components
 
         public override void Update(float DeltaTime)
         {
-            var movement = new Vector2f(Input.GetAxis(HorizontalController), Input.GetAxis(VerticalController)) * Speed * DeltaTime;
-            GameObject.Position += movement;
-            
+            //foreach(GameObject @object in Window.GameObjects) {
+                //if (GameObject.Collision && @object.Collision && !GameObject.Sprite.GetGlobalBounds().Intersects(@object.Sprite.GetGlobalBounds()))
+                //{
+                    var movement = new Vector2f(Input.GetAxis(HorizontalController), Input.GetAxis(VerticalController)) * Speed * DeltaTime;
+                    GameObject.Position += movement;
+                //}
+            //}
 
             switch (Input.GetAxis(HorizontalController))
             {

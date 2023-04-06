@@ -5632,10 +5632,10 @@
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
-    "version": "0.1.0",
+    "version": "0.1.1",
     "restore": {
       "projectUniqueName": "C:\\Users\\arabo\\Documents\\Visual Studio 2022\\Engine\\Engine\\Engine.csproj",
-      "projectName": "Engine",
+      "projectName": "engine",
       "projectPath": "C:\\Users\\arabo\\Documents\\Visual Studio 2022\\Engine\\Engine\\Engine.csproj",
       "packagesPath": "C:\\Users\\arabo\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\arabo\\Documents\\Visual Studio 2022\\Engine\\Engine\\obj\\",
@@ -5710,7 +5710,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,5 +1,6 @@
 ﻿using Editor.Forms;
 using Engine;
+using Microsoft.VisualBasic;
 using System.Windows.Forms;
 
 namespace Editor.App
@@ -13,8 +14,9 @@ namespace Editor.App
           "Dialog",
           "Logic",
           "Player Controller",
-          "Script"
-          //"Text"
+          "Prefab",
+          "Script",
+          "Text"
         };
 
         public static void NewObject()
@@ -25,6 +27,7 @@ namespace Editor.App
                 GameObject NewGameObject = new GameObject(CreateForm.ObjectName);
                 NewGameObject.Name = CreateForm.ObjectName;
 
+                #pragma warning disable
                 switch (CreateForm.ObjectType)
                 {
                     case "Player Controller":
@@ -37,12 +40,44 @@ namespace Editor.App
                         //NewGameObject.AddComponent(new Engine.Classes.Components.AnimationComponent());
                         break;
                     case "Script":
-                        if (Program.Form2.FilePath != string.Empty)
+                        if (Program.Form2.FilePath != string.Empty) {
                             NewGameObject.AddComponent(new Engine.Classes.Components.ScriptComponent($@"{Path.GetDirectoryName(Program.Form2.FilePath)}\{NewGameObject.Name}.lua"));
-                        else NewGameObject.AddComponent(new Engine.Classes.Components.ScriptComponent($@"{Environment.CurrentDirectory}\{NewGameObject.Name}.lua"));
+                            File.Create($@"{Path.GetDirectoryName(Program.Form2.FilePath)}\{NewGameObject.Name}.lua").Close();
+                            using(StreamWriter sw = new StreamWriter($@"{Path.GetDirectoryName(Program.Form2.FilePath)}\{NewGameObject.Name}.lua"))
+                            {
+                                sw.WriteLine("function Start(this)");
+                                sw.WriteLine("");
+                                sw.WriteLine("end");
+                                sw.WriteLine("");
+                                sw.WriteLine("function Update(this)");
+                                sw.WriteLine("");
+                                sw.WriteLine("end");
+                            }
+                        }
+                        else {
+                            File.Create($@"{Environment.CurrentDirectory}\{NewGameObject.Name}.lua").Close();
+                            using (StreamWriter sw = new StreamWriter($@"{Environment.CurrentDirectory}\{NewGameObject.Name}.lua"))
+                            {
+                                sw.WriteLine("function Start(this)");
+                                sw.WriteLine("");
+                                sw.WriteLine("end");
+                                sw.WriteLine("");
+                                sw.WriteLine("function Update(this)");
+                                sw.WriteLine("");
+                                sw.WriteLine("end");
+                            }
+                            NewGameObject.AddComponent(new Engine.Classes.Components.ScriptComponent($@"{Environment.CurrentDirectory}\{NewGameObject.Name}.lua"));
+                        }
                         break;
                     case "Logic":
                         NewGameObject.AddComponent(new Engine.Classes.Components.LogicComponent());
+                        break;
+                    case "Text":
+                        NewGameObject.AddComponent(new Engine.Classes.Components.GUIText("Text", Program.EditorFont));
+                        break;
+                    case "Prefab":
+                        Prefab prefab = new Prefab(NewGameObject.Name);
+                        NewGameObject.AddComponent(new Engine.Classes.Components.PrefabComp(prefab));
                         break;
                     case "Dialog":
                         NewGameObject.TexturePath = $@"{Environment.CurrentDirectory}\components\textbox.png";
@@ -70,10 +105,41 @@ namespace Editor.App
                         }
                         break;
                 }
+                #pragma warning restore
 
                 Program.Form2.GameObjects.Add(NewGameObject);
                 Program.Form2.AddListBoxItem(NewGameObject.Name);
             }
         }
+    }
+
+    public class ObjectAction
+    {
+        public static List<string> AudioSource = new List<string>()
+        {
+            "GetStatus",
+            "Play",
+            "Pause",          
+            "Stop"
+        };
+
+        public static List<string> GameObject = new List<string>()
+        {
+            "Position",
+            "Rotation",
+            "Scale",
+            "Texture",
+            "Visible"
+        };
+
+        public static List<string> Logic = new List<string>()
+        {
+            "Trigger",
+        };
+
+        public static List<string> PlayerController = new List<string>()
+        {
+            "Speed",
+        };
     }
 }

@@ -3,8 +3,10 @@ using System.Diagnostics;
 
 namespace Engine
 {
-    internal class Program
+    public class Program
     {
+        public static bool IsEditor { get; set; } = false;
+
         static void Main(string[] args)
         {
             try
@@ -20,11 +22,10 @@ namespace Engine
             }
             catch(Exception ex) //Handling global engine errors
             {
-                #pragma warning disable
-                var st = new StackTrace(ex, true); var frame = st.GetFrame(0); var line = frame.GetFileLineNumber();
-                Console.WriteLine($"{ex.Message}\n{ex.Data}\n{ex.Source}\nLine: {line}");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("The engine was stopped due to a critical error");
+                Console.WriteLine($"Reason: {ex.Message}");
                 Console.ReadKey();
-                #pragma warning restore
             }
         }
     }

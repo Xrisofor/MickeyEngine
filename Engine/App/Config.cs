@@ -54,14 +54,14 @@ namespace Engine.App
             if (vIcon != null)
                 WindowIcon = new Image(vIcon);
 
-            //foreach (string file in Directory.EnumerateFiles($@"{EngineData}\plugins", "*.lua", SearchOption.AllDirectories))
-            //{
-            //    Window.Scripts.Add(Script.LoadFromFile(file));
-            //}
-            //foreach (string file in Directory.EnumerateFiles($@"{EngineData}\plugins", "*.plugin", SearchOption.AllDirectories))
-            //{
-               // Window.Scripts.Add(Script.LoadFromFile(file, true));
-            //}
+            foreach (string file in Directory.EnumerateFiles($@"{EngineData}\plugins", "*.lua", SearchOption.AllDirectories))
+            {
+                Window.Scripts.Add(Script.LoadFromFile(file));
+            }
+            foreach (string file in Directory.EnumerateFiles($@"{EngineData}\plugins", "*.plugin", SearchOption.AllDirectories))
+            {
+                Window.Scripts.Add(Script.LoadFromFile(file, true));
+            }
         }
 
         //Replaces special characters with data from the config

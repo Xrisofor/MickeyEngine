@@ -2,6 +2,7 @@
 using Engine;
 using SFML.Graphics;
 using SFML.Window;
+using System.Windows.Forms;
 
 namespace Editor.App
 {
@@ -17,12 +18,12 @@ namespace Editor.App
             menuStrip1.Renderer = new MyRenderer();
         }
 
-        
+
         private void MainForm_Shown(object sender, EventArgs e)
         {
             Window = new RenderWindow(sfmlPanel.Handle);
 
-            while(Visible)
+            while (Visible)
             {
                 Application.DoEvents();
                 Window.DispatchEvents();
@@ -53,6 +54,10 @@ namespace Editor.App
         {
             PaintForm.Separator_Paint(sender, e);
         }
+        private void toolStripSeparator4_Paint(object sender, PaintEventArgs e)
+        {
+            PaintForm.Separator_Paint(sender, e);
+        }
         private void toolStripSeparator2_Paint(object sender, PaintEventArgs e)
         {
             PaintForm.Separator_Paint(sender, e);
@@ -60,6 +65,81 @@ namespace Editor.App
         private void toolStripSeparator3_Paint(object sender, PaintEventArgs e)
         {
             PaintForm.Separator_Paint(sender, e);
+        }
+        #endregion
+
+        #region Form.TSM | Region
+        private void ShowGrid_TSM_Click(object sender, EventArgs e)
+        {
+            if (ShowGrid_TSM.Checked)
+            {
+                ShowGrid_TSM.Checked = false;
+                ShowGrid = false;
+            }
+            else
+            {
+                ShowGrid_TSM.Checked = true;
+                ShowGrid = true;
+            }
+        }
+
+        private void GridColorButton_TSM_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                EditorGrid.Color = new SFML.Graphics.Color(colorDialog1.Color.R, colorDialog1.Color.G, colorDialog1.Color.B, Program.EditorGrid.Color.A);
+                EditorGrid.ReDraw();
+            }
+        }
+
+        #region Grid Size | Region
+        private void GridSize20_TSM_Click(object sender, EventArgs e)
+        {
+            EditorGrid.Size = 20;
+            EditorGrid.ReDraw();
+        }
+
+        private void GridSize25_TSM_Click(object sender, EventArgs e)
+        {
+            EditorGrid.Size = 25;
+            EditorGrid.ReDraw();
+        }
+
+        private void GridSize30_TSM_Click(object sender, EventArgs e)
+        {
+            EditorGrid.Size = 30;
+            EditorGrid.ReDraw();
+        }
+
+        private void GridSize35_TSM_Click(object sender, EventArgs e)
+        {
+            EditorGrid.Size = 35;
+            EditorGrid.ReDraw();
+        }
+
+        private void GridSize40_TSM_Click(object sender, EventArgs e)
+        {
+            EditorGrid.Size = 40;
+            EditorGrid.ReDraw();
+        }
+
+        private void GridSize45_TSM_Click(object sender, EventArgs e)
+        {
+            EditorGrid.Size = 45;
+            EditorGrid.ReDraw();
+        }
+
+        private void GridSize50_TSM_Click(object sender, EventArgs e)
+        {
+            EditorGrid.Size = 50;
+            EditorGrid.ReDraw();
+        }
+        #endregion
+
+        private void AboutButton_TSM_Click(object sender, EventArgs e)
+        {
+            AboutBox aboutBox = new AboutBox();
+            aboutBox.ShowDialog();
         }
         #endregion
     }

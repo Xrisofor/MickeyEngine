@@ -1836,7 +1836,7 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
-      "engine/0.1.0": {
+      "engine/0.1.1": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
@@ -5657,7 +5657,7 @@
         "system.xml.xdocument.nuspec"
       ]
     },
-    "engine/0.1.0": {
+    "engine/0.1.1": {
       "type": "project",
       "path": "../Engine/Engine.csproj",
       "msbuildProject": "../Engine/Engine.csproj"
@@ -5668,7 +5668,7 @@
       "Costura.Fody >= 5.7.0",
       "FastColoredTextBox.Net5 >= 2.16.26",
       "SFML.Net >= 2.5.0",
-      "engine >= 0.1.0"
+      "engine >= 0.1.1"
     ]
   },
   "packageFolders": {
@@ -5753,7 +5753,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

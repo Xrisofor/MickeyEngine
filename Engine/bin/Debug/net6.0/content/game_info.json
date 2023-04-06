@@ -6,5 +6,11 @@
     "FramerateLimit": 60,
     "WindowIcon": null,
     "StartMap": "$GAME_DATA/maps/NewMap.mickeymap"
-  }
+  },
+  "GameFonts": [
+    {
+      "Name": "Arial",
+      "File": "GameFont"
+    }
+  ]
 }

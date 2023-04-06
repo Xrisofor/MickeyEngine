@@ -13,6 +13,9 @@
     <Compile Update="App\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\AddLogicItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\BuildForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -22,10 +25,16 @@
     <Compile Update="Forms\Components\DialogSystem.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\Components\GUIText.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\Components\LogicComponent.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Components\PlayerController.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Components\PrefabComp.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Components\ScriptComponent.cs">

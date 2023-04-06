@@ -6,7 +6,9 @@ namespace Editor.Forms.Components
 {
     public partial class ScriptComponent : Form
     {
+        #pragma warning disable
         public Engine.Classes.Components.ScriptComponent scriptComponent;
+        #pragma warning restore
 
         public ScriptComponent()
         {

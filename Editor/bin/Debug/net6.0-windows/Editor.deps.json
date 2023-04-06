@@ -11,7 +11,7 @@
           "Costura.Fody": "5.7.0",
           "FastColoredTextBox.Net5": "2.16.26",
           "SFML.Net": "2.5.0",
-          "engine": "0.1.0",
+          "engine": "0.1.1",
           "Encryption": "1.0.7839.38292"
         },
         "runtime": {
@@ -1119,7 +1119,7 @@
           "System.Xml.ReaderWriter": "4.3.0"
         }
       },
-      "engine/0.1.0": {
+      "engine/0.1.1": {
         "dependencies": {
           "DotNetZip": "1.16.0",
           "MoonSharp": "2.0.0",
@@ -1790,7 +1790,7 @@
       "path": "system.xml.xdocument/4.3.0",
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
     },
-    "engine/0.1.0": {
+    "engine/0.1.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

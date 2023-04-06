@@ -28,143 +28,139 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.FileTextBox = new System.Windows.Forms.TextBox();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.SelectFileButton = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.StopButton = new System.Windows.Forms.Button();
-            this.PlayButton = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.LoopCheckBox = new System.Windows.Forms.CheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.SuspendLayout();
+            FileTextBox = new TextBox();
+            openFileDialog1 = new OpenFileDialog();
+            SelectFileButton = new Button();
+            comboBox1 = new ComboBox();
+            StopButton = new Button();
+            PlayButton = new Button();
+            label2 = new Label();
+            pictureBox1 = new PictureBox();
+            LoopCheckBox = new CheckBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
             // 
             // FileTextBox
             // 
-            this.FileTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.FileTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FileTextBox.Enabled = false;
-            this.FileTextBox.ForeColor = System.Drawing.Color.White;
-            this.FileTextBox.Location = new System.Drawing.Point(45, 9);
-            this.FileTextBox.Name = "FileTextBox";
-            this.FileTextBox.ReadOnly = true;
-            this.FileTextBox.Size = new System.Drawing.Size(220, 27);
-            this.FileTextBox.TabIndex = 2;
+            FileTextBox.BackColor = Color.FromArgb(33, 37, 41);
+            FileTextBox.BorderStyle = BorderStyle.FixedSingle;
+            FileTextBox.Enabled = false;
+            FileTextBox.ForeColor = Color.White;
+            FileTextBox.Location = new Point(45, 9);
+            FileTextBox.Name = "FileTextBox";
+            FileTextBox.ReadOnly = true;
+            FileTextBox.Size = new Size(220, 27);
+            FileTextBox.TabIndex = 2;
             // 
             // openFileDialog1
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.Filter = "Audio | *.wav; *.ogg";
+            openFileDialog1.FileName = "openFileDialog1";
+            openFileDialog1.Filter = "Audio | *.wav; *.ogg";
             // 
             // SelectFileButton
             // 
-            this.SelectFileButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.SelectFileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SelectFileButton.Location = new System.Drawing.Point(12, 76);
-            this.SelectFileButton.Name = "SelectFileButton";
-            this.SelectFileButton.Size = new System.Drawing.Size(253, 29);
-            this.SelectFileButton.TabIndex = 17;
-            this.SelectFileButton.Text = "Select";
-            this.SelectFileButton.UseVisualStyleBackColor = false;
-            this.SelectFileButton.Click += new System.EventHandler(this.SelectFileButton_Click);
+            SelectFileButton.BackColor = Color.FromArgb(33, 37, 41);
+            SelectFileButton.FlatStyle = FlatStyle.Flat;
+            SelectFileButton.Location = new Point(12, 76);
+            SelectFileButton.Name = "SelectFileButton";
+            SelectFileButton.Size = new Size(253, 29);
+            SelectFileButton.TabIndex = 17;
+            SelectFileButton.Text = "Select";
+            SelectFileButton.UseVisualStyleBackColor = false;
+            SelectFileButton.Click += SelectFileButton_Click;
             // 
             // comboBox1
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.comboBox1.ForeColor = System.Drawing.Color.White;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Sound",
-            "Music"});
-            this.comboBox1.Location = new System.Drawing.Point(12, 42);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(253, 28);
-            this.comboBox1.TabIndex = 18;
-            this.comboBox1.Text = "Sound";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            comboBox1.BackColor = Color.FromArgb(33, 37, 41);
+            comboBox1.ForeColor = Color.White;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Sound", "Music" });
+            comboBox1.Location = new Point(12, 42);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(253, 28);
+            comboBox1.TabIndex = 18;
+            comboBox1.Text = "Sound";
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // StopButton
             // 
-            this.StopButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.StopButton.Enabled = false;
-            this.StopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.StopButton.Location = new System.Drawing.Point(12, 348);
-            this.StopButton.Name = "StopButton";
-            this.StopButton.Size = new System.Drawing.Size(253, 29);
-            this.StopButton.TabIndex = 20;
-            this.StopButton.Text = "Stop";
-            this.StopButton.UseVisualStyleBackColor = false;
-            this.StopButton.Click += new System.EventHandler(this.StopButton_Click);
+            StopButton.BackColor = Color.FromArgb(33, 37, 41);
+            StopButton.Enabled = false;
+            StopButton.FlatStyle = FlatStyle.Flat;
+            StopButton.Location = new Point(12, 348);
+            StopButton.Name = "StopButton";
+            StopButton.Size = new Size(253, 29);
+            StopButton.TabIndex = 20;
+            StopButton.Text = "Stop";
+            StopButton.UseVisualStyleBackColor = false;
+            StopButton.Click += StopButton_Click;
             // 
             // PlayButton
             // 
-            this.PlayButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.PlayButton.Enabled = false;
-            this.PlayButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PlayButton.Location = new System.Drawing.Point(12, 313);
-            this.PlayButton.Name = "PlayButton";
-            this.PlayButton.Size = new System.Drawing.Size(253, 29);
-            this.PlayButton.TabIndex = 21;
-            this.PlayButton.Text = "Play";
-            this.PlayButton.UseVisualStyleBackColor = false;
-            this.PlayButton.Click += new System.EventHandler(this.PlayButton_Click);
+            PlayButton.BackColor = Color.FromArgb(33, 37, 41);
+            PlayButton.Enabled = false;
+            PlayButton.FlatStyle = FlatStyle.Flat;
+            PlayButton.Location = new Point(12, 313);
+            PlayButton.Name = "PlayButton";
+            PlayButton.Size = new Size(253, 29);
+            PlayButton.TabIndex = 21;
+            PlayButton.Text = "Play";
+            PlayButton.UseVisualStyleBackColor = false;
+            PlayButton.Click += PlayButton_Click;
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.Location = new System.Drawing.Point(12, 288);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(253, 22);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "Controller";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label2.Location = new Point(12, 288);
+            label2.Name = "label2";
+            label2.Size = new Size(253, 22);
+            label2.TabIndex = 22;
+            label2.Text = "Controller";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::Editor.ImageList.file;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(27, 27);
-            this.pictureBox1.TabIndex = 23;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.BackgroundImage = ImageList.file;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox1.Location = new Point(12, 9);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(27, 27);
+            pictureBox1.TabIndex = 23;
+            pictureBox1.TabStop = false;
             // 
             // LoopCheckBox
             // 
-            this.LoopCheckBox.AutoSize = true;
-            this.LoopCheckBox.Location = new System.Drawing.Point(12, 111);
-            this.LoopCheckBox.Name = "LoopCheckBox";
-            this.LoopCheckBox.Size = new System.Drawing.Size(65, 24);
-            this.LoopCheckBox.TabIndex = 24;
-            this.LoopCheckBox.Text = "Loop";
-            this.LoopCheckBox.UseVisualStyleBackColor = true;
-            this.LoopCheckBox.CheckedChanged += new System.EventHandler(this.LoopCheckBox_CheckedChanged);
+            LoopCheckBox.AutoSize = true;
+            LoopCheckBox.Location = new Point(12, 111);
+            LoopCheckBox.Name = "LoopCheckBox";
+            LoopCheckBox.Size = new Size(65, 24);
+            LoopCheckBox.TabIndex = 24;
+            LoopCheckBox.Text = "Loop";
+            LoopCheckBox.UseVisualStyleBackColor = true;
+            LoopCheckBox.CheckedChanged += LoopCheckBox_CheckedChanged;
             // 
             // AudioSound
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(277, 389);
-            this.Controls.Add(this.LoopCheckBox);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.PlayButton);
-            this.Controls.Add(this.StopButton);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.SelectFileButton);
-            this.Controls.Add(this.FileTextBox);
-            this.ForeColor = System.Drawing.Color.White;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AudioSound";
-            this.Text = "AudioSound";
-            this.Shown += new System.EventHandler(this.AudioSound_Shown);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(52, 58, 64);
+            ClientSize = new Size(277, 389);
+            Controls.Add(LoopCheckBox);
+            Controls.Add(pictureBox1);
+            Controls.Add(label2);
+            Controls.Add(PlayButton);
+            Controls.Add(StopButton);
+            Controls.Add(comboBox1);
+            Controls.Add(SelectFileButton);
+            Controls.Add(FileTextBox);
+            ForeColor = Color.White;
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "AudioSound";
+            Text = "AudioSound";
+            Shown += AudioSound_Shown;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

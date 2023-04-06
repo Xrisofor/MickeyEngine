@@ -18,22 +18,22 @@ namespace Editor.Forms
         private void BuildForm_Shown(object sender, EventArgs e)
         {
             label1.Text = "Creating folders";
-            Directory.CreateDirectory($@"{Path.GetDirectoryName(Program.Form2.FilePath)}\Build");
-            Directory.CreateDirectory($@"{Path.GetDirectoryName(Program.Form2.FilePath)}\Build\Audio");
-            Directory.CreateDirectory($@"{Path.GetDirectoryName(Program.Form2.FilePath)}\Build\Images");
-            Directory.CreateDirectory($@"{Path.GetDirectoryName(Program.Form2.FilePath)}\Build\Scripts");
+            Directory.CreateDirectory($@"{Path.GetDirectoryName(Editor.App.Program.Form2.FilePath)}\Build");
+            Directory.CreateDirectory($@"{Path.GetDirectoryName(Editor.App.Program.Form2.FilePath)}\Build\Audio");
+            Directory.CreateDirectory($@"{Path.GetDirectoryName(Editor.App.Program.Form2.FilePath)}\Build\Images");
+            Directory.CreateDirectory($@"{Path.GetDirectoryName(Editor.App.Program.Form2.FilePath)}\Build\Scripts");
             progressBar1.Value = 5;
 
             string EngineCode = "";
 
-            foreach (GameObject gameObject in Program.Form2.GameObjects)
+            foreach (GameObject gameObject in Editor.App.Program.Form2.GameObjects)
             {
                 string TextureName = String.Empty;
 
                 if (gameObject.Sprite.Texture != null && gameObject.TexturePath != null)
                 {
-                    if (!File.Exists($@"{Path.GetDirectoryName(Program.Form2.FilePath)}\Build\Images\{Path.GetFileName(gameObject.TexturePath)}"))
-                        File.Copy(gameObject.TexturePath, $@"{Path.GetDirectoryName(Program.Form2.FilePath)}\Build\Images\{Path.GetFileName(gameObject.TexturePath)}"); label1.Text = $"Copying a file: {gameObject.TexturePath}"; TextureName = Path.GetFileName(gameObject.TexturePath);
+                    if (!File.Exists($@"{Path.GetDirectoryName(Editor.App.Program.Form2.FilePath)}\Build\Images\{Path.GetFileName(gameObject.TexturePath)}"))
+                        File.Copy(gameObject.TexturePath, $@"{Path.GetDirectoryName(Editor.App.Program.Form2.FilePath)}\Build\Images\{Path.GetFileName(gameObject.TexturePath)}"); label1.Text = $"Copying a file: {gameObject.TexturePath}"; TextureName = Path.GetFileName(gameObject.TexturePath);
                 }
 
                 if (gameObject.Sprite.Texture != null && gameObject.TexturePath != null)
@@ -46,14 +46,15 @@ namespace Editor.Forms
                 EngineCode = EngineCode + $"{gameObject.Name}.Rotation = {gameObject.Rotation};\n";
                 EngineCode = EngineCode + $"{gameObject.Name}.Visible = {gameObject.Visible.ToString().ToLower()};\n";
 
+                #pragma warning disable
                 for (int i = 0; i < gameObject.Components.Length; i++)
                 {
                     switch (gameObject.Components[i])
                     {
                         case Engine.Classes.Components.AudioSource:
                             Engine.Classes.Components.AudioSource audioSource = (Engine.Classes.Components.AudioSource)gameObject.Components[i];
-                            if(!File.Exists($@"{Path.GetDirectoryName(Program.Form2.FilePath)}\Build\Audio\{Path.GetFileName(audioSource.File)}"))
-                                File.Copy(audioSource.File, $@"{Path.GetDirectoryName(Program.Form2.FilePath)}\Build\Audio\{Path.GetFileName(audioSource.File)}"); label1.Text = $"Copying a file: {audioSource.File}";
+                            if(!File.Exists($@"{Path.GetDirectoryName(Editor.App.Program.Form2.FilePath)}\Build\Audio\{Path.GetFileName(audioSource.File)}"))
+                                File.Copy(audioSource.File, $@"{Path.GetDirectoryName(Editor.App.Program.Form2.FilePath)}\Build\Audio\{Path.GetFileName(audioSource.File)}"); label1.Text = $"Copying a file: {audioSource.File}";
                             EngineCode = EngineCode + $"{gameObject.Name}.AddComponent(AudioSource({audioSource.Type}, \"$GAME_DATA/Audio/{Path.GetFileName(audioSource.File)}\"));\n";
                             break;
                         case Engine.Classes.Components.ScriptComponent:
@@ -61,8 +62,8 @@ namespace Editor.Forms
                             string script = File.ReadAllText(scriptComponent.File);
                             script = Core.Encrypt(script);
                             string file = Path.GetFileName(scriptComponent.File); file = Path.ChangeExtension(file, ".script");
-                            File.Create($@"{Path.GetDirectoryName(Program.Form2.FilePath)}\Build\Scripts\{file}").Close();
-                            File.WriteAllText($@"{Path.GetDirectoryName(Program.Form2.FilePath)}\Build\Scripts\{file}", script);
+                            File.Create($@"{Path.GetDirectoryName(Editor.App.Program.Form2.FilePath)}\Build\Scripts\{file}").Close();
+                            File.WriteAllText($@"{Path.GetDirectoryName(Editor.App.Program.Form2.FilePath)}\Build\Scripts\{file}", script);
                             label1.Text = $"Copying a file: {scriptComponent.File}";
                             EngineCode = EngineCode + $"{gameObject.Name}.AddComponent(ScriptComponent(\"$GAME_DATA/Scripts/{file}\"));\n";
                             break;
@@ -72,9 +73,10 @@ namespace Editor.Forms
                             break;
                     }
                 }
+                #pragma warning restore
 
-                File.Create($@"{Path.GetDirectoryName(Program.Form2.FilePath)}\Build\Scripts\All.lua").Close();
-                File.WriteAllText($@"{Path.GetDirectoryName(Program.Form2.FilePath)}\Build\Scripts\All.lua", EngineCode);
+                File.Create($@"{Path.GetDirectoryName(Editor.App.Program.Form2.FilePath)}\Build\Scripts\All.lua").Close();
+                File.WriteAllText($@"{Path.GetDirectoryName(Editor.App.Program.Form2.FilePath)}\Build\Scripts\All.lua", EngineCode);
             }
         }
 

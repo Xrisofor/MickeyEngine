@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "engine/0.1.0.0": {
+      "engine/0.1.1.0": {
         "dependencies": {
           "Costura.Fody": "5.7.0",
           "DotNetZip": "1.16.0",
@@ -1168,7 +1168,7 @@
     }
   },
   "libraries": {
-    "engine/0.1.0.0": {
+    "engine/0.1.1.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

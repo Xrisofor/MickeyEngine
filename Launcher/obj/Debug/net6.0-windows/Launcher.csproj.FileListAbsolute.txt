@@ -16,3 +16,17 @@ C:\Users\arabo\Documents\Visual Studio 2022\Engine\Build\Debug\net6.0-windows\La
 C:\Users\arabo\Documents\Visual Studio 2022\Engine\Build\Debug\net6.0-windows\Launcher.deps.json
 C:\Users\arabo\Documents\Visual Studio 2022\Engine\Build\Debug\net6.0-windows\Launcher.runtimeconfig.json
 C:\Users\arabo\Documents\Visual Studio 2022\Engine\Build\Debug\net6.0-windows\Launcher.dll
+C:\Users\arabo\Documents\Visual Studio 2022\Engine_DEF\Launcher\bin\Debug\net6.0-windows\Launcher.exe
+C:\Users\arabo\Documents\Visual Studio 2022\Engine_DEF\Launcher\bin\Debug\net6.0-windows\Launcher.deps.json
+C:\Users\arabo\Documents\Visual Studio 2022\Engine_DEF\Launcher\bin\Debug\net6.0-windows\Launcher.runtimeconfig.json
+C:\Users\arabo\Documents\Visual Studio 2022\Engine_DEF\Launcher\bin\Debug\net6.0-windows\Launcher.dll
+C:\Users\arabo\Documents\Visual Studio 2022\Engine_DEF\Launcher\obj\Debug\net6.0-windows\Launcher.csproj.AssemblyReference.cache
+C:\Users\arabo\Documents\Visual Studio 2022\Engine_DEF\Launcher\obj\Debug\net6.0-windows\Launcher.Forms.Engine.resources
+C:\Users\arabo\Documents\Visual Studio 2022\Engine_DEF\Launcher\obj\Debug\net6.0-windows\Launcher.Main.resources
+C:\Users\arabo\Documents\Visual Studio 2022\Engine_DEF\Launcher\obj\Debug\net6.0-windows\Launcher.csproj.GenerateResource.cache
+C:\Users\arabo\Documents\Visual Studio 2022\Engine_DEF\Launcher\obj\Debug\net6.0-windows\Launcher.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\arabo\Documents\Visual Studio 2022\Engine_DEF\Launcher\obj\Debug\net6.0-windows\Launcher.AssemblyInfoInputs.cache
+C:\Users\arabo\Documents\Visual Studio 2022\Engine_DEF\Launcher\obj\Debug\net6.0-windows\Launcher.AssemblyInfo.cs
+C:\Users\arabo\Documents\Visual Studio 2022\Engine_DEF\Launcher\obj\Debug\net6.0-windows\Launcher.csproj.CoreCompileInputs.cache
+C:\Users\arabo\Documents\Visual Studio 2022\Engine_DEF\Launcher\obj\Debug\net6.0-windows\Launcher.dll
+C:\Users\arabo\Documents\Visual Studio 2022\Engine_DEF\Launcher\obj\Debug\net6.0-windows\Launcher.genruntimeconfig.cache

@@ -13,11 +13,11 @@ using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("Crucial Experiment")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("0.1.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("0.1.0.0")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("0.1.1.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("0.1.1.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("Mickey Engine")]
 [assembly: System.Reflection.AssemblyTitleAttribute("engine")]
-[assembly: System.Reflection.AssemblyVersionAttribute("0.1.0.0")]
+[assembly: System.Reflection.AssemblyVersionAttribute("0.1.1.0")]
 
 // Создано классом WriteCodeFragment MSBuild.
 

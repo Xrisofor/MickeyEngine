@@ -73,10 +73,30 @@ namespace Editor {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add {
+            get {
+                object obj = ResourceManager.GetObject("add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap app_icon {
             get {
                 object obj = ResourceManager.GetObject("app_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        internal static byte[] arial {
+            get {
+                object obj = ResourceManager.GetObject("arial", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
@@ -116,6 +136,16 @@ namespace Editor {
         internal static System.Drawing.Bitmap logic {
             get {
                 object obj = ResourceManager.GetObject("logic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap prefabhouse {
+            get {
+                object obj = ResourceManager.GetObject("prefabhouse", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -186,6 +216,16 @@ namespace Editor {
         internal static System.Drawing.Bitmap start {
             get {
                 object obj = ResourceManager.GetObject("start", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap text {
+            get {
+                object obj = ResourceManager.GetObject("text", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -28,117 +28,112 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ScriptTextBox = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.FunctionTextBox = new System.Windows.Forms.TextBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.SuspendLayout();
+            comboBox1 = new ComboBox();
+            pictureBox1 = new PictureBox();
+            listBox1 = new ListBox();
+            EditButton = new Button();
+            NewButton = new Button();
+            RemoveButton = new Button();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
             // 
             // comboBox1
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.comboBox1.ForeColor = System.Drawing.Color.White;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Auto",
-            "Trigger"});
-            this.comboBox1.Location = new System.Drawing.Point(45, 12);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(220, 28);
-            this.comboBox1.TabIndex = 0;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            comboBox1.BackColor = Color.FromArgb(33, 37, 41);
+            comboBox1.ForeColor = Color.White;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Auto", "Trigger" });
+            comboBox1.Location = new Point(45, 13);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(220, 28);
+            comboBox1.TabIndex = 0;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::Editor.ImageList.trigger;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(27, 27);
-            this.pictureBox1.TabIndex = 24;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.BackgroundImage = ImageList.trigger;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox1.Location = new Point(12, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(27, 27);
+            pictureBox1.TabIndex = 24;
+            pictureBox1.TabStop = false;
             // 
-            // ScriptTextBox
+            // listBox1
             // 
-            this.ScriptTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.ScriptTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ScriptTextBox.ForeColor = System.Drawing.Color.White;
-            this.ScriptTextBox.Location = new System.Drawing.Point(45, 46);
-            this.ScriptTextBox.Name = "ScriptTextBox";
-            this.ScriptTextBox.Size = new System.Drawing.Size(220, 27);
-            this.ScriptTextBox.TabIndex = 26;
-            this.ScriptTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ScriptTextBox.TextChanged += new System.EventHandler(this.ScriptTextBox_TextChanged);
+            listBox1.BackColor = Color.FromArgb(33, 37, 41);
+            listBox1.BorderStyle = BorderStyle.FixedSingle;
+            listBox1.ForeColor = Color.White;
+            listBox1.FormattingEnabled = true;
+            listBox1.HorizontalScrollbar = true;
+            listBox1.ItemHeight = 20;
+            listBox1.Location = new Point(12, 45);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(253, 262);
+            listBox1.TabIndex = 30;
             // 
-            // pictureBox2
+            // EditButton
             // 
-            this.pictureBox2.BackgroundImage = global::Editor.ImageList.script;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 45);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(27, 27);
-            this.pictureBox2.TabIndex = 27;
-            this.pictureBox2.TabStop = false;
+            EditButton.BackColor = Color.FromArgb(33, 37, 41);
+            EditButton.FlatStyle = FlatStyle.Flat;
+            EditButton.Location = new Point(12, 348);
+            EditButton.Name = "EditButton";
+            EditButton.Size = new Size(253, 29);
+            EditButton.TabIndex = 31;
+            EditButton.Text = "Edit";
+            EditButton.UseVisualStyleBackColor = false;
             // 
-            // FunctionTextBox
+            // NewButton
             // 
-            this.FunctionTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.FunctionTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FunctionTextBox.ForeColor = System.Drawing.Color.White;
-            this.FunctionTextBox.Location = new System.Drawing.Point(45, 79);
-            this.FunctionTextBox.Name = "FunctionTextBox";
-            this.FunctionTextBox.Size = new System.Drawing.Size(220, 27);
-            this.FunctionTextBox.TabIndex = 28;
-            this.FunctionTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.FunctionTextBox.TextChanged += new System.EventHandler(this.FunctionTextBox_TextChanged);
+            NewButton.BackColor = Color.FromArgb(33, 37, 41);
+            NewButton.FlatStyle = FlatStyle.Flat;
+            NewButton.Location = new Point(12, 313);
+            NewButton.Name = "NewButton";
+            NewButton.Size = new Size(123, 29);
+            NewButton.TabIndex = 32;
+            NewButton.Text = "New";
+            NewButton.UseVisualStyleBackColor = false;
+            NewButton.Click += NewButton_Click;
             // 
-            // pictureBox3
+            // RemoveButton
             // 
-            this.pictureBox3.BackgroundImage = global::Editor.ImageList.start;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox3.Location = new System.Drawing.Point(12, 79);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(27, 27);
-            this.pictureBox3.TabIndex = 29;
-            this.pictureBox3.TabStop = false;
+            RemoveButton.BackColor = Color.FromArgb(33, 37, 41);
+            RemoveButton.FlatStyle = FlatStyle.Flat;
+            RemoveButton.Location = new Point(142, 313);
+            RemoveButton.Name = "RemoveButton";
+            RemoveButton.Size = new Size(123, 29);
+            RemoveButton.TabIndex = 33;
+            RemoveButton.Text = "Remove";
+            RemoveButton.UseVisualStyleBackColor = false;
             // 
             // LogicComponent
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(277, 389);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.FunctionTextBox);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.ScriptTextBox);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.comboBox1);
-            this.ForeColor = System.Drawing.Color.White;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "LogicComponent";
-            this.Text = "LogicComponent";
-            this.Shown += new System.EventHandler(this.LogicComponent_Shown);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(52, 58, 64);
+            ClientSize = new Size(277, 389);
+            Controls.Add(RemoveButton);
+            Controls.Add(NewButton);
+            Controls.Add(EditButton);
+            Controls.Add(listBox1);
+            Controls.Add(pictureBox1);
+            Controls.Add(comboBox1);
+            ForeColor = Color.White;
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "LogicComponent";
+            Text = "LogicComponent";
+            Shown += LogicComponent_Shown;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
 
         private ComboBox comboBox1;
         private PictureBox pictureBox1;
-        public TextBox ScriptTextBox;
-        private PictureBox pictureBox2;
-        public TextBox FunctionTextBox;
-        private PictureBox pictureBox3;
+        private ListBox listBox1;
+        private Button EditButton;
+        private Button NewButton;
+        private Button RemoveButton;
     }
 }

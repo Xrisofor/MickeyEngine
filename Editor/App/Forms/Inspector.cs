@@ -1,4 +1,5 @@
 using Editor.App;
+using Newtonsoft.Json;
 using SFML.Graphics;
 using SFML.System;
 using System.ComponentModel;
@@ -26,10 +27,10 @@ namespace Editor
             SelectTextureButton.Enabled = true;
             RotationTextBox.Enabled = true;
 
-            for(int index = 0; index < ComponentPanel.Controls.Count; index++)
+            for (int index = 0; index < ComponentPanel.Controls.Count; index++)
             {
                 if (ComponentPanel.Controls[index].Name != "ComponentLabel")
-                ComponentPanel.Controls.RemoveAt(index);
+                    ComponentPanel.Controls.RemoveAt(index);
             }
             ComponentNameLabel.Text = "Component";
             ComponentLabel.Visible = true;
@@ -43,6 +44,7 @@ namespace Editor
             RotationTextBox.Text = Rotation.ToString();
             TextureTextBox.Text = Program.Form2.GameObjects[Program.Form2.ListIndex].TexturePath;
 
+            #pragma warning disable
             for (int i = 0; i < Components.Length; i++)
             {
                 switch (Components[i])
@@ -59,6 +61,32 @@ namespace Editor
                         ComponentNameLabel.Text = "Audio Source";
                         ObjectPictureBox.BackgroundImage = ImageList.audio;
                         DisabledAll(1);
+                        break;
+                    case Engine.Classes.Components.GUIText:
+                        ComponentLabel.Visible = false;
+                        Forms.Components.GUIText GUITextForm = new Forms.Components.GUIText();
+                        GUITextForm.TopLevel = false;
+                        GUITextForm.AutoScroll = true;
+                        GUITextForm.guiText = (Engine.Classes.Components.GUIText)Components[i];
+                        ComponentPanel.Controls.Add(GUITextForm);
+                        GUITextForm.Dock = DockStyle.Fill;
+                        GUITextForm.Show();
+                        ComponentNameLabel.Text = "Text";
+                        ObjectPictureBox.BackgroundImage = ImageList.text;
+                        DisabledAll(2);
+                        break;
+                    case Engine.Classes.Components.PrefabComp:
+                        ComponentLabel.Visible = false;
+                        Forms.Components.PrefabComp PrefabCompForm = new Forms.Components.PrefabComp();
+                        PrefabCompForm.TopLevel = false;
+                        PrefabCompForm.AutoScroll = true;
+                        PrefabCompForm.prefabComp = (Engine.Classes.Components.PrefabComp)Components[i];
+                        ComponentPanel.Controls.Add(PrefabCompForm);
+                        PrefabCompForm.Dock = DockStyle.Fill;
+                        PrefabCompForm.Show();
+                        ComponentNameLabel.Text = "Prefab";
+                        ObjectPictureBox.BackgroundImage = ImageList.prefabhouse;
+                        DisabledAll(2);
                         break;
                     case Engine.Classes.Components.PlayerController:
                         ComponentLabel.Visible = false;
@@ -112,11 +140,12 @@ namespace Editor
                         break;
                 }
             }
+            #pragma warning restore
         }
 
         public void DisabledAll(int index = 0)
         {
-            switch(index)
+            switch (index)
             {
                 case 0:
                     NameTextBox.Enabled = false;
@@ -206,7 +235,7 @@ namespace Editor
 
         private void SelectTextureButton_Click(object sender, EventArgs e)
         {
-            if(openFileDialog1.ShowDialog() == DialogResult.OK)
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 TextureTextBox.Text = openFileDialog1.FileName;
                 TextureTextBox.Text = Program.Form2.GameObjects[Program.Form2.ListIndex].TexturePath = openFileDialog1.FileName;

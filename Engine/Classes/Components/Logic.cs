@@ -1,6 +1,8 @@
 ﻿using Engine.App;
 using Engine.Resources;
+using MoonSharp.Interpreter;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using SFML.Graphics;
 using SFML.System;
 
@@ -10,7 +12,8 @@ namespace Engine.Classes.Components
     [Obsolete]
     public class LogicComponent : Component
     {
-        public string Type; public string ScriptName; public string FunctionName;
+        public string Type;
+        public List<LogicAction> LogicAction { get; set; } = new List<LogicAction>();
 
         public LogicComponent(string Type = "Auto")
         {
@@ -20,7 +23,119 @@ namespace Engine.Classes.Components
 
         public override void Awake() { }
         public override void Draw(RenderTarget Target, RenderStates States) { }
-        public override void Update(float DeltaTime) { }
+        public override void Update(float DeltaTime) {
+            for(int i = 0; i < LogicAction.Count; i++)
+            {
+                if(!Program.IsEditor)
+                {
+                    TriggerAction(LogicAction[i]);
+                    LogicAction.RemoveAt(i);
+                }
+            }
+        }
+
+        public void TriggerAction(LogicAction logicAction)
+        {
+            switch (logicAction.Wait)
+            {
+                case Wait.None:
+                    if (GameObject.Components != null)
+                    {
+                        AudioSource audioSource = (AudioSource)logicAction.GameObject.GetComponent();
+                        switch (logicAction.Action)
+                        {
+                            case "Play":
+                                audioSource.Play();
+                                break;
+                            case "Pause":
+                                audioSource.Pause();
+                                break;
+                            case "Stop":
+                                audioSource.Stop();
+                                break;
+                            case "Speed":
+                                PlayerController playerController = (PlayerController)logicAction.GameObject.GetComponent();
+                                //playerController.Speed = Convert.ToSingle(logicAction.Value);
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        string[] Val = logicAction.Value.Split(';');
+                        switch (logicAction.Action)
+                        {
+                            case "Position":
+                                GameObject.Position = new Vector2f(Convert.ToSingle(Val[0]), Convert.ToSingle(Val[1]));
+                                break;
+                            case "Scale":
+                                GameObject.Scale = new Vector2f(Convert.ToSingle(Val[0]), Convert.ToSingle(Val[1]));
+                                break;
+                            case "Stop":
+                                GameObject.Rotation = Convert.ToSingle(logicAction.Value);
+                                break;
+                        }
+                    }
+                    break;
+                case Wait.KeyPress:
+                    if (Window.KeyPress)
+                    {
+                        if (GameObject.Components != null)
+                        {
+                            AudioSource audioSource = (AudioSource)logicAction.GameObject.GetComponent();
+                            switch (logicAction.Action)
+                            {
+                                case "Play":
+                                    audioSource.Play();
+                                    break;
+                                case "Pause":
+                                    audioSource.Pause();
+                                    break;
+                                case "Stop":
+                                    audioSource.Stop();
+                                    break;
+                                case "Speed":
+                                    PlayerController playerController = (PlayerController)logicAction.GameObject.GetComponent();
+                                    playerController.Speed = Convert.ToSingle(logicAction.Value);
+                                    break;
+                            }
+                        }
+                        else
+                        {
+                            string[] Val = logicAction.Value.Split(';');
+                            switch (logicAction.Action)
+                            {
+                                case "Position":
+                                    GameObject.Position = new Vector2f(Convert.ToSingle(Val[0]), Convert.ToSingle(Val[1]));
+                                    break;
+                                case "Scale":
+                                    GameObject.Scale = new Vector2f(Convert.ToSingle(Val[0]), Convert.ToSingle(Val[1]));
+                                    break;
+                                case "Stop":
+                                    GameObject.Rotation = Convert.ToSingle(logicAction.Value);
+                                    break;
+                            }
+                        }
+                    }
+                    break;
+            }
+        }
+    }
+
+    public class LogicAction
+    {
+        public string ObjectName;
+        [JsonIgnore] public GameObject GameObject;
+        public string Action = "None", Value = "None";
+        public Wait Wait = Wait.None;
+
+        public LogicAction(string ObjectName, GameObject GameObject, string Action, Wait Wait, string Value = "None")
+        {
+            this.ObjectName = ObjectName;
+            this.GameObject = GameObject;
+            this.Action = Action;
+            this.Wait = Wait;
+            this.Value = Value;
+        }
     }
 
     public class EventNode : Component

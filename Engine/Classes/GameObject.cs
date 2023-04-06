@@ -2,9 +2,16 @@
 using SFML.Graphics;
 using Engine.App;
 using Newtonsoft.Json;
+using Engine.Classes.Components;
 
 namespace Engine
 {
+    public enum Wait
+    {
+        None,
+        KeyPress
+    }
+
     //Sample class for creating components
     public abstract class Component
     {
@@ -19,7 +26,7 @@ namespace Engine
     public class GameObject : Drawable
     {
         public string Name; [JsonIgnore] public Sprite Sprite; public Component[] Components = new Component[0]; [JsonIgnore] public RectangleShape CollisionRectangleShape;
-        public Vector2f Position = new Vector2f(0, 0), Scale = new Vector2f(1, 1); public float Rotation = 0; [JsonIgnore] public Vector2f TempScale;
+        public Vector2f Position = new Vector2f(0, 0), Scale = new Vector2f(1, 1); public float Rotation = 0;
         public bool Visible = true; public bool Collision = false; [JsonProperty("Texture")] public string TexturePath = "";
 
         //Creating a new object
@@ -59,6 +66,20 @@ namespace Engine
             Component.GameObject = this; var NewComponents = new Component[Components.Length + 1];
             Components.CopyTo(NewComponents, 0); NewComponents[Components.Length] = Component;
             Components = NewComponents; Component.Awake();
+        }
+
+        public Component GetComponent(int ID = 0)
+        {
+            #pragma warning disable
+            Component component = null;
+            switch (Components[ID].ComponentName)
+            {
+                case "AudioSource":
+                    component = (AudioSource)Components[ID];
+                    break;
+            }
+            return component;
+            #pragma warning restore
         }
 
         //Game object update function

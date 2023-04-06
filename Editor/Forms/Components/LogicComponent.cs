@@ -1,4 +1,5 @@
 ﻿using Editor.App;
+using Engine;
 using Engine.Classes.Components;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,9 @@ namespace Editor.Forms.Components
 {
     public partial class LogicComponent : Form
     {
+        #pragma warning disable
         public Engine.Classes.Components.LogicComponent logicComponent;
+        #pragma warning restore
 
         public LogicComponent()
         {
@@ -24,26 +27,30 @@ namespace Editor.Forms.Components
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             logicComponent.Type = comboBox1.SelectedText;
-            Program.Form2.GameObjects[Program.Form2.ListIndex].Components[0] = logicComponent;
+            Editor.App.Program.Form2.GameObjects[Editor.App.Program.Form2.ListIndex].Components[0] = logicComponent;
         }
 
         private void LogicComponent_Shown(object sender, EventArgs e)
         {
             comboBox1.SelectedText = logicComponent.Type;
-            ScriptTextBox.Text = logicComponent.ScriptName;
-            FunctionTextBox.Text = logicComponent.FunctionName;
+
+            foreach(LogicAction logicAction in logicComponent.LogicAction)
+            {
+                listBox1.Items.Add($"{logicAction.ObjectName} | {logicAction.GameObject.Components[0].ComponentName} | {logicAction.Action}, {logicAction.Value} | {logicAction.Wait}");
+            }
         }
 
-        private void ScriptTextBox_TextChanged(object sender, EventArgs e)
+        private void NewButton_Click(object sender, EventArgs e)
         {
-            logicComponent.ScriptName = ScriptTextBox.Text;
-            Program.Form2.GameObjects[Program.Form2.ListIndex].Components[0] = logicComponent; 
-        }
-
-        private void FunctionTextBox_TextChanged(object sender, EventArgs e)
-        {
-            logicComponent.FunctionName = FunctionTextBox.Text;
-            Program.Form2.GameObjects[Program.Form2.ListIndex].Components[0] = logicComponent;
+            AddLogicItem addLogicItem = new AddLogicItem();
+            if (addLogicItem.ShowDialog() == DialogResult.OK)
+            {
+                #pragma warning disable
+                Engine.GameObject gameObject = Editor.App.Program.Form2.GameObjects.Find(item => item.Name == addLogicItem.ObjectName);
+                logicComponent.LogicAction.Add(new LogicAction(addLogicItem.ObjectName, gameObject, addLogicItem.Action, addLogicItem.Wait, addLogicItem.ActionValue));
+                listBox1.Items.Add($"{gameObject.Name} | {addLogicItem.ComponentName} | {addLogicItem.Action}, {addLogicItem.ActionValue} | {addLogicItem.Wait}");
+                #pragma warning restore
+            }
         }
     }
 }
