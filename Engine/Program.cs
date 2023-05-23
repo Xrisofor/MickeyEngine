@@ -15,8 +15,8 @@ namespace Engine
                 File.Create($@"{Config.GameData}\maps\NewMap_Enc.mickeymap").Close();
                 File.WriteAllText($@"{Config.GameData}\maps\NewMap_Enc.mickeymap", a);
 
-                Config.ConsoleState(0);
                 Config.Init();
+                Config.ConsoleState(0);
                 Arguments.Init(args);
                 Window.Init();
             }

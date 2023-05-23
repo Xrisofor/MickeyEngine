@@ -16,9 +16,11 @@ namespace Editor.App
         public static SFML.Graphics.Font EditorFont = new SFML.Graphics.Font(ImageList.arial);
 
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
             Window = new Window();
+
+            Arguments.Init(args);
 
             Form.StartPosition = FormStartPosition.Manual;
             Form2.StartPosition = FormStartPosition.Manual;
@@ -49,8 +51,11 @@ namespace Editor.App
                 {
                     GameObjects.Update(DeltaTime);
 
-                    if (GameObjects.Visible && GameObjects.Sprite.Texture != null || GameObjects.Visible && GameObjects.Components[0].ComponentName == "GUIText" || GameObjects.Visible && GameObjects.Components[0].ComponentName == "Prefab")
+                    if (GameObjects.Visible && GameObjects.Sprite.Texture != null)
                         Window.Draw(GameObjects);
+                    if(GameObjects.Visible && GameObjects.Components.Length != 0) 
+                        if(GameObjects.Components[0].ComponentName == "GUIText" || GameObjects.Visible && GameObjects.Components[0].ComponentName == "Prefab")
+                            Window.Draw(GameObjects);
                 }
 
                 if (ShowGrid)

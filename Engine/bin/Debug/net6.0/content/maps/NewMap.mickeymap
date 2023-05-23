@@ -66,7 +66,7 @@
           "DisplayedString": "Hello World!",
           "Font": {
             "CPointer": {
-              "value": 1962821826592
+              "value": 1960608232160
             }
           },
           "CharacterSize": 50,
@@ -89,7 +89,7 @@
           "Transform": {},
           "InverseTransform": {},
           "CPointer": {
-            "value": 1962930112832
+            "value": 1958569445024
           }
         }
       }
@@ -135,16 +135,9 @@
         "Speed": 80.0,
         "HorizontalController": "Horizontal",
         "VerticalController": "null",
-        "ComponentName": "PlayerController",
-        "IdleAnim": "$GAME_DATA\\resource\\player_idle.png",
-        "MoveAnim": "$GAME_DATA\\resource\\player_run.png"
-      },
-      {
-        "ComponentName": "Animation",
-        "Distance": 22,
-        "Speed": 8,
-        "Width": 22,
-        "Height": 41
+        "IdleAnim": null,
+        "MoveAnim": null,
+        "ComponentName": "PlayerController"
       }
     ],
     "Position": {
@@ -156,9 +149,9 @@
       "Y": 4.0
     },
     "Rotation": 0.0,
-    "Collision": true,
     "Visible": true,
-    "Texture": "$GAME_DATA\\resource\\player_idle.png"
+    "Collision": false,
+    "Texture": "C:\\Users\\arabo\\Documents\\Visual Studio 2022\\Engine\\Engine\\bin\\Debug\\net6.0\\content\\resource\\player_idle.png"
   },
   {
     "Name": "Logic",

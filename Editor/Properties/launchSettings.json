@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Editor": {
+      "commandName": "Project",
+      "commandLineArgs": "-map \"C:\\Users\\arabo\\Documents\\MyMaps\\PrefabTest.mickeymap\""
+    }
+  }
+}

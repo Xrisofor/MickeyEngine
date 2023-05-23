@@ -1,8 +1,6 @@
 ﻿using Engine.App;
 using Engine.Resources;
-using MoonSharp.Interpreter;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using SFML.Graphics;
 using SFML.System;
 
@@ -54,7 +52,7 @@ namespace Engine.Classes.Components
                                 audioSource.Stop();
                                 break;
                             case "Speed":
-                                PlayerController playerController = (PlayerController)logicAction.GameObject.GetComponent();
+                                //PlayerController playerController = (PlayerController)logicAction.GameObject.GetComponent();
                                 //playerController.Speed = Convert.ToSingle(logicAction.Value);
                                 break;
                         }

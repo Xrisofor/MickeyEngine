@@ -16,5 +16,14 @@ namespace Launcher.Forms
         {
             InitializeComponent();
         }
+
+        private void AddVersionButton_Click(object sender, EventArgs e)
+        {
+            AddEngine addEngine = new AddEngine();
+            if(addEngine.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+        }
     }
 }

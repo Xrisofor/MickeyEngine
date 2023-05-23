@@ -2,6 +2,7 @@
 using Engine.Classes.Components;
 using Newtonsoft.Json;
 using SFML.Window;
+using System.IO;
 
 namespace Engine.Classes
 {
@@ -11,7 +12,7 @@ namespace Engine.Classes
         //Loading a new map
         public static void LoadMap(string Path, bool Encryp = false)
         {
-            App.Window.GameObjects = new List<GameObject>(); string? allData;
+            App.Window.GameObjects = new List<GameObject>(); string? allData; Path = Path.Replace("\"", "");
             if (Encryp) allData = Encryption.Decrypt(File.ReadAllText(Path), "M@I!C@K@E#Y%M&A*P@F^I!L9E!@");
             else allData = File.ReadAllText(Path);
             #pragma warning disable

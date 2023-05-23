@@ -147,7 +147,7 @@ namespace Editor.App
 
         private void OpenButton_TSM_Click(object sender, EventArgs e)
         {
-            Map.LoadMap();
+            Map.LoadInsMap();
         }
 
         private void BuildButton_TSM_Click(object sender, EventArgs e)

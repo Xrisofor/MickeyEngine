@@ -28,83 +28,82 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Test", "icons8-services-500.png");
+            components = new System.ComponentModel.Container();
+            ListViewItem listViewItem1 = new ListViewItem(new string[] { "Test" }, "icons8-services-500.png", Color.Empty, Color.Empty, new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point));
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Engine));
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.SuspendLayout();
+            label1 = new Label();
+            AddVersionButton = new Button();
+            listView1 = new ListView();
+            imageList1 = new ImageList(components);
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(212, 38);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Engine Versions";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(12, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(212, 38);
+            label1.TabIndex = 0;
+            label1.Text = "Engine Versions";
             // 
-            // button1
+            // AddVersionButton
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(727, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(143, 38);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Add Version";
-            this.button1.UseVisualStyleBackColor = true;
+            AddVersionButton.FlatAppearance.BorderSize = 0;
+            AddVersionButton.FlatStyle = FlatStyle.Flat;
+            AddVersionButton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            AddVersionButton.Location = new Point(727, 12);
+            AddVersionButton.Name = "AddVersionButton";
+            AddVersionButton.Size = new Size(143, 38);
+            AddVersionButton.TabIndex = 2;
+            AddVersionButton.Text = "Add Version";
+            AddVersionButton.UseVisualStyleBackColor = true;
+            AddVersionButton.Click += AddVersionButton_Click;
             // 
             // listView1
             // 
-            this.listView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listView1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.listView1.ForeColor = System.Drawing.Color.White;
-            this.listView1.GroupImageList = this.imageList1;
-            this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
-            this.listView1.LargeImageList = this.imageList1;
-            this.listView1.Location = new System.Drawing.Point(12, 69);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(858, 580);
-            this.listView1.TabIndex = 3;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            listView1.BackColor = Color.FromArgb(31, 31, 31);
+            listView1.BorderStyle = BorderStyle.FixedSingle;
+            listView1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            listView1.ForeColor = Color.White;
+            listView1.GroupImageList = imageList1;
+            listView1.HeaderStyle = ColumnHeaderStyle.Nonclickable;
+            listView1.Items.AddRange(new ListViewItem[] { listViewItem1 });
+            listView1.LargeImageList = imageList1;
+            listView1.Location = new Point(12, 69);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(858, 580);
+            listView1.TabIndex = 3;
+            listView1.UseCompatibleStateImageBehavior = false;
             // 
             // imageList1
             // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "icons8-services-500.png");
+            imageList1.ColorDepth = ColorDepth.Depth8Bit;
+            imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
+            imageList1.TransparentColor = Color.Transparent;
+            imageList1.Images.SetKeyName(0, "icons8-services-500.png");
             // 
             // Engine
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.ClientSize = new System.Drawing.Size(882, 661);
-            this.Controls.Add(this.listView1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
-            this.ForeColor = System.Drawing.Color.White;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Engine";
-            this.Text = "Engine";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(26, 26, 26);
+            ClientSize = new Size(882, 661);
+            Controls.Add(listView1);
+            Controls.Add(AddVersionButton);
+            Controls.Add(label1);
+            ForeColor = Color.White;
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "Engine";
+            Text = "Engine";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Label label1;
-        private Button button1;
+        private Button AddVersionButton;
         private ListView listView1;
         private ImageList imageList1;
     }
