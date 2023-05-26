@@ -2,7 +2,6 @@ C:\Users\arabo\Documents\Visual Studio 2022\Engine\Editor\bin\Debug\net6.0-windo
 C:\Users\arabo\Documents\Visual Studio 2022\Engine\Editor\bin\Debug\net6.0-windows\Editor.deps.json
 C:\Users\arabo\Documents\Visual Studio 2022\Engine\Editor\bin\Debug\net6.0-windows\Editor.runtimeconfig.json
 C:\Users\arabo\Documents\Visual Studio 2022\Engine\Editor\bin\Debug\net6.0-windows\Editor.dll
-C:\Users\arabo\Documents\Visual Studio 2022\Engine\Editor\bin\Debug\net6.0-windows\Editor.pdb
 C:\Users\arabo\Documents\Visual Studio 2022\Engine\Editor\obj\Debug\net6.0-windows\Editor.csproj.AssemblyReference.cache
 C:\Users\arabo\Documents\Visual Studio 2022\Engine\Editor\obj\Debug\net6.0-windows\Editor.csproj.GenerateResource.cache
 C:\Users\arabo\Documents\Visual Studio 2022\Engine\Editor\obj\Debug\net6.0-windows\Editor.GeneratedMSBuildEditorConfig.editorconfig
@@ -11,7 +10,6 @@ C:\Users\arabo\Documents\Visual Studio 2022\Engine\Editor\obj\Debug\net6.0-windo
 C:\Users\arabo\Documents\Visual Studio 2022\Engine\Editor\obj\Debug\net6.0-windows\Editor.csproj.CoreCompileInputs.cache
 C:\Users\arabo\Documents\Visual Studio 2022\Engine\Editor\obj\Debug\net6.0-windows\Editor.dll
 C:\Users\arabo\Documents\Visual Studio 2022\Engine\Editor\obj\Debug\net6.0-windows\refint\Editor.dll
-C:\Users\arabo\Documents\Visual Studio 2022\Engine\Editor\obj\Debug\net6.0-windows\Editor.pdb
 C:\Users\arabo\Documents\Visual Studio 2022\Engine\Editor\obj\Debug\net6.0-windows\Editor.genruntimeconfig.cache
 C:\Users\arabo\Documents\Visual Studio 2022\Engine\Editor\obj\Debug\net6.0-windows\ref\Editor.dll
 C:\Users\arabo\Documents\Visual Studio 2022\Engine\Editor\obj\Debug\net6.0-windows\Editor.csproj.CopyComplete

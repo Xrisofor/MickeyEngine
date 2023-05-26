@@ -1,20 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace Editor.App.Forms
+﻿namespace Editor.App.Forms
 {
     public partial class SpriteManager : Form
     {
         public SpriteManager()
         {
             InitializeComponent();
+            //var m = imageList1.Images.Cast<SFML.Graphics.Image>().ToArray();
+            //Texture texture = new Texture(m[0]);
         }
 
         private void AddImgButton_Click(object sender, EventArgs e)

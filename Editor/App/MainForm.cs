@@ -40,6 +40,7 @@ namespace Editor.App
             }
         }
 
+        #region AddObject | Region
         public void AddObject(Component? component = null)
         {
             GameObject gameObject = new GameObject();
@@ -84,6 +85,7 @@ namespace Editor.App
             GameObjects.Add(gameObject);
             ManagerListBox.Items.Add(gameObject.Name);
         }
+        #endregion
 
         #region Form.Control.Buttons | Region
         private void CloseButton_Click(object sender, EventArgs e)
@@ -234,7 +236,8 @@ namespace Editor.App
         #region TSM Add Button | Region
         private void AddASGameObjectButton_TSM_Click(object sender, EventArgs e)
         {
-            AudioSource audioSource = new AudioSource("Sound", $@"{Environment.CurrentDirectory}\components\audiosource.wav");
+            var memoryStream = new MemoryStream(); Engine.Resources.EngineResource.FileNotFound.CopyToAsync(memoryStream);
+            AudioSource audioSource = new AudioSource("Sound", memoryStream.ToArray());
             AddObject(audioSource);
         }
 

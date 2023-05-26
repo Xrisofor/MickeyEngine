@@ -28,6 +28,21 @@ namespace Engine.Classes.Components
             }
         }
 
+        public AudioSource(string Type, byte[] Bytes)
+        {
+            ComponentName = "AudioSource"; this.Type = Type;
+            switch (Type)
+            {
+                case "Music":
+                    Music = new Music(Bytes);
+                    break;
+                case "Sound":
+                    SoundBuffer soundBuffer = new SoundBuffer(Bytes);
+                    Sound = new Sound(soundBuffer);
+                    break;
+            }
+        }
+
         public static AudioSource NewAudioSource(string Type, string File)
         {
             return new AudioSource(Type, Config.ReplaceFunction(File));

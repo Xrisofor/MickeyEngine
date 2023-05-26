@@ -15,6 +15,15 @@
     <Description>Mickey Editor is a program for creating and editing maps for the Mickey Engine.
 The editor is allowed to add to the game and use it as an example.</Description>
     <StartupObject>Editor.App.Program</StartupObject>
+    <AssemblyName>editor</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>none</DebugType>
   </PropertyGroup>
 
   <ItemGroup>

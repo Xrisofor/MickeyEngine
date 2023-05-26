@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "Editor/0.1.0": {
+      "editor/0.1.0": {
         "dependencies": {
           "Costura.Fody": "5.7.0",
           "FastColoredTextBox.Net5": "2.16.26",
@@ -15,7 +15,7 @@
           "Encryption": "1.0.7839.38292"
         },
         "runtime": {
-          "Editor.dll": {}
+          "editor.dll": {}
         }
       },
       "Costura.Fody/5.7.0": {
@@ -1141,7 +1141,7 @@
     }
   },
   "libraries": {
-    "Editor/0.1.0": {
+    "editor/0.1.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
