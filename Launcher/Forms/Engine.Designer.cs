@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            ListViewItem listViewItem1 = new ListViewItem(new string[] { "Test" }, "icons8-services-500.png", Color.Empty, Color.Empty, new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point));
+            ListViewItem listViewItem2 = new ListViewItem(new string[] { "Test" }, "icons8-services-500.png", Color.Empty, Color.Empty, new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point));
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Engine));
             label1 = new Label();
             AddVersionButton = new Button();
             listView1 = new ListView();
             imageList1 = new ImageList(components);
+            InstallProgressBar = new ProgressBar();
+            Installlabel = new Label();
             SuspendLayout();
             // 
             // label1
@@ -68,11 +70,11 @@
             listView1.ForeColor = Color.White;
             listView1.GroupImageList = imageList1;
             listView1.HeaderStyle = ColumnHeaderStyle.Nonclickable;
-            listView1.Items.AddRange(new ListViewItem[] { listViewItem1 });
+            listView1.Items.AddRange(new ListViewItem[] { listViewItem2 });
             listView1.LargeImageList = imageList1;
             listView1.Location = new Point(12, 69);
             listView1.Name = "listView1";
-            listView1.Size = new Size(858, 580);
+            listView1.Size = new Size(858, 555);
             listView1.TabIndex = 3;
             listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -83,12 +85,33 @@
             imageList1.TransparentColor = Color.Transparent;
             imageList1.Images.SetKeyName(0, "icons8-services-500.png");
             // 
+            // InstallProgressBar
+            // 
+            InstallProgressBar.Location = new Point(739, 630);
+            InstallProgressBar.Name = "InstallProgressBar";
+            InstallProgressBar.Size = new Size(131, 22);
+            InstallProgressBar.TabIndex = 4;
+            InstallProgressBar.Visible = false;
+            // 
+            // Installlabel
+            // 
+            Installlabel.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            Installlabel.Location = new Point(24, 630);
+            Installlabel.Name = "Installlabel";
+            Installlabel.Size = new Size(709, 22);
+            Installlabel.TabIndex = 5;
+            Installlabel.Text = "Install Engine...";
+            Installlabel.TextAlign = ContentAlignment.MiddleRight;
+            Installlabel.Visible = false;
+            // 
             // Engine
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(26, 26, 26);
             ClientSize = new Size(882, 661);
+            Controls.Add(Installlabel);
+            Controls.Add(InstallProgressBar);
             Controls.Add(listView1);
             Controls.Add(AddVersionButton);
             Controls.Add(label1);
@@ -106,5 +129,7 @@
         private Button AddVersionButton;
         private ListView listView1;
         private ImageList imageList1;
+        private ProgressBar InstallProgressBar;
+        private Label Installlabel;
     }
 }

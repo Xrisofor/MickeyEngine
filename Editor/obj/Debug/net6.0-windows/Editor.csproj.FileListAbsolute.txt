@@ -186,3 +186,4 @@ C:\Users\arabo\Documents\Visual Studio 2022\Engine_DEF\Editor\obj\Debug\net6.0-w
 C:\Users\arabo\Documents\Visual Studio 2022\Engine\Editor\obj\Debug\net6.0-windows\Editor.Forms.Components.GUIText.resources
 C:\Users\arabo\Documents\Visual Studio 2022\Engine\Editor\obj\Debug\net6.0-windows\Editor.Forms.Components.PrefabComp.resources
 C:\Users\arabo\Documents\Visual Studio 2022\Engine\Editor\obj\Debug\net6.0-windows\Editor.Forms.AddLogicItem.resources
+C:\Users\arabo\Documents\Visual Studio 2022\Engine\Editor\obj\Debug\net6.0-windows\Editor.App.Forms.SpriteManager.resources

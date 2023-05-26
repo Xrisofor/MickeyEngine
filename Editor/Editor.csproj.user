@@ -10,6 +10,9 @@
     <Compile Update="App\Forms\Editor.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="App\Forms\SpriteManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="App\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

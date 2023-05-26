@@ -18,7 +18,7 @@ namespace Editor.App
         [STAThread]
         static void Main(string[] args)
         {
-            Window = new Window();
+            /*Window = new Window();
 
             Arguments.Init(args);
 
@@ -62,10 +62,10 @@ namespace Editor.App
                     Window.Draw(EditorGrid);
 
                 Window.Display();
-            }
-            
-            //ApplicationConfiguration.Initialize();
-            //Application.Run(new MainForm());
+            }*/
+
+            ApplicationConfiguration.Initialize();
+            Application.Run(new MainForm());
         }
     }
 }

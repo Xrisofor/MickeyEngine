@@ -29,389 +29,367 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Editor));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.NewButton_TSM = new System.Windows.Forms.ToolStripMenuItem();
-            this.OpenButton_TSM = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.SaveButton_TSM = new System.Windows.Forms.ToolStripMenuItem();
-            this.SaveAsButton_TSM = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.BuildButton_TSM = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.CloseButton_TSM = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.ExitButton_TSM = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ShowGrid_TSM = new System.Windows.Forms.ToolStripMenuItem();
-            this.gridSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.GridSize20_TSM = new System.Windows.Forms.ToolStripMenuItem();
-            this.GridSize25_TSM = new System.Windows.Forms.ToolStripMenuItem();
-            this.GridSize30_TSM = new System.Windows.Forms.ToolStripMenuItem();
-            this.GridSize35_TSM = new System.Windows.Forms.ToolStripMenuItem();
-            this.GridSize40_TSM = new System.Windows.Forms.ToolStripMenuItem();
-            this.GridSize45_TSM = new System.Windows.Forms.ToolStripMenuItem();
-            this.GridSize50_TSM = new System.Windows.Forms.ToolStripMenuItem();
-            this.GridColorButton_TSM = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.GameInfoButton_TSM = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.AboutButton_TSM = new System.Windows.Forms.ToolStripMenuItem();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.RemoveSelectObjectButton = new System.Windows.Forms.Button();
-            this.AddNewObjectButton = new System.Windows.Forms.Button();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.menuStrip1.SuspendLayout();
-            this.SuspendLayout();
+            menuStrip1 = new MenuStrip();
+            fileToolStripMenuItem = new ToolStripMenuItem();
+            NewButton_TSM = new ToolStripMenuItem();
+            OpenButton_TSM = new ToolStripMenuItem();
+            toolStripSeparator1 = new ToolStripSeparator();
+            SaveButton_TSM = new ToolStripMenuItem();
+            SaveAsButton_TSM = new ToolStripMenuItem();
+            toolStripSeparator2 = new ToolStripSeparator();
+            BuildButton_TSM = new ToolStripMenuItem();
+            toolStripSeparator4 = new ToolStripSeparator();
+            CloseButton_TSM = new ToolStripMenuItem();
+            toolStripSeparator3 = new ToolStripSeparator();
+            ExitButton_TSM = new ToolStripMenuItem();
+            editToolStripMenuItem = new ToolStripMenuItem();
+            ShowGrid_TSM = new ToolStripMenuItem();
+            gridSettingsToolStripMenuItem = new ToolStripMenuItem();
+            sizeToolStripMenuItem = new ToolStripMenuItem();
+            GridSize20_TSM = new ToolStripMenuItem();
+            GridSize25_TSM = new ToolStripMenuItem();
+            GridSize30_TSM = new ToolStripMenuItem();
+            GridSize35_TSM = new ToolStripMenuItem();
+            GridSize40_TSM = new ToolStripMenuItem();
+            GridSize45_TSM = new ToolStripMenuItem();
+            GridSize50_TSM = new ToolStripMenuItem();
+            GridColorButton_TSM = new ToolStripMenuItem();
+            toolStripSeparator6 = new ToolStripSeparator();
+            GameInfoButton_TSM = new ToolStripMenuItem();
+            helpToolStripMenuItem = new ToolStripMenuItem();
+            AboutButton_TSM = new ToolStripMenuItem();
+            listBox1 = new ListBox();
+            RemoveSelectObjectButton = new Button();
+            AddNewObjectButton = new Button();
+            colorDialog1 = new ColorDialog();
+            fileToolStripMenuItem1 = new ToolStripMenuItem();
+            menuStrip1.SuspendLayout();
+            SuspendLayout();
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.editToolStripMenuItem,
-            this.helpToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(277, 28);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            menuStrip1.BackColor = Color.FromArgb(33, 37, 41);
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, editToolStripMenuItem, helpToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(277, 28);
+            menuStrip1.TabIndex = 0;
+            menuStrip1.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.NewButton_TSM,
-            this.OpenButton_TSM,
-            this.toolStripSeparator1,
-            this.SaveButton_TSM,
-            this.SaveAsButton_TSM,
-            this.toolStripSeparator2,
-            this.BuildButton_TSM,
-            this.toolStripSeparator4,
-            this.CloseButton_TSM,
-            this.toolStripSeparator3,
-            this.ExitButton_TSM});
-            this.fileToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
-            this.fileToolStripMenuItem.Text = "File";
+            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { NewButton_TSM, OpenButton_TSM, toolStripSeparator1, SaveButton_TSM, SaveAsButton_TSM, toolStripSeparator2, BuildButton_TSM, toolStripSeparator4, CloseButton_TSM, toolStripSeparator3, ExitButton_TSM, fileToolStripMenuItem1 });
+            fileToolStripMenuItem.ForeColor = Color.White;
+            fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            fileToolStripMenuItem.Size = new Size(46, 24);
+            fileToolStripMenuItem.Text = "File";
             // 
             // NewButton_TSM
             // 
-            this.NewButton_TSM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.NewButton_TSM.ForeColor = System.Drawing.Color.White;
-            this.NewButton_TSM.Name = "NewButton_TSM";
-            this.NewButton_TSM.Size = new System.Drawing.Size(141, 26);
-            this.NewButton_TSM.Text = "New";
-            this.NewButton_TSM.Click += new System.EventHandler(this.NewButton_TSM_Click);
+            NewButton_TSM.BackColor = Color.FromArgb(33, 37, 41);
+            NewButton_TSM.ForeColor = Color.White;
+            NewButton_TSM.Name = "NewButton_TSM";
+            NewButton_TSM.Size = new Size(224, 26);
+            NewButton_TSM.Text = "New";
+            NewButton_TSM.Click += NewButton_TSM_Click;
             // 
             // OpenButton_TSM
             // 
-            this.OpenButton_TSM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.OpenButton_TSM.ForeColor = System.Drawing.Color.White;
-            this.OpenButton_TSM.Name = "OpenButton_TSM";
-            this.OpenButton_TSM.Size = new System.Drawing.Size(141, 26);
-            this.OpenButton_TSM.Text = "Open";
-            this.OpenButton_TSM.Click += new System.EventHandler(this.OpenButton_TSM_Click);
+            OpenButton_TSM.BackColor = Color.FromArgb(33, 37, 41);
+            OpenButton_TSM.ForeColor = Color.White;
+            OpenButton_TSM.Name = "OpenButton_TSM";
+            OpenButton_TSM.Size = new Size(224, 26);
+            OpenButton_TSM.Text = "Open";
+            OpenButton_TSM.Click += OpenButton_TSM_Click;
             // 
             // toolStripSeparator1
             // 
-            this.toolStripSeparator1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.toolStripSeparator1.ForeColor = System.Drawing.Color.White;
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(138, 6);
-            this.toolStripSeparator1.Paint += new System.Windows.Forms.PaintEventHandler(this.toolStripSeparator1_Paint);
+            toolStripSeparator1.BackColor = Color.FromArgb(46, 46, 46);
+            toolStripSeparator1.ForeColor = Color.White;
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(221, 6);
+            toolStripSeparator1.Paint += toolStripSeparator1_Paint;
             // 
             // SaveButton_TSM
             // 
-            this.SaveButton_TSM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.SaveButton_TSM.Enabled = false;
-            this.SaveButton_TSM.ForeColor = System.Drawing.Color.White;
-            this.SaveButton_TSM.Name = "SaveButton_TSM";
-            this.SaveButton_TSM.Size = new System.Drawing.Size(141, 26);
-            this.SaveButton_TSM.Text = "Save";
-            this.SaveButton_TSM.Click += new System.EventHandler(this.SaveButton_TSM_Click);
+            SaveButton_TSM.BackColor = Color.FromArgb(33, 37, 41);
+            SaveButton_TSM.Enabled = false;
+            SaveButton_TSM.ForeColor = Color.White;
+            SaveButton_TSM.Name = "SaveButton_TSM";
+            SaveButton_TSM.Size = new Size(224, 26);
+            SaveButton_TSM.Text = "Save";
+            SaveButton_TSM.Click += SaveButton_TSM_Click;
             // 
             // SaveAsButton_TSM
             // 
-            this.SaveAsButton_TSM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.SaveAsButton_TSM.Enabled = false;
-            this.SaveAsButton_TSM.ForeColor = System.Drawing.Color.White;
-            this.SaveAsButton_TSM.Name = "SaveAsButton_TSM";
-            this.SaveAsButton_TSM.Size = new System.Drawing.Size(141, 26);
-            this.SaveAsButton_TSM.Text = "Save as";
-            this.SaveAsButton_TSM.Click += new System.EventHandler(this.SaveAsButton_TSM_Click);
+            SaveAsButton_TSM.BackColor = Color.FromArgb(33, 37, 41);
+            SaveAsButton_TSM.Enabled = false;
+            SaveAsButton_TSM.ForeColor = Color.White;
+            SaveAsButton_TSM.Name = "SaveAsButton_TSM";
+            SaveAsButton_TSM.Size = new Size(224, 26);
+            SaveAsButton_TSM.Text = "Save as";
+            SaveAsButton_TSM.Click += SaveAsButton_TSM_Click;
             // 
             // toolStripSeparator2
             // 
-            this.toolStripSeparator2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.toolStripSeparator2.ForeColor = System.Drawing.Color.White;
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(138, 6);
-            this.toolStripSeparator2.Paint += new System.Windows.Forms.PaintEventHandler(this.toolStripSeparator2_Paint);
+            toolStripSeparator2.BackColor = Color.FromArgb(46, 46, 46);
+            toolStripSeparator2.ForeColor = Color.White;
+            toolStripSeparator2.Name = "toolStripSeparator2";
+            toolStripSeparator2.Size = new Size(221, 6);
+            toolStripSeparator2.Paint += toolStripSeparator2_Paint;
             // 
             // BuildButton_TSM
             // 
-            this.BuildButton_TSM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.BuildButton_TSM.Enabled = false;
-            this.BuildButton_TSM.ForeColor = System.Drawing.Color.White;
-            this.BuildButton_TSM.Name = "BuildButton_TSM";
-            this.BuildButton_TSM.Size = new System.Drawing.Size(141, 26);
-            this.BuildButton_TSM.Text = "Build";
-            this.BuildButton_TSM.Click += new System.EventHandler(this.BuildButton_TSM_Click);
+            BuildButton_TSM.BackColor = Color.FromArgb(33, 37, 41);
+            BuildButton_TSM.Enabled = false;
+            BuildButton_TSM.ForeColor = Color.White;
+            BuildButton_TSM.Name = "BuildButton_TSM";
+            BuildButton_TSM.Size = new Size(224, 26);
+            BuildButton_TSM.Text = "Build";
+            BuildButton_TSM.Click += BuildButton_TSM_Click;
             // 
             // toolStripSeparator4
             // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(138, 6);
-            this.toolStripSeparator4.Paint += new System.Windows.Forms.PaintEventHandler(this.toolStripSeparator4_Paint);
+            toolStripSeparator4.Name = "toolStripSeparator4";
+            toolStripSeparator4.Size = new Size(221, 6);
+            toolStripSeparator4.Paint += toolStripSeparator4_Paint;
             // 
             // CloseButton_TSM
             // 
-            this.CloseButton_TSM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.CloseButton_TSM.Enabled = false;
-            this.CloseButton_TSM.ForeColor = System.Drawing.Color.White;
-            this.CloseButton_TSM.Name = "CloseButton_TSM";
-            this.CloseButton_TSM.Size = new System.Drawing.Size(141, 26);
-            this.CloseButton_TSM.Text = "Close";
-            this.CloseButton_TSM.Click += new System.EventHandler(this.CloseButton_TSM_Click);
+            CloseButton_TSM.BackColor = Color.FromArgb(33, 37, 41);
+            CloseButton_TSM.Enabled = false;
+            CloseButton_TSM.ForeColor = Color.White;
+            CloseButton_TSM.Name = "CloseButton_TSM";
+            CloseButton_TSM.Size = new Size(224, 26);
+            CloseButton_TSM.Text = "Close";
+            CloseButton_TSM.Click += CloseButton_TSM_Click;
             // 
             // toolStripSeparator3
             // 
-            this.toolStripSeparator3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.toolStripSeparator3.ForeColor = System.Drawing.Color.White;
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(138, 6);
-            this.toolStripSeparator3.Paint += new System.Windows.Forms.PaintEventHandler(this.toolStripSeparator3_Paint);
+            toolStripSeparator3.BackColor = Color.FromArgb(46, 46, 46);
+            toolStripSeparator3.ForeColor = Color.White;
+            toolStripSeparator3.Name = "toolStripSeparator3";
+            toolStripSeparator3.Size = new Size(221, 6);
+            toolStripSeparator3.Paint += toolStripSeparator3_Paint;
             // 
             // ExitButton_TSM
             // 
-            this.ExitButton_TSM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.ExitButton_TSM.ForeColor = System.Drawing.Color.White;
-            this.ExitButton_TSM.Name = "ExitButton_TSM";
-            this.ExitButton_TSM.Size = new System.Drawing.Size(141, 26);
-            this.ExitButton_TSM.Text = "Exit";
-            this.ExitButton_TSM.Click += new System.EventHandler(this.ExitButton_TSM_Click);
+            ExitButton_TSM.BackColor = Color.FromArgb(33, 37, 41);
+            ExitButton_TSM.ForeColor = Color.White;
+            ExitButton_TSM.Name = "ExitButton_TSM";
+            ExitButton_TSM.Size = new Size(224, 26);
+            ExitButton_TSM.Text = "Exit";
+            ExitButton_TSM.Click += ExitButton_TSM_Click;
             // 
             // editToolStripMenuItem
             // 
-            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ShowGrid_TSM,
-            this.gridSettingsToolStripMenuItem,
-            this.toolStripSeparator6,
-            this.GameInfoButton_TSM});
-            this.editToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
-            this.editToolStripMenuItem.Text = "Map";
+            editToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { ShowGrid_TSM, gridSettingsToolStripMenuItem, toolStripSeparator6, GameInfoButton_TSM });
+            editToolStripMenuItem.ForeColor = Color.White;
+            editToolStripMenuItem.Name = "editToolStripMenuItem";
+            editToolStripMenuItem.Size = new Size(53, 24);
+            editToolStripMenuItem.Text = "Map";
             // 
             // ShowGrid_TSM
             // 
-            this.ShowGrid_TSM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.ShowGrid_TSM.Checked = true;
-            this.ShowGrid_TSM.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ShowGrid_TSM.ForeColor = System.Drawing.Color.White;
-            this.ShowGrid_TSM.Name = "ShowGrid_TSM";
-            this.ShowGrid_TSM.Size = new System.Drawing.Size(177, 26);
-            this.ShowGrid_TSM.Text = "Show Grid";
-            this.ShowGrid_TSM.Click += new System.EventHandler(this.ShowGrid_TSM_Click);
+            ShowGrid_TSM.BackColor = Color.FromArgb(33, 37, 41);
+            ShowGrid_TSM.Checked = true;
+            ShowGrid_TSM.CheckState = CheckState.Checked;
+            ShowGrid_TSM.ForeColor = Color.White;
+            ShowGrid_TSM.Name = "ShowGrid_TSM";
+            ShowGrid_TSM.Size = new Size(224, 26);
+            ShowGrid_TSM.Text = "Show Grid";
+            ShowGrid_TSM.Click += ShowGrid_TSM_Click;
             // 
             // gridSettingsToolStripMenuItem
             // 
-            this.gridSettingsToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.gridSettingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sizeToolStripMenuItem,
-            this.GridColorButton_TSM});
-            this.gridSettingsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.gridSettingsToolStripMenuItem.Name = "gridSettingsToolStripMenuItem";
-            this.gridSettingsToolStripMenuItem.Size = new System.Drawing.Size(177, 26);
-            this.gridSettingsToolStripMenuItem.Text = "Grid Settings";
+            gridSettingsToolStripMenuItem.BackColor = Color.FromArgb(33, 37, 41);
+            gridSettingsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { sizeToolStripMenuItem, GridColorButton_TSM });
+            gridSettingsToolStripMenuItem.ForeColor = Color.White;
+            gridSettingsToolStripMenuItem.Name = "gridSettingsToolStripMenuItem";
+            gridSettingsToolStripMenuItem.Size = new Size(224, 26);
+            gridSettingsToolStripMenuItem.Text = "Grid Settings";
             // 
             // sizeToolStripMenuItem
             // 
-            this.sizeToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.sizeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.GridSize20_TSM,
-            this.GridSize25_TSM,
-            this.GridSize30_TSM,
-            this.GridSize35_TSM,
-            this.GridSize40_TSM,
-            this.GridSize45_TSM,
-            this.GridSize50_TSM});
-            this.sizeToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.sizeToolStripMenuItem.Name = "sizeToolStripMenuItem";
-            this.sizeToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
-            this.sizeToolStripMenuItem.Text = "Size";
+            sizeToolStripMenuItem.BackColor = Color.FromArgb(33, 37, 41);
+            sizeToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { GridSize20_TSM, GridSize25_TSM, GridSize30_TSM, GridSize35_TSM, GridSize40_TSM, GridSize45_TSM, GridSize50_TSM });
+            sizeToolStripMenuItem.ForeColor = Color.White;
+            sizeToolStripMenuItem.Name = "sizeToolStripMenuItem";
+            sizeToolStripMenuItem.Size = new Size(128, 26);
+            sizeToolStripMenuItem.Text = "Size";
             // 
             // GridSize20_TSM
             // 
-            this.GridSize20_TSM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.GridSize20_TSM.ForeColor = System.Drawing.Color.White;
-            this.GridSize20_TSM.Name = "GridSize20_TSM";
-            this.GridSize20_TSM.Size = new System.Drawing.Size(108, 26);
-            this.GridSize20_TSM.Text = "20";
-            this.GridSize20_TSM.Click += new System.EventHandler(this.GridSize20_TSM_Click);
+            GridSize20_TSM.BackColor = Color.FromArgb(33, 37, 41);
+            GridSize20_TSM.ForeColor = Color.White;
+            GridSize20_TSM.Name = "GridSize20_TSM";
+            GridSize20_TSM.Size = new Size(108, 26);
+            GridSize20_TSM.Text = "20";
+            GridSize20_TSM.Click += GridSize20_TSM_Click;
             // 
             // GridSize25_TSM
             // 
-            this.GridSize25_TSM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.GridSize25_TSM.ForeColor = System.Drawing.Color.White;
-            this.GridSize25_TSM.Name = "GridSize25_TSM";
-            this.GridSize25_TSM.Size = new System.Drawing.Size(108, 26);
-            this.GridSize25_TSM.Text = "25";
-            this.GridSize25_TSM.Click += new System.EventHandler(this.GridSize25_TSM_Click);
+            GridSize25_TSM.BackColor = Color.FromArgb(33, 37, 41);
+            GridSize25_TSM.ForeColor = Color.White;
+            GridSize25_TSM.Name = "GridSize25_TSM";
+            GridSize25_TSM.Size = new Size(108, 26);
+            GridSize25_TSM.Text = "25";
+            GridSize25_TSM.Click += GridSize25_TSM_Click;
             // 
             // GridSize30_TSM
             // 
-            this.GridSize30_TSM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.GridSize30_TSM.ForeColor = System.Drawing.Color.White;
-            this.GridSize30_TSM.Name = "GridSize30_TSM";
-            this.GridSize30_TSM.Size = new System.Drawing.Size(108, 26);
-            this.GridSize30_TSM.Text = "30";
-            this.GridSize30_TSM.Click += new System.EventHandler(this.GridSize30_TSM_Click);
+            GridSize30_TSM.BackColor = Color.FromArgb(33, 37, 41);
+            GridSize30_TSM.ForeColor = Color.White;
+            GridSize30_TSM.Name = "GridSize30_TSM";
+            GridSize30_TSM.Size = new Size(108, 26);
+            GridSize30_TSM.Text = "30";
+            GridSize30_TSM.Click += GridSize30_TSM_Click;
             // 
             // GridSize35_TSM
             // 
-            this.GridSize35_TSM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.GridSize35_TSM.ForeColor = System.Drawing.Color.White;
-            this.GridSize35_TSM.Name = "GridSize35_TSM";
-            this.GridSize35_TSM.Size = new System.Drawing.Size(108, 26);
-            this.GridSize35_TSM.Text = "35";
-            this.GridSize35_TSM.Click += new System.EventHandler(this.GridSize35_TSM_Click);
+            GridSize35_TSM.BackColor = Color.FromArgb(33, 37, 41);
+            GridSize35_TSM.ForeColor = Color.White;
+            GridSize35_TSM.Name = "GridSize35_TSM";
+            GridSize35_TSM.Size = new Size(108, 26);
+            GridSize35_TSM.Text = "35";
+            GridSize35_TSM.Click += GridSize35_TSM_Click;
             // 
             // GridSize40_TSM
             // 
-            this.GridSize40_TSM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.GridSize40_TSM.ForeColor = System.Drawing.Color.White;
-            this.GridSize40_TSM.Name = "GridSize40_TSM";
-            this.GridSize40_TSM.Size = new System.Drawing.Size(108, 26);
-            this.GridSize40_TSM.Text = "40";
-            this.GridSize40_TSM.Click += new System.EventHandler(this.GridSize40_TSM_Click);
+            GridSize40_TSM.BackColor = Color.FromArgb(33, 37, 41);
+            GridSize40_TSM.ForeColor = Color.White;
+            GridSize40_TSM.Name = "GridSize40_TSM";
+            GridSize40_TSM.Size = new Size(108, 26);
+            GridSize40_TSM.Text = "40";
+            GridSize40_TSM.Click += GridSize40_TSM_Click;
             // 
             // GridSize45_TSM
             // 
-            this.GridSize45_TSM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.GridSize45_TSM.ForeColor = System.Drawing.Color.White;
-            this.GridSize45_TSM.Name = "GridSize45_TSM";
-            this.GridSize45_TSM.Size = new System.Drawing.Size(108, 26);
-            this.GridSize45_TSM.Text = "45";
-            this.GridSize45_TSM.Click += new System.EventHandler(this.GridSize45_TSM_Click);
+            GridSize45_TSM.BackColor = Color.FromArgb(33, 37, 41);
+            GridSize45_TSM.ForeColor = Color.White;
+            GridSize45_TSM.Name = "GridSize45_TSM";
+            GridSize45_TSM.Size = new Size(108, 26);
+            GridSize45_TSM.Text = "45";
+            GridSize45_TSM.Click += GridSize45_TSM_Click;
             // 
             // GridSize50_TSM
             // 
-            this.GridSize50_TSM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.GridSize50_TSM.ForeColor = System.Drawing.Color.White;
-            this.GridSize50_TSM.Name = "GridSize50_TSM";
-            this.GridSize50_TSM.Size = new System.Drawing.Size(108, 26);
-            this.GridSize50_TSM.Text = "50";
-            this.GridSize50_TSM.Click += new System.EventHandler(this.GridSize50_TSM_Click);
+            GridSize50_TSM.BackColor = Color.FromArgb(33, 37, 41);
+            GridSize50_TSM.ForeColor = Color.White;
+            GridSize50_TSM.Name = "GridSize50_TSM";
+            GridSize50_TSM.Size = new Size(108, 26);
+            GridSize50_TSM.Text = "50";
+            GridSize50_TSM.Click += GridSize50_TSM_Click;
             // 
             // GridColorButton_TSM
             // 
-            this.GridColorButton_TSM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.GridColorButton_TSM.ForeColor = System.Drawing.Color.White;
-            this.GridColorButton_TSM.Name = "GridColorButton_TSM";
-            this.GridColorButton_TSM.Size = new System.Drawing.Size(128, 26);
-            this.GridColorButton_TSM.Text = "Color";
-            this.GridColorButton_TSM.Click += new System.EventHandler(this.GridColorButton_TSM_Click);
+            GridColorButton_TSM.BackColor = Color.FromArgb(33, 37, 41);
+            GridColorButton_TSM.ForeColor = Color.White;
+            GridColorButton_TSM.Name = "GridColorButton_TSM";
+            GridColorButton_TSM.Size = new Size(128, 26);
+            GridColorButton_TSM.Text = "Color";
+            GridColorButton_TSM.Click += GridColorButton_TSM_Click;
             // 
             // toolStripSeparator6
             // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(174, 6);
-            this.toolStripSeparator6.Paint += new System.Windows.Forms.PaintEventHandler(this.toolStripSeparator6_Paint);
+            toolStripSeparator6.Name = "toolStripSeparator6";
+            toolStripSeparator6.Size = new Size(221, 6);
+            toolStripSeparator6.Paint += toolStripSeparator6_Paint;
             // 
             // GameInfoButton_TSM
             // 
-            this.GameInfoButton_TSM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.GameInfoButton_TSM.ForeColor = System.Drawing.Color.White;
-            this.GameInfoButton_TSM.Name = "GameInfoButton_TSM";
-            this.GameInfoButton_TSM.Size = new System.Drawing.Size(177, 26);
-            this.GameInfoButton_TSM.Text = "GameInfo";
-            this.GameInfoButton_TSM.Click += new System.EventHandler(this.GameInfoButton_TSM_Click);
+            GameInfoButton_TSM.BackColor = Color.FromArgb(33, 37, 41);
+            GameInfoButton_TSM.ForeColor = Color.White;
+            GameInfoButton_TSM.Name = "GameInfoButton_TSM";
+            GameInfoButton_TSM.Size = new Size(224, 26);
+            GameInfoButton_TSM.Text = "GameInfo";
+            GameInfoButton_TSM.Click += GameInfoButton_TSM_Click;
             // 
             // helpToolStripMenuItem
             // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AboutButton_TSM});
-            this.helpToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
-            this.helpToolStripMenuItem.Text = "Help";
+            helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { AboutButton_TSM });
+            helpToolStripMenuItem.ForeColor = Color.White;
+            helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            helpToolStripMenuItem.Size = new Size(55, 24);
+            helpToolStripMenuItem.Text = "Help";
             // 
             // AboutButton_TSM
             // 
-            this.AboutButton_TSM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.AboutButton_TSM.ForeColor = System.Drawing.Color.White;
-            this.AboutButton_TSM.Name = "AboutButton_TSM";
-            this.AboutButton_TSM.Size = new System.Drawing.Size(133, 26);
-            this.AboutButton_TSM.Text = "About";
-            this.AboutButton_TSM.Click += new System.EventHandler(this.AboutButton_TSM_Click);
+            AboutButton_TSM.BackColor = Color.FromArgb(33, 37, 41);
+            AboutButton_TSM.ForeColor = Color.White;
+            AboutButton_TSM.Name = "AboutButton_TSM";
+            AboutButton_TSM.Size = new Size(133, 26);
+            AboutButton_TSM.Text = "About";
+            AboutButton_TSM.Click += AboutButton_TSM_Click;
             // 
             // listBox1
             // 
-            this.listBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listBox1.ForeColor = System.Drawing.Color.White;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(12, 40);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(253, 602);
-            this.listBox1.TabIndex = 1;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            listBox1.BackColor = Color.FromArgb(33, 37, 41);
+            listBox1.BorderStyle = BorderStyle.FixedSingle;
+            listBox1.ForeColor = Color.White;
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 20;
+            listBox1.Location = new Point(12, 40);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(253, 602);
+            listBox1.TabIndex = 1;
+            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // RemoveSelectObjectButton
             // 
-            this.RemoveSelectObjectButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.RemoveSelectObjectButton.Enabled = false;
-            this.RemoveSelectObjectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RemoveSelectObjectButton.Location = new System.Drawing.Point(12, 682);
-            this.RemoveSelectObjectButton.Name = "RemoveSelectObjectButton";
-            this.RemoveSelectObjectButton.Size = new System.Drawing.Size(253, 29);
-            this.RemoveSelectObjectButton.TabIndex = 3;
-            this.RemoveSelectObjectButton.Text = "Remove Select Object";
-            this.RemoveSelectObjectButton.UseVisualStyleBackColor = false;
-            this.RemoveSelectObjectButton.Click += new System.EventHandler(this.RemoveSelectObjectButton_Click);
+            RemoveSelectObjectButton.BackColor = Color.FromArgb(33, 37, 41);
+            RemoveSelectObjectButton.Enabled = false;
+            RemoveSelectObjectButton.FlatStyle = FlatStyle.Flat;
+            RemoveSelectObjectButton.Location = new Point(12, 682);
+            RemoveSelectObjectButton.Name = "RemoveSelectObjectButton";
+            RemoveSelectObjectButton.Size = new Size(253, 29);
+            RemoveSelectObjectButton.TabIndex = 3;
+            RemoveSelectObjectButton.Text = "Remove Select Object";
+            RemoveSelectObjectButton.UseVisualStyleBackColor = false;
+            RemoveSelectObjectButton.Click += RemoveSelectObjectButton_Click;
             // 
             // AddNewObjectButton
             // 
-            this.AddNewObjectButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.AddNewObjectButton.Enabled = false;
-            this.AddNewObjectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddNewObjectButton.Location = new System.Drawing.Point(12, 647);
-            this.AddNewObjectButton.Name = "AddNewObjectButton";
-            this.AddNewObjectButton.Size = new System.Drawing.Size(253, 29);
-            this.AddNewObjectButton.TabIndex = 4;
-            this.AddNewObjectButton.Text = "Add New Object";
-            this.AddNewObjectButton.UseVisualStyleBackColor = false;
-            this.AddNewObjectButton.Click += new System.EventHandler(this.AddNewObjectButton_Click);
+            AddNewObjectButton.BackColor = Color.FromArgb(33, 37, 41);
+            AddNewObjectButton.Enabled = false;
+            AddNewObjectButton.FlatStyle = FlatStyle.Flat;
+            AddNewObjectButton.Location = new Point(12, 647);
+            AddNewObjectButton.Name = "AddNewObjectButton";
+            AddNewObjectButton.Size = new Size(253, 29);
+            AddNewObjectButton.TabIndex = 4;
+            AddNewObjectButton.Text = "Add New Object";
+            AddNewObjectButton.UseVisualStyleBackColor = false;
+            AddNewObjectButton.Click += AddNewObjectButton_Click;
+            // 
+            // fileToolStripMenuItem1
+            // 
+            fileToolStripMenuItem1.Name = "fileToolStripMenuItem1";
+            fileToolStripMenuItem1.Size = new Size(224, 26);
+            fileToolStripMenuItem1.Text = "File";
             // 
             // Editor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(277, 723);
-            this.Controls.Add(this.AddNewObjectButton);
-            this.Controls.Add(this.RemoveSelectObjectButton);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.menuStrip1);
-            this.ForeColor = System.Drawing.Color.White;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
-            this.MaximizeBox = false;
-            this.Name = "Editor";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Editor";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(52, 58, 64);
+            ClientSize = new Size(277, 723);
+            Controls.Add(AddNewObjectButton);
+            Controls.Add(RemoveSelectObjectButton);
+            Controls.Add(listBox1);
+            Controls.Add(menuStrip1);
+            ForeColor = Color.White;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MainMenuStrip = menuStrip1;
+            MaximizeBox = false;
+            Name = "Editor";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Editor";
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -449,5 +427,6 @@
         private ToolStripSeparator toolStripSeparator6;
         private ToolStripMenuItem helpToolStripMenuItem;
         private ToolStripMenuItem AboutButton_TSM;
+        private ToolStripMenuItem fileToolStripMenuItem1;
     }
 }

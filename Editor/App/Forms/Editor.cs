@@ -39,7 +39,8 @@ namespace Editor.App
         }
         public void Disable(int index = 0)
         {
-            switch(index) {
+            switch (index)
+            {
                 case 0:
                     SaveAsButton_TSM.Enabled = false;
                     SaveButton_TSM.Enabled = false;
@@ -93,7 +94,7 @@ namespace Editor.App
 
         private void ShowGrid_TSM_Click(object sender, EventArgs e)
         {
-            switch(ShowGrid_TSM.Checked)
+            switch (ShowGrid_TSM.Checked)
             {
                 case true:
                     Program.ShowGrid = false;
@@ -159,7 +160,7 @@ namespace Editor.App
 
         private void GameInfoButton_TSM_Click(object sender, EventArgs e)
         {
-            if(FilePath != String.Empty)
+            if (FilePath != String.Empty)
             {
                 if (!File.Exists($@"{Path.GetDirectoryName(FilePath)}\GameInfo.json"))
                 {
@@ -199,7 +200,7 @@ namespace Editor.App
                     }
                 }
             }
-            
+
             EditScript editGameInfo = new EditScript();
             editGameInfo.Show();
             editGameInfo.UpdateForm($@"{Path.GetDirectoryName(FilePath)}\GameInfo.json", FastColoredTextBoxNS.Language.JSON);
@@ -245,7 +246,7 @@ namespace Editor.App
 
         private void GridColorButton_TSM_Click(object sender, EventArgs e)
         {
-            if(colorDialog1.ShowDialog() == DialogResult.OK)
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
             {
                 Program.EditorGrid.Color = new SFML.Graphics.Color(colorDialog1.Color.R, colorDialog1.Color.G, colorDialog1.Color.B, Program.EditorGrid.Color.A);
                 Program.EditorGrid.ReDraw();

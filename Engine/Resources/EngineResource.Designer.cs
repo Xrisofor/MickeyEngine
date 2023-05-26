@@ -22,7 +22,7 @@ namespace Engine.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class EngineResource {
+    public class EngineResource {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Engine.Resources {
         ///   Возвращает кэшированный экземпляр ResourceManager, использованный этим классом.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Engine.Resources.EngineResource", typeof(EngineResource).Assembly);
@@ -51,7 +51,7 @@ namespace Engine.Resources {
         ///   обращений к ресурсу с помощью этого класса ресурса со строгой типизацией.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace Engine.Resources {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] Branch {
+        public static byte[] Branch {
             get {
                 object obj = ResourceManager.GetObject("Branch", resourceCulture);
                 return ((byte[])(obj));
@@ -73,7 +73,7 @@ namespace Engine.Resources {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] CreatedOn {
+        public static byte[] CreatedOn {
             get {
                 object obj = ResourceManager.GetObject("CreatedOn", resourceCulture);
                 return ((byte[])(obj));
@@ -83,7 +83,7 @@ namespace Engine.Resources {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] EventNode {
+        public static byte[] EventNode {
             get {
                 object obj = ResourceManager.GetObject("EventNode", resourceCulture);
                 return ((byte[])(obj));
@@ -93,7 +93,7 @@ namespace Engine.Resources {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.IO.UnmanagedMemoryStream, аналогичного System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream FileNotFound {
+        public static System.IO.UnmanagedMemoryStream FileNotFound {
             get {
                 return ResourceManager.GetStream("FileNotFound", resourceCulture);
             }
@@ -102,7 +102,7 @@ namespace Engine.Resources {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] Font {
+        public static byte[] Font {
             get {
                 object obj = ResourceManager.GetObject("Font", resourceCulture);
                 return ((byte[])(obj));
@@ -112,7 +112,7 @@ namespace Engine.Resources {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] Script {
+        public static byte[] Script {
             get {
                 object obj = ResourceManager.GetObject("Script", resourceCulture);
                 return ((byte[])(obj));
@@ -122,7 +122,7 @@ namespace Engine.Resources {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] TheatricalMasks {
+        public static byte[] TheatricalMasks {
             get {
                 object obj = ResourceManager.GetObject("TheatricalMasks", resourceCulture);
                 return ((byte[])(obj));
@@ -132,7 +132,7 @@ namespace Engine.Resources {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] Trigger {
+        public static byte[] Trigger {
             get {
                 object obj = ResourceManager.GetObject("Trigger", resourceCulture);
                 return ((byte[])(obj));

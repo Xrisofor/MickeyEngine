@@ -39,7 +39,7 @@
             LinuxCheckBox = new CheckBox();
             panel1 = new Panel();
             ChouseFolderButton = new Button();
-            CancelButton = new Button();
+            CanButton = new Button();
             FolderTextBox = new TextBox();
             label7 = new Label();
             VersionComboBox = new ComboBox();
@@ -97,12 +97,15 @@
             // WindowsCheckBox
             // 
             WindowsCheckBox.AutoSize = true;
+            WindowsCheckBox.Checked = true;
+            WindowsCheckBox.CheckState = CheckState.Checked;
             WindowsCheckBox.Location = new Point(17, 191);
             WindowsCheckBox.Name = "WindowsCheckBox";
             WindowsCheckBox.Size = new Size(208, 24);
             WindowsCheckBox.TabIndex = 6;
             WindowsCheckBox.Text = "Windows (target platform)";
             WindowsCheckBox.UseVisualStyleBackColor = true;
+            WindowsCheckBox.CheckedChanged += WindowsCheckBox_CheckedChanged;
             // 
             // label4
             // 
@@ -137,6 +140,7 @@
             EditorCheckBox.TabIndex = 8;
             EditorCheckBox.Text = "Editor";
             EditorCheckBox.UseVisualStyleBackColor = true;
+            EditorCheckBox.CheckedChanged += EditorCheckBox_CheckedChanged;
             // 
             // LinuxCheckBox
             // 
@@ -153,7 +157,7 @@
             // 
             panel1.BackColor = Color.FromArgb(31, 31, 31);
             panel1.Controls.Add(ChouseFolderButton);
-            panel1.Controls.Add(CancelButton);
+            panel1.Controls.Add(CanButton);
             panel1.Controls.Add(FolderTextBox);
             panel1.Controls.Add(label7);
             panel1.Controls.Add(VersionComboBox);
@@ -167,7 +171,6 @@
             // 
             // ChouseFolderButton
             // 
-            ChouseFolderButton.DialogResult = DialogResult.OK;
             ChouseFolderButton.FlatStyle = FlatStyle.Flat;
             ChouseFolderButton.Location = new Point(643, 48);
             ChouseFolderButton.Name = "ChouseFolderButton";
@@ -177,16 +180,16 @@
             ChouseFolderButton.UseVisualStyleBackColor = true;
             ChouseFolderButton.Click += ChouseFolderButton_Click;
             // 
-            // CancelButton
+            // CanButton
             // 
-            CancelButton.DialogResult = DialogResult.Cancel;
-            CancelButton.FlatStyle = FlatStyle.Flat;
-            CancelButton.Location = new Point(684, 10);
-            CancelButton.Name = "CancelButton";
-            CancelButton.Size = new Size(104, 28);
-            CancelButton.TabIndex = 15;
-            CancelButton.Text = "Cancel";
-            CancelButton.UseVisualStyleBackColor = true;
+            CanButton.DialogResult = DialogResult.Cancel;
+            CanButton.FlatStyle = FlatStyle.Flat;
+            CanButton.Location = new Point(684, 10);
+            CanButton.Name = "CanButton";
+            CanButton.Size = new Size(104, 28);
+            CanButton.TabIndex = 15;
+            CanButton.Text = "Cancel";
+            CanButton.UseVisualStyleBackColor = true;
             // 
             // FolderTextBox
             // 
@@ -195,6 +198,7 @@
             FolderTextBox.ForeColor = Color.White;
             FolderTextBox.Location = new Point(84, 48);
             FolderTextBox.Name = "FolderTextBox";
+            FolderTextBox.ReadOnly = true;
             FolderTextBox.Size = new Size(553, 27);
             FolderTextBox.TabIndex = 14;
             // 
@@ -215,9 +219,9 @@
             VersionComboBox.ForeColor = Color.White;
             VersionComboBox.FormattingEnabled = true;
             VersionComboBox.Items.AddRange(new object[] { "0.1.0" });
-            VersionComboBox.Location = new Point(84, 10);
+            VersionComboBox.Location = new Point(84, 11);
             VersionComboBox.Name = "VersionComboBox";
-            VersionComboBox.Size = new Size(263, 28);
+            VersionComboBox.Size = new Size(594, 28);
             VersionComboBox.TabIndex = 12;
             VersionComboBox.Text = "0.1.0";
             // 
@@ -291,7 +295,7 @@
         private ComboBox VersionComboBox;
         private Label label7;
         private TextBox FolderTextBox;
-        private Button CancelButton;
+        private Button CanButton;
         private Button ChouseFolderButton;
         private FolderBrowserDialog ChouseFolderBrowser;
     }

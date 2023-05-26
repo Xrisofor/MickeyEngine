@@ -31,3 +31,4 @@ C:\Users\arabo\Documents\Visual Studio 2022\Engine_DEF\Launcher\obj\Debug\net6.0
 C:\Users\arabo\Documents\Visual Studio 2022\Engine_DEF\Launcher\obj\Debug\net6.0-windows\Launcher.dll
 C:\Users\arabo\Documents\Visual Studio 2022\Engine_DEF\Launcher\obj\Debug\net6.0-windows\Launcher.genruntimeconfig.cache
 C:\Users\arabo\Documents\Visual Studio 2022\Engine\Launcher\obj\Debug\net6.0-windows\Launcher.Forms.AddEngine.resources
+C:\Users\arabo\Documents\Visual Studio 2022\Engine\Launcher\obj\Debug\net6.0-windows\Launcher.csproj.Fody.CopyLocal.cache

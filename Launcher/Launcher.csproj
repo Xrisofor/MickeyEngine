@@ -23,4 +23,13 @@
     <None Include="..\.editorconfig" Link=".editorconfig" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Costura.Fody" Version="5.7.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="DotNetZip" Version="1.16.0" />
+    <PackageReference Include="fastcoloredtextbox.net5" Version="2.16.26" />
+  </ItemGroup>
+
 </Project>
