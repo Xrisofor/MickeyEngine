@@ -269,6 +269,7 @@
             RotationTextBox.TabIndex = 32;
             RotationTextBox.Text = "0";
             RotationTextBox.TextAlign = HorizontalAlignment.Center;
+            RotationTextBox.TextChanged += RotationTextBox_TextChanged;
             // 
             // label3
             // 
@@ -291,6 +292,7 @@
             SelectTextureButton.TabIndex = 30;
             SelectTextureButton.Text = "Select";
             SelectTextureButton.UseVisualStyleBackColor = false;
+            SelectTextureButton.Click += SelectTextureButton_Click;
             // 
             // TextureTextBox
             // 
@@ -325,6 +327,7 @@
             ScaleYTextBox.TabIndex = 27;
             ScaleYTextBox.Text = "0";
             ScaleYTextBox.TextAlign = HorizontalAlignment.Center;
+            ScaleYTextBox.TextChanged += ScaleYTextBox_TextChanged;
             // 
             // ScaleXTextBox
             // 
@@ -338,6 +341,7 @@
             ScaleXTextBox.TabIndex = 26;
             ScaleXTextBox.Text = "0";
             ScaleXTextBox.TextAlign = HorizontalAlignment.Center;
+            ScaleXTextBox.TextChanged += ScaleXTextBox_TextChanged;
             // 
             // label5
             // 
@@ -361,6 +365,7 @@
             PosYTextBox.TabIndex = 24;
             PosYTextBox.Text = "0";
             PosYTextBox.TextAlign = HorizontalAlignment.Center;
+            PosYTextBox.TextChanged += PosYTextBox_TextChanged;
             // 
             // PosXTextBox
             // 
@@ -374,6 +379,7 @@
             PosXTextBox.TabIndex = 23;
             PosXTextBox.Text = "0";
             PosXTextBox.TextAlign = HorizontalAlignment.Center;
+            PosXTextBox.TextChanged += PosXTextBox_TextChanged;
             // 
             // label4
             // 
@@ -405,6 +411,7 @@
             VisibleCheckBox.Size = new Size(18, 17);
             VisibleCheckBox.TabIndex = 20;
             VisibleCheckBox.UseVisualStyleBackColor = false;
+            VisibleCheckBox.CheckedChanged += VisibleCheckBox_CheckedChanged;
             // 
             // NameTextBox
             // 
@@ -416,6 +423,7 @@
             NameTextBox.Name = "NameTextBox";
             NameTextBox.Size = new Size(220, 27);
             NameTextBox.TabIndex = 19;
+            NameTextBox.TextChanged += NameTextBox_TextChanged;
             // 
             // label1
             // 
@@ -534,7 +542,7 @@
             ShowGrid_TSM.CheckState = CheckState.Checked;
             ShowGrid_TSM.ForeColor = Color.White;
             ShowGrid_TSM.Name = "ShowGrid_TSM";
-            ShowGrid_TSM.Size = new Size(224, 26);
+            ShowGrid_TSM.Size = new Size(194, 26);
             ShowGrid_TSM.Text = "Show Grid";
             ShowGrid_TSM.Click += ShowGrid_TSM_Click;
             // 
@@ -544,7 +552,7 @@
             gridSettingsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { sizeToolStripMenuItem, GridColorButton_TSM });
             gridSettingsToolStripMenuItem.ForeColor = Color.White;
             gridSettingsToolStripMenuItem.Name = "gridSettingsToolStripMenuItem";
-            gridSettingsToolStripMenuItem.Size = new Size(224, 26);
+            gridSettingsToolStripMenuItem.Size = new Size(194, 26);
             gridSettingsToolStripMenuItem.Text = "Grid Settings";
             // 
             // sizeToolStripMenuItem
@@ -631,7 +639,7 @@
             // toolStripSeparator6
             // 
             toolStripSeparator6.Name = "toolStripSeparator6";
-            toolStripSeparator6.Size = new Size(221, 6);
+            toolStripSeparator6.Size = new Size(191, 6);
             toolStripSeparator6.Paint += toolStripSeparator6_Paint;
             // 
             // SpriteManager_TSM
@@ -639,7 +647,7 @@
             SpriteManager_TSM.BackColor = Color.FromArgb(33, 37, 41);
             SpriteManager_TSM.ForeColor = Color.White;
             SpriteManager_TSM.Name = "SpriteManager_TSM";
-            SpriteManager_TSM.Size = new Size(224, 26);
+            SpriteManager_TSM.Size = new Size(194, 26);
             SpriteManager_TSM.Text = "Sprite Manager";
             SpriteManager_TSM.Click += SpriteManager_TSM_Click;
             // 
@@ -658,7 +666,7 @@
             AddGameObjectButton_TSM.Enabled = false;
             AddGameObjectButton_TSM.ForeColor = Color.White;
             AddGameObjectButton_TSM.Name = "AddGameObjectButton_TSM";
-            AddGameObjectButton_TSM.Size = new Size(224, 26);
+            AddGameObjectButton_TSM.Size = new Size(146, 26);
             AddGameObjectButton_TSM.Text = "Add";
             // 
             // AddPlugGameObjectButton_TSM
@@ -667,7 +675,7 @@
             AddPlugGameObjectButton_TSM.DropDownItems.AddRange(new ToolStripItem[] { noneToolStripMenuItem });
             AddPlugGameObjectButton_TSM.ForeColor = Color.White;
             AddPlugGameObjectButton_TSM.Name = "AddPlugGameObjectButton_TSM";
-            AddPlugGameObjectButton_TSM.Size = new Size(224, 26);
+            AddPlugGameObjectButton_TSM.Size = new Size(202, 26);
             AddPlugGameObjectButton_TSM.Text = "Plugin";
             // 
             // noneToolStripMenuItem
@@ -681,7 +689,7 @@
             // toolStripSeparator5
             // 
             toolStripSeparator5.Name = "toolStripSeparator5";
-            toolStripSeparator5.Size = new Size(221, 6);
+            toolStripSeparator5.Size = new Size(199, 6);
             toolStripSeparator5.Paint += toolStripSeparator5_Paint;
             // 
             // AddASGameObjectButton_TSM
@@ -689,7 +697,7 @@
             AddASGameObjectButton_TSM.BackColor = Color.FromArgb(33, 37, 41);
             AddASGameObjectButton_TSM.ForeColor = Color.White;
             AddASGameObjectButton_TSM.Name = "AddASGameObjectButton_TSM";
-            AddASGameObjectButton_TSM.Size = new Size(224, 26);
+            AddASGameObjectButton_TSM.Size = new Size(202, 26);
             AddASGameObjectButton_TSM.Text = "Audio Source";
             AddASGameObjectButton_TSM.Click += AddASGameObjectButton_TSM_Click;
             // 
@@ -698,7 +706,7 @@
             AddAGameObjectButton_TSM.BackColor = Color.FromArgb(33, 37, 41);
             AddAGameObjectButton_TSM.ForeColor = Color.White;
             AddAGameObjectButton_TSM.Name = "AddAGameObjectButton_TSM";
-            AddAGameObjectButton_TSM.Size = new Size(224, 26);
+            AddAGameObjectButton_TSM.Size = new Size(202, 26);
             AddAGameObjectButton_TSM.Text = "Animation";
             // 
             // AddDLGameObjectButton_TSM
@@ -706,7 +714,7 @@
             AddDLGameObjectButton_TSM.BackColor = Color.FromArgb(33, 37, 41);
             AddDLGameObjectButton_TSM.ForeColor = Color.White;
             AddDLGameObjectButton_TSM.Name = "AddDLGameObjectButton_TSM";
-            AddDLGameObjectButton_TSM.Size = new Size(224, 26);
+            AddDLGameObjectButton_TSM.Size = new Size(202, 26);
             AddDLGameObjectButton_TSM.Text = "Dialog";
             AddDLGameObjectButton_TSM.Click += AddDLGameObjectButton_TSM_Click;
             // 
@@ -715,7 +723,7 @@
             AddLGGameObjectButton_TSM.BackColor = Color.FromArgb(33, 37, 41);
             AddLGGameObjectButton_TSM.ForeColor = Color.White;
             AddLGGameObjectButton_TSM.Name = "AddLGGameObjectButton_TSM";
-            AddLGGameObjectButton_TSM.Size = new Size(224, 26);
+            AddLGGameObjectButton_TSM.Size = new Size(202, 26);
             AddLGGameObjectButton_TSM.Text = "Logic";
             AddLGGameObjectButton_TSM.Click += AddLGGameObjectButton_TSM_Click;
             // 
@@ -724,7 +732,7 @@
             AddPCGameObjectButton_TSM.BackColor = Color.FromArgb(33, 37, 41);
             AddPCGameObjectButton_TSM.ForeColor = Color.White;
             AddPCGameObjectButton_TSM.Name = "AddPCGameObjectButton_TSM";
-            AddPCGameObjectButton_TSM.Size = new Size(224, 26);
+            AddPCGameObjectButton_TSM.Size = new Size(202, 26);
             AddPCGameObjectButton_TSM.Text = "Player Controller";
             AddPCGameObjectButton_TSM.Click += AddPCGameObjectButton_TSM_Click;
             // 
@@ -733,7 +741,7 @@
             AddPrefabGameObjectButton_TSM.BackColor = Color.FromArgb(33, 37, 41);
             AddPrefabGameObjectButton_TSM.ForeColor = Color.White;
             AddPrefabGameObjectButton_TSM.Name = "AddPrefabGameObjectButton_TSM";
-            AddPrefabGameObjectButton_TSM.Size = new Size(224, 26);
+            AddPrefabGameObjectButton_TSM.Size = new Size(202, 26);
             AddPrefabGameObjectButton_TSM.Text = "Prefab";
             AddPrefabGameObjectButton_TSM.Click += AddPrefabGameObjectButton_TSM_Click;
             // 
@@ -742,7 +750,7 @@
             AddSpriteGameObjectButton_TSM.BackColor = Color.FromArgb(33, 37, 41);
             AddSpriteGameObjectButton_TSM.ForeColor = Color.White;
             AddSpriteGameObjectButton_TSM.Name = "AddSpriteGameObjectButton_TSM";
-            AddSpriteGameObjectButton_TSM.Size = new Size(224, 26);
+            AddSpriteGameObjectButton_TSM.Size = new Size(202, 26);
             AddSpriteGameObjectButton_TSM.Text = "Sprite";
             AddSpriteGameObjectButton_TSM.Click += AddSpriteGameObjectButton_TSM_Click;
             // 
@@ -751,7 +759,7 @@
             AddSGameObjectButton_TSM.BackColor = Color.FromArgb(33, 37, 41);
             AddSGameObjectButton_TSM.ForeColor = Color.White;
             AddSGameObjectButton_TSM.Name = "AddSGameObjectButton_TSM";
-            AddSGameObjectButton_TSM.Size = new Size(224, 26);
+            AddSGameObjectButton_TSM.Size = new Size(202, 26);
             AddSGameObjectButton_TSM.Text = "Script";
             // 
             // AddTextGameObjectButton_TSM
@@ -759,7 +767,7 @@
             AddTextGameObjectButton_TSM.BackColor = Color.FromArgb(33, 37, 41);
             AddTextGameObjectButton_TSM.ForeColor = Color.White;
             AddTextGameObjectButton_TSM.Name = "AddTextGameObjectButton_TSM";
-            AddTextGameObjectButton_TSM.Size = new Size(224, 26);
+            AddTextGameObjectButton_TSM.Size = new Size(202, 26);
             AddTextGameObjectButton_TSM.Text = "Text";
             AddTextGameObjectButton_TSM.Click += AddTextGameObjectButton_TSM_Click;
             // 
@@ -769,7 +777,7 @@
             RemoveGameObjectButton_TSM.Enabled = false;
             RemoveGameObjectButton_TSM.ForeColor = Color.White;
             RemoveGameObjectButton_TSM.Name = "RemoveGameObjectButton_TSM";
-            RemoveGameObjectButton_TSM.Size = new Size(224, 26);
+            RemoveGameObjectButton_TSM.Size = new Size(146, 26);
             RemoveGameObjectButton_TSM.Text = "Remove";
             // 
             // helpToolStripMenuItem

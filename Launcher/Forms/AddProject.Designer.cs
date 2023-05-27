@@ -1,6 +1,6 @@
 ﻿namespace Launcher.Forms
 {
-    partial class AddEngine
+    partial class AddProject
     {
         /// <summary>
         /// Required designer variable.
@@ -28,16 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            EngineCheckBox = new CheckBox();
+            components = new System.ComponentModel.Container();
+            ListViewItem listViewItem1 = new ListViewItem("Blank", "folder.png");
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddProject));
             label1 = new Label();
-            label2 = new Label();
             label3 = new Label();
-            WindowsCheckBox = new CheckBox();
-            label4 = new Label();
-            label5 = new Label();
-            EditorCheckBox = new CheckBox();
-            LinuxCheckBox = new CheckBox();
             panel1 = new Panel();
+            NameTextBox = new TextBox();
+            label2 = new Label();
             ChouseFolderButton = new Button();
             CanButton = new Button();
             FolderTextBox = new TextBox();
@@ -46,21 +44,10 @@
             label6 = new Label();
             InstallButton = new Button();
             ChouseFolderBrowser = new FolderBrowserDialog();
+            TemplateListView = new ListView();
+            imageList1 = new ImageList(components);
             panel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // EngineCheckBox
-            // 
-            EngineCheckBox.AutoSize = true;
-            EngineCheckBox.Checked = true;
-            EngineCheckBox.CheckState = CheckState.Checked;
-            EngineCheckBox.Location = new Point(17, 88);
-            EngineCheckBox.Name = "EngineCheckBox";
-            EngineCheckBox.Size = new Size(76, 24);
-            EngineCheckBox.TabIndex = 0;
-            EngineCheckBox.Text = "Engine";
-            EngineCheckBox.UseVisualStyleBackColor = true;
-            EngineCheckBox.CheckedChanged += EngineCheckBox_CheckedChanged;
             // 
             // label1
             // 
@@ -68,19 +55,9 @@
             label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(277, 38);
+            label1.Size = new Size(361, 38);
             label1.TabIndex = 1;
-            label1.Text = "Install Mickey Engine";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(12, 60);
-            label2.Name = "label2";
-            label2.Size = new Size(133, 25);
-            label2.TabIndex = 2;
-            label2.Text = "Select program";
+            label1.Text = "Select new project template";
             // 
             // label3
             // 
@@ -94,68 +71,11 @@
             label3.TabIndex = 3;
             label3.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // WindowsCheckBox
-            // 
-            WindowsCheckBox.AutoSize = true;
-            WindowsCheckBox.Checked = true;
-            WindowsCheckBox.CheckState = CheckState.Checked;
-            WindowsCheckBox.Location = new Point(17, 191);
-            WindowsCheckBox.Name = "WindowsCheckBox";
-            WindowsCheckBox.Size = new Size(208, 24);
-            WindowsCheckBox.TabIndex = 6;
-            WindowsCheckBox.Text = "Windows (target platform)";
-            WindowsCheckBox.UseVisualStyleBackColor = true;
-            WindowsCheckBox.CheckedChanged += WindowsCheckBox_CheckedChanged;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(12, 160);
-            label4.Name = "label4";
-            label4.Size = new Size(128, 25);
-            label4.TabIndex = 5;
-            label4.Text = "Select pacages";
-            // 
-            // label5
-            // 
-            label5.BackColor = Color.FromArgb(31, 31, 31);
-            label5.BorderStyle = BorderStyle.FixedSingle;
-            label5.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.ForeColor = Color.FromArgb(31, 31, 31);
-            label5.Location = new Point(12, 151);
-            label5.Name = "label5";
-            label5.Size = new Size(776, 2);
-            label5.TabIndex = 7;
-            label5.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // EditorCheckBox
-            // 
-            EditorCheckBox.AutoSize = true;
-            EditorCheckBox.Checked = true;
-            EditorCheckBox.CheckState = CheckState.Checked;
-            EditorCheckBox.Location = new Point(17, 117);
-            EditorCheckBox.Name = "EditorCheckBox";
-            EditorCheckBox.Size = new Size(71, 24);
-            EditorCheckBox.TabIndex = 8;
-            EditorCheckBox.Text = "Editor";
-            EditorCheckBox.UseVisualStyleBackColor = true;
-            EditorCheckBox.CheckedChanged += EditorCheckBox_CheckedChanged;
-            // 
-            // LinuxCheckBox
-            // 
-            LinuxCheckBox.AutoSize = true;
-            LinuxCheckBox.Location = new Point(17, 221);
-            LinuxCheckBox.Name = "LinuxCheckBox";
-            LinuxCheckBox.Size = new Size(181, 24);
-            LinuxCheckBox.TabIndex = 9;
-            LinuxCheckBox.Text = "Linux (target platform)";
-            LinuxCheckBox.UseVisualStyleBackColor = true;
-            LinuxCheckBox.CheckedChanged += LinuxCheckBox_CheckedChanged;
-            // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(31, 31, 31);
+            panel1.Controls.Add(NameTextBox);
+            panel1.Controls.Add(label2);
             panel1.Controls.Add(ChouseFolderButton);
             panel1.Controls.Add(CanButton);
             panel1.Controls.Add(FolderTextBox);
@@ -168,6 +88,27 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(800, 81);
             panel1.TabIndex = 10;
+            // 
+            // NameTextBox
+            // 
+            NameTextBox.BackColor = Color.FromArgb(31, 31, 31);
+            NameTextBox.BorderStyle = BorderStyle.FixedSingle;
+            NameTextBox.ForeColor = Color.White;
+            NameTextBox.Location = new Point(425, 11);
+            NameTextBox.Name = "NameTextBox";
+            NameTextBox.Size = new Size(253, 27);
+            NameTextBox.TabIndex = 18;
+            NameTextBox.Text = "My Project";
+            NameTextBox.TextChanged += NameTextBox_TextChanged;
+            // 
+            // label2
+            // 
+            label2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(356, 11);
+            label2.Name = "label2";
+            label2.Size = new Size(63, 28);
+            label2.TabIndex = 17;
+            label2.Text = "Name:";
             // 
             // ChouseFolderButton
             // 
@@ -219,9 +160,9 @@
             VersionComboBox.ForeColor = Color.White;
             VersionComboBox.FormattingEnabled = true;
             VersionComboBox.Items.AddRange(new object[] { "0.1.0" });
-            VersionComboBox.Location = new Point(84, 11);
+            VersionComboBox.Location = new Point(92, 11);
             VersionComboBox.Name = "VersionComboBox";
-            VersionComboBox.Size = new Size(594, 28);
+            VersionComboBox.Size = new Size(258, 28);
             VersionComboBox.TabIndex = 12;
             VersionComboBox.Text = "0.1.0";
             VersionComboBox.SelectedIndexChanged += VersionComboBox_SelectedIndexChanged;
@@ -244,35 +185,52 @@
             InstallButton.Name = "InstallButton";
             InstallButton.Size = new Size(104, 28);
             InstallButton.TabIndex = 0;
-            InstallButton.Text = "Install";
+            InstallButton.Text = "Create";
             InstallButton.UseVisualStyleBackColor = true;
             // 
             // ChouseFolderBrowser
             // 
-            ChouseFolderBrowser.RootFolder = Environment.SpecialFolder.ProgramFilesX86;
+            ChouseFolderBrowser.RootFolder = Environment.SpecialFolder.MyDocuments;
             // 
-            // AddEngine
+            // TemplateListView
+            // 
+            TemplateListView.BackColor = Color.FromArgb(31, 31, 31);
+            TemplateListView.BorderStyle = BorderStyle.FixedSingle;
+            TemplateListView.ForeColor = Color.White;
+            TemplateListView.Items.AddRange(new ListViewItem[] { listViewItem1 });
+            TemplateListView.LargeImageList = imageList1;
+            TemplateListView.Location = new Point(12, 60);
+            TemplateListView.MultiSelect = false;
+            TemplateListView.Name = "TemplateListView";
+            TemplateListView.Size = new Size(776, 303);
+            TemplateListView.TabIndex = 11;
+            TemplateListView.UseCompatibleStateImageBehavior = false;
+            TemplateListView.SelectedIndexChanged += TemplateListView_SelectedIndexChanged;
+            // 
+            // imageList1
+            // 
+            imageList1.ColorDepth = ColorDepth.Depth32Bit;
+            imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
+            imageList1.TransparentColor = Color.Transparent;
+            imageList1.Images.SetKeyName(0, "folder.png");
+            // 
+            // AddProject
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(26, 26, 26);
             ClientSize = new Size(800, 450);
+            Controls.Add(TemplateListView);
             Controls.Add(panel1);
-            Controls.Add(LinuxCheckBox);
-            Controls.Add(EditorCheckBox);
-            Controls.Add(label5);
-            Controls.Add(WindowsCheckBox);
-            Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(EngineCheckBox);
             ForeColor = Color.White;
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
-            Name = "AddEngine";
+            Name = "AddProject";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Install Mickey Engine";
+            Text = "Create new project";
+            Load += AddProject_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -280,16 +238,8 @@
         }
 
         #endregion
-
-        private CheckBox EngineCheckBox;
         private Label label1;
-        private Label label2;
         private Label label3;
-        private CheckBox WindowsCheckBox;
-        private Label label4;
-        private Label label5;
-        private CheckBox EditorCheckBox;
-        private CheckBox LinuxCheckBox;
         private Panel panel1;
         private Button InstallButton;
         private Label label6;
@@ -299,5 +249,9 @@
         private Button CanButton;
         private Button ChouseFolderButton;
         private FolderBrowserDialog ChouseFolderBrowser;
+        private TextBox NameTextBox;
+        private Label label2;
+        private ImageList imageList1;
+        public ListView TemplateListView;
     }
 }

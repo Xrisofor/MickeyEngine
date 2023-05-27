@@ -4,6 +4,7 @@ using SFML.Graphics;
 using Engine.Classes.Components;
 using System.Resources;
 using Editor.App.Forms;
+using SFML.System;
 
 namespace Editor.App
 {
@@ -26,12 +27,25 @@ namespace Editor.App
 
             DebLog("Running the editor");
 
+            Clock DeltaClock = new Clock();
             while (Visible)
             {
+                float DeltaTime = DeltaClock.Restart().AsSeconds();
                 Application.DoEvents();
                 Window.DispatchEvents();
 
                 Window.Clear();
+
+                foreach (GameObject GameObjects in GameObjects)
+                {
+                    GameObjects.Update(DeltaTime);
+
+                    if (GameObjects.Visible && GameObjects.Sprite.Texture != null)
+                        Window.Draw(GameObjects);
+                    if (GameObjects.Visible && GameObjects.Components.Length != 0)
+                        if (GameObjects.Components[0].ComponentName == "GUIText" || GameObjects.Visible && GameObjects.Components[0].ComponentName == "Prefab")
+                            Window.Draw(GameObjects);
+                }
 
                 if (ShowGrid)
                     Window.Draw(EditorGrid);
@@ -217,6 +231,15 @@ namespace Editor.App
             SaveButton_TSM.Enabled = false;
             AddGameObjectButton_TSM.Enabled = false;
             RemoveGameObjectButton_TSM.Enabled = false;
+
+            ManagerListBox.Items.Clear();
+            GameObjects.Clear();
+            NameTextBox.Enabled = false; VisibleCheckBox.Enabled = false; RotationTextBox.Enabled = false;
+            PosXTextBox.Enabled = false; PosYTextBox.Enabled = false; ScaleXTextBox.Enabled = false;
+            ScaleYTextBox.Enabled = false; SelectTextureButton.Enabled = false;
+
+            ConsoleListBox.Items.Clear();
+            DebLog("Closing map editing");
         }
 
         private void ExitButton_TSM_Click(object sender, EventArgs e)
@@ -227,10 +250,7 @@ namespace Editor.App
         private void SpriteManager_TSM_Click(object sender, EventArgs e)
         {
             SpriteManager spriteManager = new SpriteManager();
-            if(spriteManager.ShowDialog() == DialogResult.OK)
-            {
-
-            }
+            spriteManager.ShowDialog();
         }
 
         #region TSM Add Button | Region
@@ -294,9 +314,9 @@ namespace Editor.App
             PosYTextBox.Enabled = true; ScaleYTextBox.Enabled = true;
             SelectTextureButton.Enabled = true; VisibleCheckBox.Enabled = true;
 
-            NameTextBox.Text = GameObjects[ManagerListBox.SelectedIndex].Name; RotationTextBox.Text = GameObjects[ManagerListBox.SelectedIndex].Rotation.ToString();
-            PosXTextBox.Text = GameObjects[ManagerListBox.SelectedIndex].Position.X.ToString();
-            PosYTextBox.Text = GameObjects[ManagerListBox.SelectedIndex].Position.Y.ToString();
+            NameTextBox.Text = GameObjects[ManagerListBox.SelectedIndex].Name; RotationTextBox.Text = GameObjects[ManagerListBox.SelectedIndex].Rotation.ToString(); ScaleYTextBox.Text = GameObjects[ManagerListBox.SelectedIndex].Scale.Y.ToString();
+            PosXTextBox.Text = GameObjects[ManagerListBox.SelectedIndex].Position.X.ToString(); VisibleCheckBox.Checked = GameObjects[ManagerListBox.SelectedIndex].Visible;
+            PosYTextBox.Text = GameObjects[ManagerListBox.SelectedIndex].Position.Y.ToString(); ScaleXTextBox.Text = GameObjects[ManagerListBox.SelectedIndex].Scale.X.ToString();
 
             ObjectPictureBox.BackgroundImage = ImageList._object;
 
@@ -326,6 +346,118 @@ namespace Editor.App
                         ObjectPictureBox.BackgroundImage = ImageList.theatrical_masks;
                         break;
                 }
+        }
+        #endregion
+
+        #region Inspector | Region
+        private void VisibleCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ManagerListBox.SelectedItem != null)
+                GameObjects[ManagerListBox.SelectedIndex].Visible = VisibleCheckBox.Checked;
+        }
+
+        private void NameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (ManagerListBox.SelectedItem != null)
+                GameObjects[ManagerListBox.SelectedIndex].Name = NameTextBox.Text;
+        }
+
+        private void PosXTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (ManagerListBox.SelectedItem != null)
+            {
+                try
+                {
+                    if (PosXTextBox.Text == String.Empty) PosXTextBox.Text = "0";
+                    GameObjects[ManagerListBox.SelectedIndex].Position = new Vector2f(Convert.ToSingle(PosXTextBox.Text), GameObjects[ManagerListBox.SelectedIndex].Position.Y);
+                }
+                catch
+                {
+                    DebLog("Incorrect number format!");
+                    PosXTextBox.Text = "0";
+                }
+            }
+        }
+
+        private void PosYTextBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ManagerListBox.SelectedItem != null)
+                {
+                    if (PosYTextBox.Text == String.Empty) PosYTextBox.Text = "0";
+                    GameObjects[ManagerListBox.SelectedIndex].Position = new Vector2f(GameObjects[ManagerListBox.SelectedIndex].Position.X, Convert.ToSingle(PosYTextBox.Text));
+                }
+            }
+            catch
+            {
+                DebLog("Incorrect number format!");
+                PosYTextBox.Text = "0";
+            }
+        }
+
+        private void RotationTextBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ManagerListBox.SelectedItem != null)
+                {
+                    if (RotationTextBox.Text == String.Empty) RotationTextBox.Text = "0";
+                    GameObjects[ManagerListBox.SelectedIndex].Rotation = Convert.ToSingle(RotationTextBox.Text);
+                }
+            }
+            catch
+            {
+                DebLog("Incorrect number format!");
+                RotationTextBox.Text = "0";
+            }
+        }
+
+        private void ScaleXTextBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ManagerListBox.SelectedItem != null)
+                {
+                    if (ScaleXTextBox.Text == String.Empty) ScaleXTextBox.Text = "0";
+                    GameObjects[ManagerListBox.SelectedIndex].Scale = new Vector2f(Convert.ToSingle(ScaleXTextBox.Text), GameObjects[ManagerListBox.SelectedIndex].Scale.Y);
+                }
+            }
+            catch
+            {
+                DebLog("Incorrect number format!");
+                ScaleXTextBox.Text = "0";
+            }
+        }
+
+        private void ScaleYTextBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ManagerListBox.SelectedItem != null)
+                {
+                    if (ScaleYTextBox.Text == String.Empty) ScaleYTextBox.Text = "0";
+                    GameObjects[ManagerListBox.SelectedIndex].Scale = new Vector2f(GameObjects[ManagerListBox.SelectedIndex].Scale.Y, Convert.ToSingle(ScaleYTextBox.Text));
+                }
+            }
+            catch
+            {
+                DebLog("Incorrect number format!");
+                ScaleYTextBox.Text = "0";
+            }
+        }
+
+        private void SelectTextureButton_Click(object sender, EventArgs e)
+        {
+            if (ManagerListBox.SelectedItem != null)
+            {
+                SpriteManager spriteManager = new SpriteManager();
+                if (spriteManager.ShowDialog() == DialogResult.OK)
+                {
+                    var bitmap = new Bitmap(spriteManager.imageList1.Images[spriteManager.SelectedIndex]);
+                    GameObjects[ManagerListBox.SelectedIndex].Sprite.Texture = new Texture(App.Classes.Convert.ToSFMLImage(bitmap));
+                }
+            }
         }
         #endregion
     }

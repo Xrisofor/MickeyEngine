@@ -8,7 +8,7 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "C:\\Users\\arabo\\Documents\\Visual Studio 2022\\Engine\\Launcher\\Launcher.csproj",
-        "projectName": "Launcher",
+        "projectName": "launcher",
         "projectPath": "C:\\Users\\arabo\\Documents\\Visual Studio 2022\\Engine\\Launcher\\Launcher.csproj",
         "packagesPath": "C:\\Users\\arabo\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\arabo\\Documents\\Visual Studio 2022\\Engine\\Launcher\\obj\\",
@@ -53,6 +53,10 @@
             "DotNetZip": {
               "target": "Package",
               "version": "[1.16.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             },
             "fastcoloredtextbox.net5": {
               "target": "Package",

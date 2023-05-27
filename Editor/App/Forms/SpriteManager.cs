@@ -2,11 +2,11 @@
 {
     public partial class SpriteManager : Form
     {
+        public int SelectedIndex { get; private set; }
+
         public SpriteManager()
         {
             InitializeComponent();
-            //var m = imageList1.Images.Cast<SFML.Graphics.Image>().ToArray();
-            //Texture texture = new Texture(m[0]);
         }
 
         private void AddImgButton_Click(object sender, EventArgs e)
@@ -25,6 +25,18 @@
                 imageList1.Images.RemoveByKey(listView1.SelectedItems[0].Text);
                 listView1.Items.Remove(listView1.SelectedItems[0]);
             }
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count != 0)
+                SelectedIndex = listView1.SelectedIndices[0];
+        }
+
+        private void listView1_ItemActivate(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+            Close();
         }
     }
 }

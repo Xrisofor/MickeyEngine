@@ -40,6 +40,7 @@
             // 
             // listView1
             // 
+            listView1.Activation = ItemActivation.TwoClick;
             listView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             listView1.BackColor = Color.FromArgb(33, 37, 41);
             listView1.BorderStyle = BorderStyle.FixedSingle;
@@ -52,6 +53,8 @@
             listView1.Size = new Size(965, 635);
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
+            listView1.ItemActivate += listView1_ItemActivate;
+            listView1.SelectedIndexChanged += listView1_SelectedIndexChanged;
             // 
             // imageList1
             // 
@@ -138,6 +141,6 @@
         private Button ReloadImgButton;
         private TextBox textBox1;
         private OpenFileDialog SelectImageFile;
-        private System.Windows.Forms.ImageList imageList1;
+        public System.Windows.Forms.ImageList imageList1;
     }
 }

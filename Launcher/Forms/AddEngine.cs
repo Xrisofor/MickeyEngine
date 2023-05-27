@@ -1,13 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
 namespace Launcher.Forms
 {
     public partial class AddEngine : Form
@@ -22,13 +14,14 @@ namespace Launcher.Forms
             InitializeComponent();
             FolderTextBox.Text = $@"{Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86)}\Mickey Engine\";
             Folder = FolderTextBox.Text;
+            VersionComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
 
             VersionComboBox.Items.Clear();
             foreach (Versions version in Program.Versions)
             {
-                if (VersionComboBox.FindString(version.Number) != 0)
+                if (VersionComboBox.FindString(version.Number) == -1)
                     VersionComboBox.Items.Add(version.Number);
-                Version = version.Number; VersionComboBox.Text = version.Number;
+                Version = version.Number; VersionComboBox.SelectedItem = version.Number;
             }
         }
 
@@ -66,5 +59,10 @@ namespace Launcher.Forms
             else LinuxCheckBox.Checked = true;
         }
         #endregion
+
+        private void VersionComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Version = VersionComboBox.Text;
+        }
     }
 }

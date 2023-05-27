@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            ListViewItem listViewItem2 = new ListViewItem(new string[] { "Test" }, "icons8-services-500.png", Color.Empty, Color.Empty, new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point));
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Engine));
             label1 = new Label();
             AddVersionButton = new Button();
-            listView1 = new ListView();
+            EnginesListView = new ListView();
             imageList1 = new ImageList(components);
             InstallProgressBar = new ProgressBar();
             Installlabel = new Label();
+            DeleteVersionButton = new Button();
+            NewVersionsLabel = new Label();
             SuspendLayout();
             // 
             // label1
@@ -62,31 +63,32 @@
             AddVersionButton.UseVisualStyleBackColor = true;
             AddVersionButton.Click += AddVersionButton_Click;
             // 
-            // listView1
+            // EnginesListView
             // 
-            listView1.BackColor = Color.FromArgb(31, 31, 31);
-            listView1.BorderStyle = BorderStyle.FixedSingle;
-            listView1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            listView1.ForeColor = Color.White;
-            listView1.GroupImageList = imageList1;
-            listView1.HeaderStyle = ColumnHeaderStyle.Nonclickable;
-            listView1.Items.AddRange(new ListViewItem[] { listViewItem2 });
-            listView1.LargeImageList = imageList1;
-            listView1.Location = new Point(12, 69);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(858, 555);
-            listView1.TabIndex = 3;
-            listView1.UseCompatibleStateImageBehavior = false;
+            EnginesListView.BackColor = Color.FromArgb(31, 31, 31);
+            EnginesListView.BorderStyle = BorderStyle.FixedSingle;
+            EnginesListView.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            EnginesListView.ForeColor = Color.White;
+            EnginesListView.GroupImageList = imageList1;
+            EnginesListView.HeaderStyle = ColumnHeaderStyle.Nonclickable;
+            EnginesListView.LargeImageList = imageList1;
+            EnginesListView.Location = new Point(12, 69);
+            EnginesListView.MultiSelect = false;
+            EnginesListView.Name = "EnginesListView";
+            EnginesListView.Size = new Size(858, 555);
+            EnginesListView.TabIndex = 3;
+            EnginesListView.UseCompatibleStateImageBehavior = false;
             // 
             // imageList1
             // 
-            imageList1.ColorDepth = ColorDepth.Depth8Bit;
+            imageList1.ColorDepth = ColorDepth.Depth32Bit;
             imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
             imageList1.TransparentColor = Color.Transparent;
-            imageList1.Images.SetKeyName(0, "icons8-services-500.png");
+            imageList1.Images.SetKeyName(0, "icons8-settings-500 (1).png");
             // 
             // InstallProgressBar
             // 
+            InstallProgressBar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             InstallProgressBar.Location = new Point(739, 630);
             InstallProgressBar.Name = "InstallProgressBar";
             InstallProgressBar.Size = new Size(131, 22);
@@ -95,6 +97,7 @@
             // 
             // Installlabel
             // 
+            Installlabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             Installlabel.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             Installlabel.Location = new Point(24, 630);
             Installlabel.Name = "Installlabel";
@@ -104,15 +107,40 @@
             Installlabel.TextAlign = ContentAlignment.MiddleRight;
             Installlabel.Visible = false;
             // 
+            // DeleteVersionButton
+            // 
+            DeleteVersionButton.FlatAppearance.BorderSize = 0;
+            DeleteVersionButton.FlatStyle = FlatStyle.Flat;
+            DeleteVersionButton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            DeleteVersionButton.Location = new Point(566, 12);
+            DeleteVersionButton.Name = "DeleteVersionButton";
+            DeleteVersionButton.Size = new Size(155, 38);
+            DeleteVersionButton.TabIndex = 6;
+            DeleteVersionButton.Text = "Delete Version";
+            DeleteVersionButton.UseVisualStyleBackColor = true;
+            DeleteVersionButton.Click += DeleteVersionButton_Click;
+            // 
+            // NewVersionsLabel
+            // 
+            NewVersionsLabel.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            NewVersionsLabel.Location = new Point(12, 627);
+            NewVersionsLabel.Name = "NewVersionsLabel";
+            NewVersionsLabel.Size = new Size(386, 22);
+            NewVersionsLabel.TabIndex = 7;
+            NewVersionsLabel.Text = "No new versions were found";
+            NewVersionsLabel.TextAlign = ContentAlignment.MiddleLeft;
+            // 
             // Engine
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(26, 26, 26);
             ClientSize = new Size(882, 661);
+            Controls.Add(NewVersionsLabel);
+            Controls.Add(DeleteVersionButton);
             Controls.Add(Installlabel);
             Controls.Add(InstallProgressBar);
-            Controls.Add(listView1);
+            Controls.Add(EnginesListView);
             Controls.Add(AddVersionButton);
             Controls.Add(label1);
             ForeColor = Color.White;
@@ -127,9 +155,11 @@
 
         private Label label1;
         private Button AddVersionButton;
-        private ListView listView1;
+        private ListView EnginesListView;
         private ImageList imageList1;
         private ProgressBar InstallProgressBar;
         private Label Installlabel;
+        private Button DeleteVersionButton;
+        private Label NewVersionsLabel;
     }
 }

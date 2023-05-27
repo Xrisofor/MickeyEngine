@@ -9,6 +9,7 @@
     <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
     <SignAssembly>False</SignAssembly>
     <BaseOutputPath>bin\</BaseOutputPath>
+    <AssemblyName>launcher</AssemblyName>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -30,6 +31,17 @@
     </PackageReference>
     <PackageReference Include="DotNetZip" Version="1.16.0" />
     <PackageReference Include="fastcoloredtextbox.net5" Version="2.16.26" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Forms\AddProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\News.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Project.cs" />
   </ItemGroup>
 
 </Project>

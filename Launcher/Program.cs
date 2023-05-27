@@ -1,12 +1,13 @@
 using System.Net;
-using System.IO;
-using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace Launcher
 {
     public static class Program
     {
         public static List<Versions> Versions = new List<Versions>();
+        public static List<EngineVersions> EngineVersions = new List<EngineVersions>(); 
+        public static List<Project> Projects = new List<Project>();
 
         [STAThread]
         static void Main()
@@ -25,20 +26,61 @@ namespace Launcher
             }
             #pragma warning restore SYSLIB0014
 
+            LoadJSON();
+
             ApplicationConfiguration.Initialize();
             Application.Run(new Main());
         }
-    }
 
-    public class Versions
-    {
-        public string Number { get; set; }
-        public string Type { get; set; }
-        public string OS { get; set; }
-        public string Link { get; set; }
+        #pragma warning disable
+        public static void LoadJSON()
+        {
+            if(File.Exists($@"{Environment.CurrentDirectory}\engines.json"))
+            {
+                string allData = File.ReadAllText($@"{Environment.CurrentDirectory}\engines.json");
+                dynamic jsonData = JsonConvert.DeserializeObject(allData);
 
-        public Versions(string _Number, string _Type, string _OS, string _Link) {
-            Number = _Number; Type = _Type; Link = _Link; OS = _OS;
+                foreach (var data in jsonData)
+                {
+                    string Number = data.Number, OS = data.OS, Path = data.Path;
+                    EngineVersions.Add(new EngineVersions(Number, OS, Path));
+                }
+                
+            }
+
+            if (File.Exists($@"{Environment.CurrentDirectory}\projects.json"))
+            {
+                string allData = File.ReadAllText($@"{Environment.CurrentDirectory}\projects.json");
+                dynamic jsonData = JsonConvert.DeserializeObject(allData);
+
+                foreach (var data in jsonData)
+                {
+                    string Name = data.Name, EngineV = data.EngineV, Path = data.Path;
+                    Projects.Add(new Project(Name, EngineV, Path));
+                }
+            }
         }
+        #pragma warning restore
+
+        #pragma warning disable
+        public static void SaveJSON()
+        {
+            using (StreamWriter file = File.CreateText($@"{Environment.CurrentDirectory}\engines.json"))
+            {
+                JsonSerializer serializer = new JsonSerializer();
+                serializer.Formatting = Formatting.Indented;
+                serializer.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+                serializer.Serialize(file, EngineVersions);
+            }
+
+            using (StreamWriter file = File.CreateText($@"{Environment.CurrentDirectory}\projects.json"))
+            {
+                JsonSerializer serializer = new JsonSerializer();
+                serializer.Formatting = Formatting.Indented;
+                serializer.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+                serializer.Serialize(file, Projects);
+            }
+        }
+        #pragma warning restore
     }
 }
