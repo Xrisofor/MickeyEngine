@@ -8,11 +8,22 @@ namespace Editor.App
         {
             for (int i = 0; i < args.Length; i++)
             {
-                switch (args[i])
+                try
                 {
-                    case "-map":
-                        Map.LoadMap(Config.ReplaceFunction(args[i + 1]));
-                        break;
+                    switch (args[i])
+                    {
+                        case "-map":
+                            Map.LoadMap(Config.ReplaceFunction(args[i + 1]));
+                            break;
+                        case "-project":
+                            Program.ProjectFolder = Config.ReplaceFunction(args[i + 1]);
+                            Program.ProjectFolder = Program.ProjectFolder.Replace("info.json", string.Empty);
+                            break;
+                    }
+                }
+                catch
+                {
+                    break;
                 }
             }
         }

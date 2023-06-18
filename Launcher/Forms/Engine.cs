@@ -58,7 +58,7 @@ namespace Launcher.Forms
                         {
                             InstallProgressBar.Value = e.ProgressPercentage;
                         };
-                        EngineWC.DownloadFileCompleted += (sender, e) => { Installlabel.Text = "Unpacking Engine..."; ExtractZip(@$"{addEngine.Folder}\{addEngine.Version}\engine.zip", $@"{addEngine.Folder}\{addEngine.Version}\Engine\"); };
+                        EngineWC.DownloadFileCompleted += (sender, e) => { Installlabel.Text = "Unpacking Engine..."; ExtractZip(@$"{addEngine.Folder}\{addEngine.Version}\engine.zip", $@"{addEngine.Folder}\{addEngine.Version}\engine\"); };
                     }
                     break;
                 case 1:
@@ -74,7 +74,7 @@ namespace Launcher.Forms
                             {
                                 InstallProgressBar.Value = e.ProgressPercentage;
                             };
-                            EngineWC.DownloadFileCompleted += (sender, e) => { Installlabel.Text = "Unpacking Editor..."; ExtractZip(@$"{addEngine.Folder}\{addEngine.Version}\editor.zip", $@"{addEngine.Folder}\{addEngine.Version}\Editor\"); };
+                            EngineWC.DownloadFileCompleted += (sender, e) => { Installlabel.Text = "Unpacking Editor..."; ExtractZip(@$"{addEngine.Folder}\{addEngine.Version}\editor.zip", $@"{addEngine.Folder}\{addEngine.Version}\editor\"); };
                         }
                     }
                     else

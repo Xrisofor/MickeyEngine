@@ -35,3 +35,4 @@ C:\Users\arabo\Documents\Visual Studio 2022\Engine\Launcher\obj\Debug\net6.0-win
 C:\Users\arabo\Documents\Visual Studio 2022\Engine\Launcher\obj\Debug\net6.0-windows\Launcher.Forms.News.resources
 C:\Users\arabo\Documents\Visual Studio 2022\Engine\Launcher\obj\Debug\net6.0-windows\Launcher.Forms.AddProject.resources
 C:\Users\arabo\Documents\Visual Studio 2022\Engine\Launcher\obj\Debug\net6.0-windows\Launcher.Forms.Projects.resources
+C:\Users\arabo\Documents\Visual Studio 2022\Engine\Launcher\obj\Debug\net6.0-windows\Launcher.Forms.SwitchEngineVersion.resources

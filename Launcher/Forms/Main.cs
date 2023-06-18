@@ -12,7 +12,7 @@ namespace Launcher
         private void EngineButton_Click(object sender, EventArgs e)
         {
             panel2.Controls.Clear();
-            Engine objForm = new Engine();
+            Forms.Engine objForm = new Forms.Engine();
             objForm.TopLevel = false;
             panel2.Controls.Add(objForm);
             objForm.FormBorderStyle = FormBorderStyle.None;

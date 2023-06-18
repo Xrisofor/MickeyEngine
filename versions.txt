@@ -2,3 +2,5 @@
 0.1.0 (beta);engine;windows;https://www.dropbox.com/s/32f7tsi0bp6mc3u/0.1.0-beta-engine.zip?dl=1
 0.1.0.1 (beta);editor;windows;https://www.dropbox.com/s/s5jdj6qc2k04rq8/0.1.0.1-beta-editor.zip?dl=1
 0.1.0.1 (beta);engine;windows;https://www.dropbox.com/s/32f7tsi0bp6mc3u/0.1.0-beta-engine.zip?dl=1
+0.1.0.2 (beta);editor;windows;https://www.dropbox.com/s/iciys1dh34ycfgn/0.1.0.2-beta-editor.zip?dl=1
+0.1.0.2 (beta);engine;windows;https://www.dropbox.com/s/32f7tsi0bp6mc3u/0.1.0-beta-engine.zip?dl=1

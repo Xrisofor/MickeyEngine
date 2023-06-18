@@ -5,7 +5,7 @@
   },
   "projects": {
     "C:\\Users\\arabo\\Documents\\Visual Studio 2022\\Engine\\Editor\\Editor.csproj": {
-      "version": "0.1.0",
+      "version": "0.1.0.2",
       "restore": {
         "projectUniqueName": "C:\\Users\\arabo\\Documents\\Visual Studio 2022\\Engine\\Editor\\Editor.csproj",
         "projectName": "Mickey Editor",

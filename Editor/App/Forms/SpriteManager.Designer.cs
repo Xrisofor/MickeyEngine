@@ -99,6 +99,7 @@
             ReloadImgButton.TabIndex = 3;
             ReloadImgButton.Text = "Reload";
             ReloadImgButton.UseVisualStyleBackColor = false;
+            ReloadImgButton.Click += ReloadImgButton_Click;
             // 
             // textBox1
             // 

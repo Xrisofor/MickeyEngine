@@ -5169,7 +5169,7 @@
     "version": "1.0.0",
     "restore": {
       "projectUniqueName": "C:\\Users\\arabo\\Documents\\Visual Studio 2022\\Engine\\Launcher\\Launcher.csproj",
-      "projectName": "Launcher",
+      "projectName": "launcher",
       "projectPath": "C:\\Users\\arabo\\Documents\\Visual Studio 2022\\Engine\\Launcher\\Launcher.csproj",
       "packagesPath": "C:\\Users\\arabo\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\arabo\\Documents\\Visual Studio 2022\\Engine\\Launcher\\obj\\",

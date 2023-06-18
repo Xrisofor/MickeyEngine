@@ -11,9 +11,9 @@ namespace Engine
         {
             try
             {
-                string a = Encryption.Encrypt(File.ReadAllText($@"{Config.GameData}\maps\NewMap.mickeymap"), "M@I!C@K@E#Y%M&A*P@F^I!L9E!@");
-                File.Create($@"{Config.GameData}\maps\NewMap_Enc.mickeymap").Close();
-                File.WriteAllText($@"{Config.GameData}\maps\NewMap_Enc.mickeymap", a);
+                //string a = Encryption.Encrypt(File.ReadAllText($@"{Config.GameData}\maps\NewMap.mickeymap"), "M@I!C@K@E#Y%M&A*P@F^I!L9E!@");
+                //File.Create($@"{Config.GameData}\maps\NewMap_Enc.mickeymap").Close();
+                //File.WriteAllText($@"{Config.GameData}\maps\NewMap_Enc.mickeymap", a);
 
                 Config.Init();
                 Config.ConsoleState(0);

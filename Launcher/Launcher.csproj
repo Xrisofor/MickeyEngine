@@ -35,6 +35,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="editor">
+      <HintPath>..\Editor\bin\Debug\net6.0-windows\editor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Forms\AddProject.cs">
       <SubType>Form</SubType>
     </Compile>

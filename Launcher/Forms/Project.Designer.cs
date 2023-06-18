@@ -33,8 +33,16 @@
             label1 = new Label();
             AddProjectButton = new Button();
             ProjectsListView = new ListView();
+            ProjectsMenuStrip = new ContextMenuStrip(components);
+            OpenTSMButton = new ToolStripMenuItem();
+            toolStripSeparator1 = new ToolStripSeparator();
+            BuildTSMButton = new ToolStripMenuItem();
+            toolStripSeparator2 = new ToolStripSeparator();
+            DeleteTSMButton = new ToolStripMenuItem();
             imageList1 = new ImageList(components);
             NewProjectButton = new Button();
+            SwitchEVTSMButton = new ToolStripMenuItem();
+            ProjectsMenuStrip.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -62,8 +70,10 @@
             // 
             // ProjectsListView
             // 
+            ProjectsListView.Activation = ItemActivation.TwoClick;
             ProjectsListView.BackColor = Color.FromArgb(31, 31, 31);
             ProjectsListView.BorderStyle = BorderStyle.FixedSingle;
+            ProjectsListView.ContextMenuStrip = ProjectsMenuStrip;
             ProjectsListView.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             ProjectsListView.ForeColor = Color.White;
             ProjectsListView.GroupImageList = imageList1;
@@ -75,6 +85,53 @@
             ProjectsListView.Size = new Size(858, 580);
             ProjectsListView.TabIndex = 3;
             ProjectsListView.UseCompatibleStateImageBehavior = false;
+            ProjectsListView.ItemActivate += ProjectsListView_ItemActivate;
+            // 
+            // ProjectsMenuStrip
+            // 
+            ProjectsMenuStrip.ImageScalingSize = new Size(20, 20);
+            ProjectsMenuStrip.Items.AddRange(new ToolStripItem[] { OpenTSMButton, toolStripSeparator1, BuildTSMButton, SwitchEVTSMButton, toolStripSeparator2, DeleteTSMButton });
+            ProjectsMenuStrip.Name = "ProjectsMenuStrip";
+            ProjectsMenuStrip.Size = new Size(223, 140);
+            // 
+            // OpenTSMButton
+            // 
+            OpenTSMButton.BackColor = Color.FromArgb(26, 26, 26);
+            OpenTSMButton.ForeColor = Color.White;
+            OpenTSMButton.Name = "OpenTSMButton";
+            OpenTSMButton.Size = new Size(222, 24);
+            OpenTSMButton.Text = "Open";
+            OpenTSMButton.Click += OpenTSMButton_Click;
+            // 
+            // toolStripSeparator1
+            // 
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(219, 6);
+            toolStripSeparator1.Paint += toolStripSeparator1_Paint;
+            // 
+            // BuildTSMButton
+            // 
+            BuildTSMButton.BackColor = Color.FromArgb(26, 26, 26);
+            BuildTSMButton.ForeColor = Color.White;
+            BuildTSMButton.Name = "BuildTSMButton";
+            BuildTSMButton.Size = new Size(222, 24);
+            BuildTSMButton.Text = "Build";
+            BuildTSMButton.Click += BuildTSMButton_Click;
+            // 
+            // toolStripSeparator2
+            // 
+            toolStripSeparator2.Name = "toolStripSeparator2";
+            toolStripSeparator2.Size = new Size(219, 6);
+            toolStripSeparator2.Paint += toolStripSeparator2_Paint;
+            // 
+            // DeleteTSMButton
+            // 
+            DeleteTSMButton.BackColor = Color.FromArgb(26, 26, 26);
+            DeleteTSMButton.ForeColor = Color.White;
+            DeleteTSMButton.Name = "DeleteTSMButton";
+            DeleteTSMButton.Size = new Size(222, 24);
+            DeleteTSMButton.Text = "Delete";
+            DeleteTSMButton.Click += DeleteTSMButton_Click;
             // 
             // imageList1
             // 
@@ -96,6 +153,15 @@
             NewProjectButton.UseVisualStyleBackColor = true;
             NewProjectButton.Click += NewProjectButton_Click;
             // 
+            // SwitchEVTSMButton
+            // 
+            SwitchEVTSMButton.BackColor = Color.FromArgb(26, 26, 26);
+            SwitchEVTSMButton.ForeColor = Color.White;
+            SwitchEVTSMButton.Name = "SwitchEVTSMButton";
+            SwitchEVTSMButton.Size = new Size(222, 24);
+            SwitchEVTSMButton.Text = "Switch Engine Version";
+            SwitchEVTSMButton.Click += SwitchEVTSMButton_Click;
+            // 
             // Projects
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -110,6 +176,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Projects";
             Text = "Engine";
+            ProjectsMenuStrip.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -121,5 +188,12 @@
         private ListView ProjectsListView;
         private ImageList imageList1;
         private Button NewProjectButton;
+        private ContextMenuStrip ProjectsMenuStrip;
+        private ToolStripMenuItem OpenTSMButton;
+        private ToolStripSeparator toolStripSeparator1;
+        private ToolStripMenuItem BuildTSMButton;
+        private ToolStripSeparator toolStripSeparator2;
+        private ToolStripMenuItem DeleteTSMButton;
+        private ToolStripMenuItem SwitchEVTSMButton;
     }
 }

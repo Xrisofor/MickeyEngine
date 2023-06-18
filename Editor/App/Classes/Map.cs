@@ -12,29 +12,31 @@ namespace Editor.App
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.FileName = "NewMap.mickeymap";
-            if (Program.Form2.FilePath != String.Empty && t == 0)
+            if (Program.SaveFolderPath != string.Empty && t == 0)
             {
-                using (StreamWriter file = File.CreateText(Program.Form2.FilePath))
+                using (StreamWriter file = File.CreateText(Program.SaveFolderPath))
                 {
                     JsonSerializer serializer = new JsonSerializer();
                     serializer.Formatting = Formatting.Indented;
                     serializer.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-                    serializer.Serialize(file, Program.Form2.GameObjects.ToArray());
+                    serializer.Serialize(file, MainForm.GameObjects.ToArray());
                 }
+                Program.MainForm.DebLog($"Saving the {Path.GetFileName(Program.SaveFolderPath)} file");
             }
             else
             {
+                saveFileDialog.InitialDirectory = Path.GetFullPath($@"{Program.ProjectFolder}\content\maps\");
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    Program.Form2.FilePath = saveFileDialog.FileName;
-                    Program.Window.SetTitle($"Viewer - {Program.Form2.FilePath}");
-                    using (StreamWriter file = File.CreateText(Program.Form2.FilePath))
+                    Program.SaveFolderPath = saveFileDialog.FileName;
+                    using (StreamWriter file = File.CreateText(Program.SaveFolderPath))
                     {
                         JsonSerializer serializer = new JsonSerializer();
                         serializer.Formatting = Formatting.Indented;
                         serializer.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-                        serializer.Serialize(file, Program.Form2.GameObjects.ToArray());
+                        serializer.Serialize(file, MainForm.GameObjects.ToArray());
                     }
+                    Program.MainForm.DebLog($"Saving the {Path.GetFileName(Program.SaveFolderPath)} file");
                 }
             }
         }
@@ -43,22 +45,21 @@ namespace Editor.App
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Mickey Map|*.mickeymap";
+            openFileDialog.InitialDirectory = Path.GetFullPath($@"{Program.ProjectFolder}\content\maps\");
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 LoadMap(openFileDialog.FileName);
+                Program.MainForm.DebLog($"Opening the {Path.GetFileName(Program.SaveFolderPath)} file");
             }
         }
 
         public static void LoadMap(string path) 
         {
             path = path.Replace("\"", "");
-            Program.Form2.ClearListBox();
-            Program.Form2.GameObjects = new List<GameObject>();
-            Program.Form2.FilePath = path;
-            Program.Window.SetTitle($"Viewer - {Program.Form2.FilePath}");
-            Program.Form2.Enable();
+            Program.MainForm.ManagerListBox.Items.Clear();
+            Program.SaveFolderPath = path;
 
-            string allData = File.ReadAllText(Program.Form2.FilePath);
+            string allData = File.ReadAllText(Program.SaveFolderPath);
             #pragma warning disable
             dynamic jsonData = JsonConvert.DeserializeObject(allData);
             #pragma warning restore
@@ -149,8 +150,14 @@ namespace Editor.App
                     }
                 }
 
-                Program.Form2.GameObjects.Add(gameObject);
-                Program.Form2.AddListBoxItem(gameObject.Name);
+                MainForm.GameObjects.Add(gameObject);
+                Program.MainForm.ManagerListBox.Items.Add(gameObject.Name);
+
+                Program.MainForm.SaveButton_TSM.Enabled = true;
+                Program.MainForm.CloseButton_TSM.Enabled = true;
+                Program.MainForm.SaveAsButton_TSM.Enabled = true;
+                Program.MainForm.AddGameObjectButton_TSM.Enabled = true;
+                Program.MainForm.RemoveGameObjectButton_TSM.Enabled = true;
             }
             #pragma warning restore
         }

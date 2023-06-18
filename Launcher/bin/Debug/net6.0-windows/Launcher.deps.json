@@ -11,7 +11,8 @@
           "Costura.Fody": "5.7.0",
           "DotNetZip": "1.16.0",
           "Newtonsoft.Json": "13.0.3",
-          "FastColoredTextBox.Net5": "2.16.26"
+          "FastColoredTextBox.Net5": "2.16.26",
+          "editor": "0.1.0.2"
         },
         "runtime": {
           "launcher.dll": {}
@@ -757,6 +758,14 @@
           "System.Threading": "4.3.0",
           "System.Xml.ReaderWriter": "4.3.0"
         }
+      },
+      "editor/0.1.0.2": {
+        "runtime": {
+          "editor.dll": {
+            "assemblyVersion": "0.1.0.2",
+            "fileVersion": "0.1.0.2"
+          }
+        }
       }
     }
   },
@@ -1360,6 +1369,11 @@
       "sha512": "sha512-5zJ0XDxAIg8iy+t4aMnQAu0MqVbqyvfoUVl1yDV61xdo3Vth45oA2FoY4pPkxYAH5f8ixpmTqXeEIya95x0aCQ==",
       "path": "system.xml.xdocument/4.3.0",
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
+    },
+    "editor/0.1.0.2": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

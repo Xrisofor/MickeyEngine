@@ -1,29 +1,65 @@
-﻿using Editor.App.Paint;
+﻿//Engine
 using Engine;
-using SFML.Graphics;
 using Engine.Classes.Components;
-using System.Resources;
-using Editor.App.Forms;
+//SFML
+using SFML.Graphics;
 using SFML.System;
+//Editor
+using Editor.App.Paint;
+using Editor.Project;
+using Editor.App.Forms;
+using Editor.App.Classes;
 
 namespace Editor.App
 {
     public partial class MainForm : Form
     {
         public static RenderWindow Window { get; private set; }
-        public static List<GameObject> GameObjects { get; private set; } = new List<GameObject>();
         public static Grid EditorGrid = new Grid(); public static bool ShowGrid = true;
 
-        public MainForm()
+        public static List<GameObject> GameObjects { get; private set; } = new List<GameObject>();
+        public static List<Sprites> Sprites { get; private set; } = new List<Sprites>();
+
+        private string[] args;
+        public MainForm(string[] args)
         {
             InitializeComponent();
             menuStrip1.Renderer = new MyRenderer();
+
+            this.args = args;
+            Arguments.Init(args);
+
+            if (Program.ProjectFolder == null)
+                if (MessageBox.Show("To work with the editor, open the project by clicking OK or using the launcher!", "Mickey Editor", MessageBoxButtons.OKCancel, MessageBoxIcon.Error) == DialogResult.OK)
+                {
+                    OpenFileDialog openFile = new OpenFileDialog();
+                    openFile.Filter = "Info|*.json"; openFile.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                    if (openFile.ShowDialog() == DialogResult.OK)
+                    {
+                        Program.ProjectFolder = openFile.FileName;
+                    }
+                }
+
+            ProjInfo.LoadInfo();
         }
 
 
         private void MainForm_Shown(object sender, EventArgs e)
         {
+            DebLog("Loading project...");
             Window = new RenderWindow(sfmlPanel.Handle);
+            Text = $"{Program.ProjectInfo.Name} - Mickey Editor";
+            if (Program.ProjectInfo.Icon != null)
+            {
+                System.Drawing.Image IconImg = System.Drawing.Image.FromFile(Program.ProjectInfo.Icon);
+                Bitmap IconBitmap = (Bitmap)IconImg;
+                IntPtr PtrIcon = IconBitmap.GetHicon();
+                Icon Icon = Icon.FromHandle(PtrIcon);
+                this.Icon = Icon;
+                Icon.Dispose();
+            }
+
+            Arguments.Init(args);
 
             DebLog("Running the editor");
 
@@ -297,6 +333,11 @@ namespace Editor.App
             DialogSystem dialogSystem = new DialogSystem();
             AddObject(dialogSystem);
         }
+
+        private void AddTargetGameObjectButton_TSM_Click(object sender, EventArgs e)
+        {
+            AddObject();
+        }
         #endregion
 
         #endregion
@@ -369,7 +410,7 @@ namespace Editor.App
                 try
                 {
                     if (PosXTextBox.Text == String.Empty) PosXTextBox.Text = "0";
-                    GameObjects[ManagerListBox.SelectedIndex].Position = new Vector2f(Convert.ToSingle(PosXTextBox.Text), GameObjects[ManagerListBox.SelectedIndex].Position.Y);
+                    GameObjects[ManagerListBox.SelectedIndex].Position = new Vector2f(System.Convert.ToSingle(PosXTextBox.Text), GameObjects[ManagerListBox.SelectedIndex].Position.Y);
                 }
                 catch
                 {
@@ -386,7 +427,7 @@ namespace Editor.App
                 if (ManagerListBox.SelectedItem != null)
                 {
                     if (PosYTextBox.Text == String.Empty) PosYTextBox.Text = "0";
-                    GameObjects[ManagerListBox.SelectedIndex].Position = new Vector2f(GameObjects[ManagerListBox.SelectedIndex].Position.X, Convert.ToSingle(PosYTextBox.Text));
+                    GameObjects[ManagerListBox.SelectedIndex].Position = new Vector2f(GameObjects[ManagerListBox.SelectedIndex].Position.X, System.Convert.ToSingle(PosYTextBox.Text));
                 }
             }
             catch
@@ -403,7 +444,7 @@ namespace Editor.App
                 if (ManagerListBox.SelectedItem != null)
                 {
                     if (RotationTextBox.Text == String.Empty) RotationTextBox.Text = "0";
-                    GameObjects[ManagerListBox.SelectedIndex].Rotation = Convert.ToSingle(RotationTextBox.Text);
+                    GameObjects[ManagerListBox.SelectedIndex].Rotation = System.Convert.ToSingle(RotationTextBox.Text);
                 }
             }
             catch
@@ -420,7 +461,7 @@ namespace Editor.App
                 if (ManagerListBox.SelectedItem != null)
                 {
                     if (ScaleXTextBox.Text == String.Empty) ScaleXTextBox.Text = "0";
-                    GameObjects[ManagerListBox.SelectedIndex].Scale = new Vector2f(Convert.ToSingle(ScaleXTextBox.Text), GameObjects[ManagerListBox.SelectedIndex].Scale.Y);
+                    GameObjects[ManagerListBox.SelectedIndex].Scale = new Vector2f(System.Convert.ToSingle(ScaleXTextBox.Text), GameObjects[ManagerListBox.SelectedIndex].Scale.Y);
                 }
             }
             catch
@@ -437,7 +478,7 @@ namespace Editor.App
                 if (ManagerListBox.SelectedItem != null)
                 {
                     if (ScaleYTextBox.Text == String.Empty) ScaleYTextBox.Text = "0";
-                    GameObjects[ManagerListBox.SelectedIndex].Scale = new Vector2f(GameObjects[ManagerListBox.SelectedIndex].Scale.Y, Convert.ToSingle(ScaleYTextBox.Text));
+                    GameObjects[ManagerListBox.SelectedIndex].Scale = new Vector2f(GameObjects[ManagerListBox.SelectedIndex].Scale.Y, System.Convert.ToSingle(ScaleYTextBox.Text));
                 }
             }
             catch
@@ -454,10 +495,28 @@ namespace Editor.App
                 SpriteManager spriteManager = new SpriteManager();
                 if (spriteManager.ShowDialog() == DialogResult.OK)
                 {
-                    var bitmap = new Bitmap(spriteManager.imageList1.Images[spriteManager.SelectedIndex]);
-                    GameObjects[ManagerListBox.SelectedIndex].Sprite.Texture = new Texture(App.Classes.Convert.ToSFMLImage(bitmap));
+                    TextureTextBox.Text = Sprites[spriteManager.SelectedIndex].Path;
+                    GameObjects[ManagerListBox.SelectedIndex].TexturePath = Sprites[spriteManager.SelectedIndex].Path;
+                    GameObjects[ManagerListBox.SelectedIndex].Sprite.Texture = new Texture(Sprites[spriteManager.SelectedIndex].Path);
                 }
             }
+        }
+        #endregion
+
+        #region Save | Load Map
+        private void SaveButton_TSM_Click(object sender, EventArgs e)
+        {
+            Map.SaveMap(0);
+        }
+
+        private void SaveAsButton_TSM_Click(object sender, EventArgs e)
+        {
+            Map.SaveMap(1);
+        }
+
+        private void OpenButton_TSM_Click(object sender, EventArgs e)
+        {
+            Map.LoadInsMap();
         }
         #endregion
     }
