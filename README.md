@@ -1,8 +1,8 @@
 <h1 align="center">Mickey Engine</h1>
 <h3 align="center">An engine for creating simple visual novels in the C# programming language</h3>
 <div id="badges" align="center">
-  <a href="https://www.tiktok.com/@gordonlife">
-    <img src="https://img.shields.io/badge/TikTok-000000?style=for-the-badge&logo=tiktok&logoColor=white" alt="TikTok Badge"/>
+  <a href="https://vk.com/xrisofor_arabov">
+    <img src="https://img.shields.io/badge/вконтакте-%232E87FB.svg?&style=for-the-badge&logo=vk&logoColor=white" alt="VK Badge"/>
   </a>
   <a href="https://youtube.com/channel/GordonLife">
     <img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white" alt="YouTube Badge"/>
@@ -10,7 +10,7 @@
   <a href="https://steamcommunity.com/id/Xrisofor">
     <img src="https://img.shields.io/badge/Steam-000000?style=for-the-badge&logo=steam&logoColor=white" alt="Steam Badge"/>
   </a>
-</div><br>
+</div>
 
 ---
 
