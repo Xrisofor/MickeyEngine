@@ -7,6 +7,7 @@ namespace Engine.Classes.Components
     public class GUIText : Component
     {
         public Text Text { get; set; }
+        public string FontName { get; set; }
 
         public GUIText(string text, Font font, uint characterSize = 26) {
             Text = new Text(text, font, characterSize);

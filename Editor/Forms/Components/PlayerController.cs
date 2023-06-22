@@ -1,16 +1,6 @@
 ﻿using Editor.App;
-using Engine.Classes.Components;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace Editor.Forms.Components
+namespace Editor.Components
 {
     public partial class PlayerController : Form
     {
@@ -54,19 +44,19 @@ namespace Editor.Forms.Components
         private void SpeedTextBox_TextChanged(object sender, EventArgs e)
         {
             playerController.Speed = Convert.ToSingle(SpeedTextBox.Text);
-            Program.Form2.GameObjects[Program.Form2.ListIndex].Components[0] = playerController;
+            MainForm.GameObjects[Program.MainForm.ManagerListBox.SelectedIndex].Components[0] = playerController;
         }
 
         private void HorizontalTextBox_TextChanged(object sender, EventArgs e)
         {
             playerController.HorizontalController = HorizontalTextBox.Text;
-            Program.Form2.GameObjects[Program.Form2.ListIndex].Components[0] = playerController;
+            MainForm.GameObjects[Program.MainForm.ManagerListBox.SelectedIndex].Components[0] = playerController;
         }
 
         private void VerticalTextBox_TextChanged(object sender, EventArgs e)
         {
             playerController.VerticalController = VerticalTextBox.Text;
-            Program.Form2.GameObjects[Program.Form2.ListIndex].Components[0] = playerController;
+            MainForm.GameObjects[Program.MainForm.ManagerListBox.SelectedIndex].Components[0] = playerController;
         }
     }
 }

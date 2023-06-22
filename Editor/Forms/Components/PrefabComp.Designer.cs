@@ -1,4 +1,4 @@
-﻿namespace Editor.Forms.Components
+﻿namespace Editor.Components
 {
     partial class PrefabComp
     {
@@ -52,7 +52,7 @@
             SelectFileButton.FlatStyle = FlatStyle.Flat;
             SelectFileButton.Location = new Point(12, 78);
             SelectFileButton.Name = "SelectFileButton";
-            SelectFileButton.Size = new Size(253, 29);
+            SelectFileButton.Size = new Size(271, 29);
             SelectFileButton.TabIndex = 25;
             SelectFileButton.Text = "Select";
             SelectFileButton.UseVisualStyleBackColor = false;
@@ -67,7 +67,7 @@
             FileTextBox.Location = new Point(45, 45);
             FileTextBox.Name = "FileTextBox";
             FileTextBox.ReadOnly = true;
-            FileTextBox.Size = new Size(220, 27);
+            FileTextBox.Size = new Size(238, 27);
             FileTextBox.TabIndex = 24;
             // 
             // openFileDialog1
@@ -82,7 +82,7 @@
             NameTextBox.ForeColor = Color.White;
             NameTextBox.Location = new Point(12, 12);
             NameTextBox.Name = "NameTextBox";
-            NameTextBox.Size = new Size(253, 27);
+            NameTextBox.Size = new Size(271, 27);
             NameTextBox.TabIndex = 27;
             NameTextBox.Text = "None";
             NameTextBox.TextAlign = HorizontalAlignment.Center;
@@ -93,7 +93,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(52, 58, 64);
-            ClientSize = new Size(277, 389);
+            ClientSize = new Size(295, 364);
             Controls.Add(NameTextBox);
             Controls.Add(pictureBox1);
             Controls.Add(SelectFileButton);

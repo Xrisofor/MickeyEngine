@@ -1,4 +1,4 @@
-﻿namespace Editor.Forms.Components
+﻿namespace Editor.Components
 {
     partial class DialogSystem
     {
@@ -28,187 +28,177 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DialogSystem));
-            this.NameSizeTextBox = new System.Windows.Forms.TextBox();
-            this.DialogSizeTextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.SelectNameColorButton = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.DialogSelectColorButton = new System.Windows.Forms.Button();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.EditButton = new System.Windows.Forms.Button();
-            this.ScriptTextBox = new FastColoredTextBoxNS.FastColoredTextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.ScriptTextBox)).BeginInit();
-            this.SuspendLayout();
+            NameSizeTextBox = new TextBox();
+            DialogSizeTextBox = new TextBox();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            SelectNameColorButton = new Button();
+            label4 = new Label();
+            DialogSelectColorButton = new Button();
+            colorDialog1 = new ColorDialog();
+            EditButton = new Button();
+            ScriptTextBox = new FastColoredTextBoxNS.FastColoredTextBox();
+            ((System.ComponentModel.ISupportInitialize)ScriptTextBox).BeginInit();
+            SuspendLayout();
             // 
             // NameSizeTextBox
             // 
-            this.NameSizeTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.NameSizeTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.NameSizeTextBox.ForeColor = System.Drawing.Color.White;
-            this.NameSizeTextBox.Location = new System.Drawing.Point(107, 12);
-            this.NameSizeTextBox.Name = "NameSizeTextBox";
-            this.NameSizeTextBox.Size = new System.Drawing.Size(158, 27);
-            this.NameSizeTextBox.TabIndex = 27;
-            this.NameSizeTextBox.Text = "28";
-            this.NameSizeTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.NameSizeTextBox.TextChanged += new System.EventHandler(this.NameSizeTextBox_TextChanged);
-            this.NameSizeTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameSizeTextBox_KeyPress);
+            NameSizeTextBox.BackColor = Color.FromArgb(33, 37, 41);
+            NameSizeTextBox.BorderStyle = BorderStyle.FixedSingle;
+            NameSizeTextBox.ForeColor = Color.White;
+            NameSizeTextBox.Location = new Point(107, 12);
+            NameSizeTextBox.Name = "NameSizeTextBox";
+            NameSizeTextBox.Size = new Size(176, 27);
+            NameSizeTextBox.TabIndex = 27;
+            NameSizeTextBox.Text = "28";
+            NameSizeTextBox.TextAlign = HorizontalAlignment.Center;
+            NameSizeTextBox.TextChanged += NameSizeTextBox_TextChanged;
+            NameSizeTextBox.KeyPress += NameSizeTextBox_KeyPress;
             // 
             // DialogSizeTextBox
             // 
-            this.DialogSizeTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.DialogSizeTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.DialogSizeTextBox.ForeColor = System.Drawing.Color.White;
-            this.DialogSizeTextBox.Location = new System.Drawing.Point(107, 45);
-            this.DialogSizeTextBox.Name = "DialogSizeTextBox";
-            this.DialogSizeTextBox.Size = new System.Drawing.Size(158, 27);
-            this.DialogSizeTextBox.TabIndex = 30;
-            this.DialogSizeTextBox.Text = "24";
-            this.DialogSizeTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.DialogSizeTextBox.TextChanged += new System.EventHandler(this.DialogSizeTextBox_TextChanged);
-            this.DialogSizeTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DialogSizeTextBox_KeyPress);
+            DialogSizeTextBox.BackColor = Color.FromArgb(33, 37, 41);
+            DialogSizeTextBox.BorderStyle = BorderStyle.FixedSingle;
+            DialogSizeTextBox.ForeColor = Color.White;
+            DialogSizeTextBox.Location = new Point(107, 45);
+            DialogSizeTextBox.Name = "DialogSizeTextBox";
+            DialogSizeTextBox.Size = new Size(176, 27);
+            DialogSizeTextBox.TabIndex = 30;
+            DialogSizeTextBox.Text = "24";
+            DialogSizeTextBox.TextAlign = HorizontalAlignment.Center;
+            DialogSizeTextBox.TextChanged += DialogSizeTextBox_TextChanged;
+            DialogSizeTextBox.KeyPress += DialogSizeTextBox_KeyPress;
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(12, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 25);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "Name Size";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label1.Location = new Point(12, 14);
+            label1.Name = "label1";
+            label1.Size = new Size(89, 25);
+            label1.TabIndex = 31;
+            label1.Text = "Name Size";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(12, 47);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 25);
-            this.label2.TabIndex = 32;
-            this.label2.Text = "Dialog Size";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label2.Location = new Point(12, 47);
+            label2.Name = "label2";
+            label2.Size = new Size(89, 25);
+            label2.TabIndex = 32;
+            label2.Text = "Dialog Size";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(12, 83);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 25);
-            this.label3.TabIndex = 33;
-            this.label3.Text = "Name Color";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label3.Location = new Point(12, 83);
+            label3.Name = "label3";
+            label3.Size = new Size(97, 25);
+            label3.TabIndex = 33;
+            label3.Text = "Name Color";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // SelectNameColorButton
             // 
-            this.SelectNameColorButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.SelectNameColorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SelectNameColorButton.Location = new System.Drawing.Point(115, 81);
-            this.SelectNameColorButton.Name = "SelectNameColorButton";
-            this.SelectNameColorButton.Size = new System.Drawing.Size(150, 29);
-            this.SelectNameColorButton.TabIndex = 34;
-            this.SelectNameColorButton.Text = "Select";
-            this.SelectNameColorButton.UseVisualStyleBackColor = false;
-            this.SelectNameColorButton.Click += new System.EventHandler(this.SelectNameColorButton_Click);
+            SelectNameColorButton.BackColor = Color.FromArgb(33, 37, 41);
+            SelectNameColorButton.FlatStyle = FlatStyle.Flat;
+            SelectNameColorButton.Location = new Point(115, 81);
+            SelectNameColorButton.Name = "SelectNameColorButton";
+            SelectNameColorButton.Size = new Size(168, 29);
+            SelectNameColorButton.TabIndex = 34;
+            SelectNameColorButton.Text = "Select";
+            SelectNameColorButton.UseVisualStyleBackColor = false;
+            SelectNameColorButton.Click += SelectNameColorButton_Click;
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(12, 118);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 25);
-            this.label4.TabIndex = 35;
-            this.label4.Text = "Dialog Color";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label4.Location = new Point(12, 118);
+            label4.Name = "label4";
+            label4.Size = new Size(97, 25);
+            label4.TabIndex = 35;
+            label4.Text = "Dialog Color";
+            label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // DialogSelectColorButton
             // 
-            this.DialogSelectColorButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.DialogSelectColorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DialogSelectColorButton.Location = new System.Drawing.Point(115, 118);
-            this.DialogSelectColorButton.Name = "DialogSelectColorButton";
-            this.DialogSelectColorButton.Size = new System.Drawing.Size(150, 29);
-            this.DialogSelectColorButton.TabIndex = 36;
-            this.DialogSelectColorButton.Text = "Select";
-            this.DialogSelectColorButton.UseVisualStyleBackColor = false;
-            this.DialogSelectColorButton.Click += new System.EventHandler(this.DialogSelectColorButton_Click);
+            DialogSelectColorButton.BackColor = Color.FromArgb(33, 37, 41);
+            DialogSelectColorButton.FlatStyle = FlatStyle.Flat;
+            DialogSelectColorButton.Location = new Point(115, 118);
+            DialogSelectColorButton.Name = "DialogSelectColorButton";
+            DialogSelectColorButton.Size = new Size(168, 29);
+            DialogSelectColorButton.TabIndex = 36;
+            DialogSelectColorButton.Text = "Select";
+            DialogSelectColorButton.UseVisualStyleBackColor = false;
+            DialogSelectColorButton.Click += DialogSelectColorButton_Click;
             // 
             // EditButton
             // 
-            this.EditButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EditButton.Location = new System.Drawing.Point(12, 348);
-            this.EditButton.Name = "EditButton";
-            this.EditButton.Size = new System.Drawing.Size(253, 29);
-            this.EditButton.TabIndex = 39;
-            this.EditButton.Text = "Edit";
-            this.EditButton.UseVisualStyleBackColor = false;
-            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
+            EditButton.BackColor = Color.FromArgb(33, 37, 41);
+            EditButton.FlatStyle = FlatStyle.Flat;
+            EditButton.Location = new Point(12, 327);
+            EditButton.Name = "EditButton";
+            EditButton.Size = new Size(271, 29);
+            EditButton.TabIndex = 39;
+            EditButton.Text = "Edit";
+            EditButton.UseVisualStyleBackColor = false;
+            EditButton.Click += EditButton_Click;
             // 
             // ScriptTextBox
             // 
-            this.ScriptTextBox.AutoCompleteBracketsList = new char[] {
-        '(',
-        ')',
-        '{',
-        '}',
-        '[',
-        ']',
-        '\"',
-        '\"',
-        '\'',
-        '\''};
-            this.ScriptTextBox.AutoIndentCharsPatterns = "\r\n^\\s*[\\w\\.]+(\\s\\w+)?\\s*(?<range>=)\\s*(?<range>[^;]+);\r\n";
-            this.ScriptTextBox.AutoScrollMinSize = new System.Drawing.Size(31, 18);
-            this.ScriptTextBox.BackBrush = null;
-            this.ScriptTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.ScriptTextBox.BracketsHighlightStrategy = FastColoredTextBoxNS.BracketsHighlightStrategy.Strategy2;
-            this.ScriptTextBox.CharHeight = 18;
-            this.ScriptTextBox.CharWidth = 10;
-            this.ScriptTextBox.CommentPrefix = "--";
-            this.ScriptTextBox.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.ScriptTextBox.IndentBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.ScriptTextBox.IsReplaceMode = false;
-            this.ScriptTextBox.Language = FastColoredTextBoxNS.Language.JSON;
-            this.ScriptTextBox.LeftBracket = '[';
-            this.ScriptTextBox.LeftBracket2 = '{';
-            this.ScriptTextBox.LineNumberColor = System.Drawing.Color.White;
-            this.ScriptTextBox.Location = new System.Drawing.Point(12, 153);
-            this.ScriptTextBox.Name = "ScriptTextBox";
-            this.ScriptTextBox.Paddings = new System.Windows.Forms.Padding(0);
-            this.ScriptTextBox.ReadOnly = true;
-            this.ScriptTextBox.RightBracket = ']';
-            this.ScriptTextBox.RightBracket2 = '}';
-            this.ScriptTextBox.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
-            this.ScriptTextBox.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("ScriptTextBox.ServiceColors")));
-            this.ScriptTextBox.Size = new System.Drawing.Size(253, 189);
-            this.ScriptTextBox.TabIndex = 38;
-            this.ScriptTextBox.Zoom = 100;
+            ScriptTextBox.AutoCompleteBracketsList = (new char[] { '(', ')', '{', '}', '[', ']', '"', '"', '\'', '\'' });
+            ScriptTextBox.AutoIndentCharsPatterns = "\r\n^\\s*[\\w\\.]+(\\s\\w+)?\\s*(?<range>=)\\s*(?<range>[^;]+);\r\n";
+            ScriptTextBox.AutoScrollMinSize = new Size(31, 18);
+            ScriptTextBox.BackBrush = null;
+            ScriptTextBox.BackColor = Color.FromArgb(33, 37, 41);
+            ScriptTextBox.BracketsHighlightStrategy = FastColoredTextBoxNS.BracketsHighlightStrategy.Strategy2;
+            ScriptTextBox.CharHeight = 18;
+            ScriptTextBox.CharWidth = 10;
+            ScriptTextBox.CommentPrefix = "--";
+            ScriptTextBox.DisabledColor = Color.FromArgb(100, 180, 180, 180);
+            ScriptTextBox.Font = new Font("Courier New", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            ScriptTextBox.IndentBackColor = Color.FromArgb(33, 37, 41);
+            ScriptTextBox.IsReplaceMode = false;
+            ScriptTextBox.Language = FastColoredTextBoxNS.Language.JSON;
+            ScriptTextBox.LeftBracket = '[';
+            ScriptTextBox.LeftBracket2 = '{';
+            ScriptTextBox.LineNumberColor = Color.White;
+            ScriptTextBox.Location = new Point(12, 153);
+            ScriptTextBox.Name = "ScriptTextBox";
+            ScriptTextBox.Paddings = new Padding(0);
+            ScriptTextBox.ReadOnly = true;
+            ScriptTextBox.RightBracket = ']';
+            ScriptTextBox.RightBracket2 = '}';
+            ScriptTextBox.SelectionColor = Color.FromArgb(60, 0, 0, 255);
+            ScriptTextBox.ServiceColors = (FastColoredTextBoxNS.ServiceColors)resources.GetObject("ScriptTextBox.ServiceColors");
+            ScriptTextBox.Size = new Size(271, 168);
+            ScriptTextBox.TabIndex = 38;
+            ScriptTextBox.Zoom = 100;
             // 
             // DialogSystem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(277, 389);
-            this.Controls.Add(this.EditButton);
-            this.Controls.Add(this.ScriptTextBox);
-            this.Controls.Add(this.DialogSelectColorButton);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.SelectNameColorButton);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.DialogSizeTextBox);
-            this.Controls.Add(this.NameSizeTextBox);
-            this.ForeColor = System.Drawing.Color.White;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "DialogSystem";
-            this.Text = "DialogSystem";
-            this.Shown += new System.EventHandler(this.DialogSystem_Shown);
-            ((System.ComponentModel.ISupportInitialize)(this.ScriptTextBox)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(52, 58, 64);
+            ClientSize = new Size(295, 364);
+            Controls.Add(EditButton);
+            Controls.Add(ScriptTextBox);
+            Controls.Add(DialogSelectColorButton);
+            Controls.Add(label4);
+            Controls.Add(SelectNameColorButton);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(DialogSizeTextBox);
+            Controls.Add(NameSizeTextBox);
+            ForeColor = Color.White;
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "DialogSystem";
+            Text = "DialogSystem";
+            Shown += DialogSystem_Shown;
+            ((System.ComponentModel.ISupportInitialize)ScriptTextBox).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

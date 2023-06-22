@@ -1,0 +1,12 @@
+C:\Users\arabo\Рабочий стол\MyPlugin\MyPlugin\bin\Debug\net6.0\MyPlugin.deps.json
+C:\Users\arabo\Рабочий стол\MyPlugin\MyPlugin\bin\Debug\net6.0\MyPlugin.dll
+C:\Users\arabo\Рабочий стол\MyPlugin\MyPlugin\bin\Debug\net6.0\MyPlugin.pdb
+C:\Users\arabo\Рабочий стол\MyPlugin\MyPlugin\obj\Debug\net6.0\MyPlugin.csproj.AssemblyReference.cache
+C:\Users\arabo\Рабочий стол\MyPlugin\MyPlugin\obj\Debug\net6.0\MyPlugin.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\arabo\Рабочий стол\MyPlugin\MyPlugin\obj\Debug\net6.0\MyPlugin.AssemblyInfoInputs.cache
+C:\Users\arabo\Рабочий стол\MyPlugin\MyPlugin\obj\Debug\net6.0\MyPlugin.AssemblyInfo.cs
+C:\Users\arabo\Рабочий стол\MyPlugin\MyPlugin\obj\Debug\net6.0\MyPlugin.csproj.CoreCompileInputs.cache
+C:\Users\arabo\Рабочий стол\MyPlugin\MyPlugin\obj\Debug\net6.0\MyPlugin.dll
+C:\Users\arabo\Рабочий стол\MyPlugin\MyPlugin\obj\Debug\net6.0\refint\MyPlugin.dll
+C:\Users\arabo\Рабочий стол\MyPlugin\MyPlugin\obj\Debug\net6.0\MyPlugin.pdb
+C:\Users\arabo\Рабочий стол\MyPlugin\MyPlugin\obj\Debug\net6.0\ref\MyPlugin.dll

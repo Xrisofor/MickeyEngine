@@ -1,8 +1,6 @@
-﻿using Engine.Classes.Components;
-using System.Collections.Generic;
-using System.Windows.Forms;
+﻿using Editor.Forms;
 
-namespace Editor.Forms.Components
+namespace Editor.Components
 {
     public partial class ScriptComponent : Form
     {

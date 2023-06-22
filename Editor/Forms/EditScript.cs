@@ -27,8 +27,8 @@ namespace Editor.Forms
         public void UpdateForm(string Path, FastColoredTextBoxNS.Language Language = FastColoredTextBoxNS.Language.Lua)
         {
             ScriptTextBox.Text = File.ReadAllText(Path);
-            this.Text = $"Script Editor - {Path}";
-            label1.Text = $"Script Editor - {Path}";
+            this.Text = $"Script Editor - {Path.Replace("/", @"\")}";
+            label1.Text = $"Script Editor - {Path.Replace("/", @"\")}";
             this.Path = Path;
             ScriptTextBox.Language = Language;
             EditScriptTextBotInfo();

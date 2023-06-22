@@ -29,38 +29,41 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            listView1 = new ListView();
-            imageList1 = new System.Windows.Forms.ImageList(components);
+            ObjectsListView = new ListView();
+            SpritesList = new System.Windows.Forms.ImageList(components);
             AddImgButton = new Button();
             RemoveImgButton = new Button();
             ReloadImgButton = new Button();
             textBox1 = new TextBox();
             SelectImageFile = new OpenFileDialog();
+            OtherList = new System.Windows.Forms.ImageList(components);
+            SelectAudioFile = new OpenFileDialog();
+            SelectFontFile = new OpenFileDialog();
             SuspendLayout();
             // 
-            // listView1
+            // ObjectsListView
             // 
-            listView1.Activation = ItemActivation.TwoClick;
-            listView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            listView1.BackColor = Color.FromArgb(33, 37, 41);
-            listView1.BorderStyle = BorderStyle.FixedSingle;
-            listView1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            listView1.ForeColor = Color.White;
-            listView1.LargeImageList = imageList1;
-            listView1.Location = new Point(12, 40);
-            listView1.MultiSelect = false;
-            listView1.Name = "listView1";
-            listView1.Size = new Size(965, 635);
-            listView1.TabIndex = 0;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.ItemActivate += listView1_ItemActivate;
-            listView1.SelectedIndexChanged += listView1_SelectedIndexChanged;
+            ObjectsListView.Activation = ItemActivation.TwoClick;
+            ObjectsListView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            ObjectsListView.BackColor = Color.FromArgb(33, 37, 41);
+            ObjectsListView.BorderStyle = BorderStyle.FixedSingle;
+            ObjectsListView.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ObjectsListView.ForeColor = Color.White;
+            ObjectsListView.LargeImageList = SpritesList;
+            ObjectsListView.Location = new Point(12, 40);
+            ObjectsListView.MultiSelect = false;
+            ObjectsListView.Name = "ObjectsListView";
+            ObjectsListView.Size = new Size(965, 635);
+            ObjectsListView.TabIndex = 0;
+            ObjectsListView.UseCompatibleStateImageBehavior = false;
+            ObjectsListView.ItemActivate += listView1_ItemActivate;
+            ObjectsListView.SelectedIndexChanged += listView1_SelectedIndexChanged;
             // 
-            // imageList1
+            // SpritesList
             // 
-            imageList1.ColorDepth = ColorDepth.Depth32Bit;
-            imageList1.ImageSize = new Size(185, 185);
-            imageList1.TransparentColor = Color.Transparent;
+            SpritesList.ColorDepth = ColorDepth.Depth32Bit;
+            SpritesList.ImageSize = new Size(185, 185);
+            SpritesList.TransparentColor = Color.Transparent;
             // 
             // AddImgButton
             // 
@@ -114,7 +117,21 @@
             // 
             // SelectImageFile
             // 
-            SelectImageFile.Filter = "Images | *.png; *.jpg; *.gif";
+            SelectImageFile.Filter = "Images|*.png;*.jpg;*.gif";
+            // 
+            // OtherList
+            // 
+            OtherList.ColorDepth = ColorDepth.Depth32Bit;
+            OtherList.ImageSize = new Size(185, 185);
+            OtherList.TransparentColor = Color.Transparent;
+            // 
+            // SelectAudioFile
+            // 
+            SelectAudioFile.Filter = "Audio|*.wav; *.ogg";
+            // 
+            // SelectFontFile
+            // 
+            SelectFontFile.Filter = "Font|*.ttf";
             // 
             // SpriteManager
             // 
@@ -126,7 +143,7 @@
             Controls.Add(ReloadImgButton);
             Controls.Add(RemoveImgButton);
             Controls.Add(AddImgButton);
-            Controls.Add(listView1);
+            Controls.Add(ObjectsListView);
             ForeColor = Color.White;
             Name = "SpriteManager";
             StartPosition = FormStartPosition.CenterScreen;
@@ -136,12 +153,15 @@
         }
 
         #endregion
-        private ListView listView1;
+        private ListView ObjectsListView;
         private Button AddImgButton;
         private Button RemoveImgButton;
         private Button ReloadImgButton;
         private TextBox textBox1;
         private OpenFileDialog SelectImageFile;
-        public System.Windows.Forms.ImageList imageList1;
+        public System.Windows.Forms.ImageList SpritesList;
+        private System.Windows.Forms.ImageList OtherList;
+        private OpenFileDialog SelectAudioFile;
+        private OpenFileDialog SelectFontFile;
     }
 }

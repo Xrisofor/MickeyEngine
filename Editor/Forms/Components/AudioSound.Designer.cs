@@ -1,4 +1,4 @@
-﻿namespace Editor.Forms.Components
+﻿namespace Editor.Components
 {
     partial class AudioSound
     {
@@ -49,7 +49,7 @@
             FileTextBox.Location = new Point(45, 9);
             FileTextBox.Name = "FileTextBox";
             FileTextBox.ReadOnly = true;
-            FileTextBox.Size = new Size(220, 27);
+            FileTextBox.Size = new Size(238, 27);
             FileTextBox.TabIndex = 2;
             // 
             // openFileDialog1
@@ -63,7 +63,7 @@
             SelectFileButton.FlatStyle = FlatStyle.Flat;
             SelectFileButton.Location = new Point(12, 76);
             SelectFileButton.Name = "SelectFileButton";
-            SelectFileButton.Size = new Size(253, 29);
+            SelectFileButton.Size = new Size(271, 29);
             SelectFileButton.TabIndex = 17;
             SelectFileButton.Text = "Select";
             SelectFileButton.UseVisualStyleBackColor = false;
@@ -77,7 +77,7 @@
             comboBox1.Items.AddRange(new object[] { "Sound", "Music" });
             comboBox1.Location = new Point(12, 42);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(253, 28);
+            comboBox1.Size = new Size(271, 28);
             comboBox1.TabIndex = 18;
             comboBox1.Text = "Sound";
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
@@ -87,9 +87,9 @@
             StopButton.BackColor = Color.FromArgb(33, 37, 41);
             StopButton.Enabled = false;
             StopButton.FlatStyle = FlatStyle.Flat;
-            StopButton.Location = new Point(12, 348);
+            StopButton.Location = new Point(12, 323);
             StopButton.Name = "StopButton";
-            StopButton.Size = new Size(253, 29);
+            StopButton.Size = new Size(271, 29);
             StopButton.TabIndex = 20;
             StopButton.Text = "Stop";
             StopButton.UseVisualStyleBackColor = false;
@@ -100,9 +100,9 @@
             PlayButton.BackColor = Color.FromArgb(33, 37, 41);
             PlayButton.Enabled = false;
             PlayButton.FlatStyle = FlatStyle.Flat;
-            PlayButton.Location = new Point(12, 313);
+            PlayButton.Location = new Point(12, 288);
             PlayButton.Name = "PlayButton";
-            PlayButton.Size = new Size(253, 29);
+            PlayButton.Size = new Size(271, 29);
             PlayButton.TabIndex = 21;
             PlayButton.Text = "Play";
             PlayButton.UseVisualStyleBackColor = false;
@@ -111,9 +111,9 @@
             // label2
             // 
             label2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            label2.Location = new Point(12, 288);
+            label2.Location = new Point(12, 263);
             label2.Name = "label2";
-            label2.Size = new Size(253, 22);
+            label2.Size = new Size(271, 22);
             label2.TabIndex = 22;
             label2.Text = "Controller";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -144,7 +144,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(52, 58, 64);
-            ClientSize = new Size(277, 389);
+            ClientSize = new Size(295, 364);
             Controls.Add(LoopCheckBox);
             Controls.Add(pictureBox1);
             Controls.Add(label2);

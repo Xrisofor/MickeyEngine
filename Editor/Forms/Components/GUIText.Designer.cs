@@ -1,4 +1,4 @@
-﻿namespace Editor.Forms.Components
+﻿namespace Editor.Components
 {
     partial class GUIText
     {
@@ -29,9 +29,11 @@
         private void InitializeComponent()
         {
             NameTextBox = new TextBox();
-            FontComboBox = new ComboBox();
             CharacterSizeBox = new NumericUpDown();
+            pictureBox1 = new PictureBox();
+            SelectFileButton = new Button();
             ((System.ComponentModel.ISupportInitialize)CharacterSizeBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // NameTextBox
@@ -41,42 +43,53 @@
             NameTextBox.ForeColor = Color.White;
             NameTextBox.Location = new Point(12, 12);
             NameTextBox.Name = "NameTextBox";
-            NameTextBox.Size = new Size(253, 27);
+            NameTextBox.Size = new Size(271, 27);
             NameTextBox.TabIndex = 26;
             NameTextBox.TextChanged += NameTextBox_TextChanged;
-            // 
-            // FontComboBox
-            // 
-            FontComboBox.BackColor = Color.FromArgb(33, 37, 41);
-            FontComboBox.ForeColor = Color.White;
-            FontComboBox.FormattingEnabled = true;
-            FontComboBox.Items.AddRange(new object[] { "Arial" });
-            FontComboBox.Location = new Point(12, 45);
-            FontComboBox.Name = "FontComboBox";
-            FontComboBox.Size = new Size(253, 28);
-            FontComboBox.TabIndex = 27;
-            FontComboBox.Text = "Arial";
             // 
             // CharacterSizeBox
             // 
             CharacterSizeBox.BackColor = Color.FromArgb(33, 37, 41);
             CharacterSizeBox.BorderStyle = BorderStyle.FixedSingle;
             CharacterSizeBox.ForeColor = Color.White;
-            CharacterSizeBox.Location = new Point(12, 79);
+            CharacterSizeBox.Location = new Point(12, 80);
             CharacterSizeBox.Name = "CharacterSizeBox";
-            CharacterSizeBox.Size = new Size(253, 27);
+            CharacterSizeBox.Size = new Size(271, 27);
             CharacterSizeBox.TabIndex = 28;
             CharacterSizeBox.TextAlign = HorizontalAlignment.Center;
             CharacterSizeBox.ValueChanged += CharacterSizeBox_ValueChanged;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = ImageList.font;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox1.Location = new Point(12, 45);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(28, 28);
+            pictureBox1.TabIndex = 30;
+            pictureBox1.TabStop = false;
+            // 
+            // SelectFileButton
+            // 
+            SelectFileButton.BackColor = Color.FromArgb(33, 37, 41);
+            SelectFileButton.FlatStyle = FlatStyle.Flat;
+            SelectFileButton.Location = new Point(46, 45);
+            SelectFileButton.Name = "SelectFileButton";
+            SelectFileButton.Size = new Size(237, 29);
+            SelectFileButton.TabIndex = 31;
+            SelectFileButton.Text = "Select";
+            SelectFileButton.UseVisualStyleBackColor = false;
+            SelectFileButton.Click += SelectFileButton_Click;
             // 
             // GUIText
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(52, 58, 64);
-            ClientSize = new Size(277, 389);
+            ClientSize = new Size(295, 364);
+            Controls.Add(SelectFileButton);
+            Controls.Add(pictureBox1);
             Controls.Add(CharacterSizeBox);
-            Controls.Add(FontComboBox);
             Controls.Add(NameTextBox);
             ForeColor = Color.White;
             FormBorderStyle = FormBorderStyle.None;
@@ -84,13 +97,15 @@
             Text = "GUIText";
             Shown += GUIText_Shown;
             ((System.ComponentModel.ISupportInitialize)CharacterSizeBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
         public TextBox NameTextBox;
-        private ComboBox FontComboBox;
         private NumericUpDown CharacterSizeBox;
+        private PictureBox pictureBox1;
+        private Button SelectFileButton;
     }
 }

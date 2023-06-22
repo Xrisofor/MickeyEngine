@@ -36,6 +36,7 @@ namespace Launcher.Forms
         List<string> ProjectFolderDirs = new List<string> {
             "content",
             "content/images",
+            "content/scripts",
             "content/audio",
             "content/maps",
             "plugins",
@@ -54,7 +55,7 @@ namespace Launcher.Forms
                     Directory.CreateDirectory($@"{addProject.Folder}\{addProject.ProjName}\{ProjectFolderDirs[i]}");
                 }
 
-                Structur structur = new Structur(addProject.ProjName, $@"{addProject.Folder}\{addProject.ProjName}\content\images\sprites.json");
+                Structur structur = new Structur(addProject.ProjName, $@"{addProject.Folder}\{addProject.ProjName}\content\images\sprites.json", $@"{addProject.Folder}\{addProject.ProjName}\content\audio\audios.json", $@"{addProject.Folder}\{addProject.ProjName}\content\fonts.json");
 
                 using (StreamWriter file = File.CreateText($@"{addProject.Folder}\{addProject.ProjName}\info.json"))
                 {

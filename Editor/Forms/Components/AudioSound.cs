@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Editor.App;
+﻿using Editor.App;
+using Editor.App.Forms;
 
-namespace Editor.Forms.Components
+namespace Editor.Components
 {
     public partial class AudioSound : Form
     {
@@ -22,16 +14,19 @@ namespace Editor.Forms.Components
 
         private void SelectFileButton_Click(object sender, EventArgs e)
         {
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            if (Program.MainForm.ManagerListBox.SelectedItem != null)
             {
-                if (audioSource != null) audioSource.Stop(); StopButton.Enabled = false;
-                audioSource = new Engine.Classes.Components.AudioSource(comboBox1.Text, openFileDialog1.FileName);
-                FileTextBox.Text = openFileDialog1.FileName;
-                audioSource.File = openFileDialog1.FileName;
-                Program.Form2.GameObjects[Program.Form2.ListIndex].Components[0] = audioSource;
-                PlayButton.Enabled = true;
-                audioSource.Type = comboBox1.Text;
-                audioSource.File = openFileDialog1.FileName;
+                SpriteManager spriteManager = new SpriteManager(ManagerType.Audio);
+                if (spriteManager.ShowDialog() == DialogResult.OK)
+                {
+                    if (audioSource != null) audioSource.Stop(); StopButton.Enabled = false;
+                    audioSource = new Engine.Classes.Components.AudioSource(comboBox1.Text, MainForm.Audio[spriteManager.SelectedIndex].Path);
+                    FileTextBox.Text = MainForm.Audio[spriteManager.SelectedIndex].Path;
+                    audioSource.Type = comboBox1.Text;
+                    audioSource.File = MainForm.Audio[spriteManager.SelectedIndex].Path;
+                    MainForm.GameObjects[Program.MainForm.ManagerListBox.SelectedIndex].Components[0] = audioSource;
+                    PlayButton.Enabled = true;
+                }
             }
         }
 

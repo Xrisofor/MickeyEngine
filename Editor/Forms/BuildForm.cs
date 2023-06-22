@@ -2,7 +2,6 @@
 using Encryption;
 using System.Windows.Forms;
 using Engine.Classes.Components;
-using Editor.Forms.Components;
 using SFML.System;
 using Editor.App;
 

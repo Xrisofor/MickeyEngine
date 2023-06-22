@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            UpdateLNButton = new Button();
+            NewVersionLabel = new Label();
             EngineButton = new Button();
             ProjectsButton = new Button();
             NewsButton = new Button();
             label1 = new Label();
-            label2 = new Label();
             panel2 = new Panel();
+            label2 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -42,6 +44,8 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(31, 31, 31);
+            panel1.Controls.Add(UpdateLNButton);
+            panel1.Controls.Add(NewVersionLabel);
             panel1.Controls.Add(EngineButton);
             panel1.Controls.Add(ProjectsButton);
             panel1.Controls.Add(NewsButton);
@@ -51,6 +55,31 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(248, 661);
             panel1.TabIndex = 0;
+            // 
+            // UpdateLNButton
+            // 
+            UpdateLNButton.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            UpdateLNButton.FlatStyle = FlatStyle.Flat;
+            UpdateLNButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            UpdateLNButton.Location = new Point(12, 610);
+            UpdateLNButton.Name = "UpdateLNButton";
+            UpdateLNButton.Size = new Size(223, 39);
+            UpdateLNButton.TabIndex = 5;
+            UpdateLNButton.Text = "Update";
+            UpdateLNButton.UseVisualStyleBackColor = true;
+            UpdateLNButton.Visible = false;
+            UpdateLNButton.Click += UpdateLNButton_Click;
+            // 
+            // NewVersionLabel
+            // 
+            NewVersionLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            NewVersionLabel.Location = new Point(12, 507);
+            NewVersionLabel.Name = "NewVersionLabel";
+            NewVersionLabel.Size = new Size(223, 100);
+            NewVersionLabel.TabIndex = 4;
+            NewVersionLabel.Text = "New Launcher version available!";
+            NewVersionLabel.TextAlign = ContentAlignment.MiddleCenter;
+            NewVersionLabel.Visible = false;
             // 
             // EngineButton
             // 
@@ -102,17 +131,6 @@
             label1.Text = "Mickey Engine";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label2
-            // 
-            label2.Dock = DockStyle.Fill;
-            label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(0, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(882, 661);
-            label2.TabIndex = 1;
-            label2.Text = "We couldn't find your projects, create a new project or add them manually";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // panel2
             // 
             panel2.Controls.Add(label2);
@@ -121,6 +139,17 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(882, 661);
             panel2.TabIndex = 1;
+            // 
+            // label2
+            // 
+            label2.Dock = DockStyle.Fill;
+            label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(0, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(882, 661);
+            label2.TabIndex = 0;
+            label2.Text = "Did you know that to create a project you first need to download an engine?";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Main
             // 
@@ -143,10 +172,12 @@
 
         private Panel panel1;
         private Label label1;
-        private Label label2;
         private Button NewsButton;
         private Button EngineButton;
         private Button ProjectsButton;
         private Panel panel2;
+        private Label NewVersionLabel;
+        private Button UpdateLNButton;
+        private Label label2;
     }
 }

@@ -113,6 +113,16 @@ namespace Editor {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap audio_100px {
+            get {
+                object obj = ResourceManager.GetObject("audio_100px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cube_ryb {
             get {
                 object obj = ResourceManager.GetObject("cube_ryb", resourceCulture);
@@ -133,9 +143,29 @@ namespace Editor {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap font {
+            get {
+                object obj = ResourceManager.GetObject("font", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logic {
             get {
                 object obj = ResourceManager.GetObject("logic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plugin {
+            get {
+                object obj = ResourceManager.GetObject("plugin", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -206,6 +236,16 @@ namespace Editor {
         internal static System.Drawing.Bitmap size {
             get {
                 object obj = ResourceManager.GetObject("size", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap splash_screen {
+            get {
+                object obj = ResourceManager.GetObject("splash_screen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

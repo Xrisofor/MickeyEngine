@@ -10,6 +10,12 @@
     <SignAssembly>False</SignAssembly>
     <BaseOutputPath>bin\</BaseOutputPath>
     <AssemblyName>launcher</AssemblyName>
+    <Version>0.1.1.0</Version>
+    <Title>Mickey Launcher</Title>
+    <PackageId>Mickey Launcher</PackageId>
+    <Authors>Xrisofor</Authors>
+    <Company>Crucial Experiment</Company>
+    <Product>Mickey Engine</Product>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

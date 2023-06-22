@@ -1,4 +1,4 @@
-﻿namespace Editor.Forms.Components
+﻿namespace Editor.Components
 {
     partial class PlayerController
     {
@@ -28,120 +28,115 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SpeedTextBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.HorizontalTextBox = new System.Windows.Forms.TextBox();
-            this.VerticalTextBox = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.SuspendLayout();
+            SpeedTextBox = new TextBox();
+            label2 = new Label();
+            label1 = new Label();
+            HorizontalTextBox = new TextBox();
+            VerticalTextBox = new TextBox();
+            label3 = new Label();
+            label4 = new Label();
+            SuspendLayout();
             // 
             // SpeedTextBox
             // 
-            this.SpeedTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.SpeedTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SpeedTextBox.ForeColor = System.Drawing.Color.White;
-            this.SpeedTextBox.Location = new System.Drawing.Point(12, 34);
-            this.SpeedTextBox.Name = "SpeedTextBox";
-            this.SpeedTextBox.Size = new System.Drawing.Size(253, 27);
-            this.SpeedTextBox.TabIndex = 24;
-            this.SpeedTextBox.Text = "0";
-            this.SpeedTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.SpeedTextBox.TextChanged += new System.EventHandler(this.SpeedTextBox_TextChanged);
-            this.SpeedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SpeedTextBox_KeyPress);
+            SpeedTextBox.BackColor = Color.FromArgb(33, 37, 41);
+            SpeedTextBox.BorderStyle = BorderStyle.FixedSingle;
+            SpeedTextBox.ForeColor = Color.White;
+            SpeedTextBox.Location = new Point(12, 34);
+            SpeedTextBox.Name = "SpeedTextBox";
+            SpeedTextBox.Size = new Size(271, 27);
+            SpeedTextBox.TabIndex = 24;
+            SpeedTextBox.Text = "0";
+            SpeedTextBox.TextAlign = HorizontalAlignment.Center;
+            SpeedTextBox.TextChanged += SpeedTextBox_TextChanged;
+            SpeedTextBox.KeyPress += SpeedTextBox_KeyPress;
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.Location = new System.Drawing.Point(12, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(253, 22);
-            this.label2.TabIndex = 25;
-            this.label2.Text = "Speed";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label2.Location = new Point(12, 9);
+            label2.Name = "label2";
+            label2.Size = new Size(271, 22);
+            label2.TabIndex = 25;
+            label2.Text = "Speed";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.Location = new System.Drawing.Point(12, 67);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(253, 22);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "Controllers";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label1.Location = new Point(12, 67);
+            label1.Name = "label1";
+            label1.Size = new Size(271, 22);
+            label1.TabIndex = 26;
+            label1.Text = "Controllers";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // HorizontalTextBox
             // 
-            this.HorizontalTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.HorizontalTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.HorizontalTextBox.ForeColor = System.Drawing.Color.White;
-            this.HorizontalTextBox.Location = new System.Drawing.Point(111, 95);
-            this.HorizontalTextBox.Name = "HorizontalTextBox";
-            this.HorizontalTextBox.Size = new System.Drawing.Size(154, 27);
-            this.HorizontalTextBox.TabIndex = 27;
-            this.HorizontalTextBox.Text = "Horizontal";
-            this.HorizontalTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.HorizontalTextBox.TextChanged += new System.EventHandler(this.HorizontalTextBox_TextChanged);
+            HorizontalTextBox.BackColor = Color.FromArgb(33, 37, 41);
+            HorizontalTextBox.BorderStyle = BorderStyle.FixedSingle;
+            HorizontalTextBox.ForeColor = Color.White;
+            HorizontalTextBox.Location = new Point(129, 96);
+            HorizontalTextBox.Name = "HorizontalTextBox";
+            HorizontalTextBox.Size = new Size(154, 27);
+            HorizontalTextBox.TabIndex = 27;
+            HorizontalTextBox.Text = "Horizontal";
+            HorizontalTextBox.TextAlign = HorizontalAlignment.Center;
+            HorizontalTextBox.TextChanged += HorizontalTextBox_TextChanged;
             // 
             // VerticalTextBox
             // 
-            this.VerticalTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.VerticalTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.VerticalTextBox.ForeColor = System.Drawing.Color.White;
-            this.VerticalTextBox.Location = new System.Drawing.Point(111, 129);
-            this.VerticalTextBox.Name = "VerticalTextBox";
-            this.VerticalTextBox.Size = new System.Drawing.Size(154, 27);
-            this.VerticalTextBox.TabIndex = 28;
-            this.VerticalTextBox.Text = "Vertical";
-            this.VerticalTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.VerticalTextBox.TextChanged += new System.EventHandler(this.VerticalTextBox_TextChanged);
+            VerticalTextBox.BackColor = Color.FromArgb(33, 37, 41);
+            VerticalTextBox.BorderStyle = BorderStyle.FixedSingle;
+            VerticalTextBox.ForeColor = Color.White;
+            VerticalTextBox.Location = new Point(129, 129);
+            VerticalTextBox.Name = "VerticalTextBox";
+            VerticalTextBox.Size = new Size(154, 27);
+            VerticalTextBox.TabIndex = 28;
+            VerticalTextBox.Text = "Vertical";
+            VerticalTextBox.TextAlign = HorizontalAlignment.Center;
+            VerticalTextBox.TextChanged += VerticalTextBox_TextChanged;
             // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.Location = new System.Drawing.Point(12, 96);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 22);
-            this.label3.TabIndex = 29;
-            this.label3.Text = "Horizontal";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label3.Location = new Point(12, 96);
+            label3.Name = "label3";
+            label3.Size = new Size(111, 22);
+            label3.TabIndex = 29;
+            label3.Text = "Horizontal";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.Location = new System.Drawing.Point(12, 130);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 22);
-            this.label4.TabIndex = 30;
-            this.label4.Text = "Vertical";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label4.Location = new Point(12, 130);
+            label4.Name = "label4";
+            label4.Size = new Size(111, 22);
+            label4.TabIndex = 30;
+            label4.Text = "Vertical";
+            label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // PlayerController
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(277, 389);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.VerticalTextBox);
-            this.Controls.Add(this.HorizontalTextBox);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.SpeedTextBox);
-            this.ForeColor = System.Drawing.Color.White;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "PlayerController";
-            this.Text = "PlayerController";
-            this.Shown += new System.EventHandler(this.PlayerController_Shown);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(52, 58, 64);
+            ClientSize = new Size(295, 364);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(VerticalTextBox);
+            Controls.Add(HorizontalTextBox);
+            Controls.Add(label1);
+            Controls.Add(label2);
+            Controls.Add(SpeedTextBox);
+            ForeColor = Color.White;
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "PlayerController";
+            Text = "PlayerController";
+            Shown += PlayerController_Shown;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

@@ -5166,10 +5166,10 @@
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
-    "version": "1.0.0",
+    "version": "0.1.1",
     "restore": {
       "projectUniqueName": "C:\\Users\\arabo\\Documents\\Visual Studio 2022\\Engine\\Launcher\\Launcher.csproj",
-      "projectName": "launcher",
+      "projectName": "Mickey Launcher",
       "projectPath": "C:\\Users\\arabo\\Documents\\Visual Studio 2022\\Engine\\Launcher\\Launcher.csproj",
       "packagesPath": "C:\\Users\\arabo\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\arabo\\Documents\\Visual Studio 2022\\Engine\\Launcher\\obj\\",

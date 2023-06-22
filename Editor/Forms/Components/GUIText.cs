@@ -1,16 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Editor.App.Forms;
 using Editor.App;
-using SFML.Graphics;
+using Engine.Classes.Components;
 
-namespace Editor.Forms.Components
+namespace Editor.Components
 {
     public partial class GUIText : Form
     {
@@ -24,8 +16,6 @@ namespace Editor.Forms.Components
         private void GUIText_Shown(object sender, EventArgs e)
         {
             NameTextBox.Text = guiText.Text.DisplayedString;
-            FontComboBox.Text = string.Empty;
-            FontComboBox.SelectedText = guiText.Text.Font.GetInfo().Family;
             CharacterSizeBox.Value = guiText.Text.CharacterSize;
         }
 
@@ -37,6 +27,20 @@ namespace Editor.Forms.Components
         private void CharacterSizeBox_ValueChanged(object sender, EventArgs e)
         {
             guiText.Text.CharacterSize = (uint)CharacterSizeBox.Value;
+        }
+
+        private void SelectFileButton_Click(object sender, EventArgs e)
+        {
+            if (Program.MainForm.ManagerListBox.SelectedItem != null)
+            {
+                SpriteManager fontManager = new SpriteManager(ManagerType.Font);
+                if (fontManager.ShowDialog() == DialogResult.OK)
+                {
+                    guiText.Text = new SFML.Graphics.Text(NameTextBox.Text, new SFML.Graphics.Font(MainForm.Fonts[fontManager.SelectedIndex].Path), (uint)CharacterSizeBox.Value);
+                    guiText.FontName = Path.GetFileName(MainForm.Fonts[fontManager.SelectedIndex].Path);
+                    MainForm.GameObjects[Program.MainForm.ManagerListBox.SelectedIndex].Components[0] = guiText;
+                }
+            }
         }
     }
 }

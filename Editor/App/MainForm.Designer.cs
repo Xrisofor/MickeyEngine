@@ -31,7 +31,7 @@
             panel1 = new Panel();
             panel2 = new Panel();
             ConsoleListBox = new ListBox();
-            label6 = new Label();
+            ConsoleLabel = new Label();
             ManagerListBox = new ListBox();
             label2 = new Label();
             sfmlPanel = new Panel();
@@ -66,6 +66,11 @@
             CloseButton_TSM = new ToolStripMenuItem();
             toolStripSeparator3 = new ToolStripSeparator();
             ExitButton_TSM = new ToolStripMenuItem();
+            viewToolStripMenuItem = new ToolStripMenuItem();
+            ShowConsole_TSM = new ToolStripMenuItem();
+            toolStripSeparator7 = new ToolStripSeparator();
+            ShowFPS_TSM = new ToolStripMenuItem();
+            ResetCSize_TSM = new ToolStripMenuItem();
             mapToolStripMenuItem = new ToolStripMenuItem();
             ShowGrid_TSM = new ToolStripMenuItem();
             gridSettingsToolStripMenuItem = new ToolStripMenuItem();
@@ -79,6 +84,9 @@
             GridSize50_TSM = new ToolStripMenuItem();
             GridColorButton_TSM = new ToolStripMenuItem();
             toolStripSeparator6 = new ToolStripSeparator();
+            AudioManager_TSM = new ToolStripMenuItem();
+            FontsManager_TSM = new ToolStripMenuItem();
+            PluginsManager_TSM = new ToolStripMenuItem();
             SpriteManager_TSM = new ToolStripMenuItem();
             gameObjectToolStripMenuItem = new ToolStripMenuItem();
             AddGameObjectButton_TSM = new ToolStripMenuItem();
@@ -126,7 +134,7 @@
             // panel2
             // 
             panel2.Controls.Add(ConsoleListBox);
-            panel2.Controls.Add(label6);
+            panel2.Controls.Add(ConsoleLabel);
             panel2.Dock = DockStyle.Bottom;
             panel2.Location = new Point(0, 549);
             panel2.Name = "panel2";
@@ -135,6 +143,7 @@
             // 
             // ConsoleListBox
             // 
+            ConsoleListBox.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             ConsoleListBox.BackColor = Color.FromArgb(33, 37, 41);
             ConsoleListBox.BorderStyle = BorderStyle.FixedSingle;
             ConsoleListBox.ForeColor = Color.White;
@@ -146,16 +155,16 @@
             ConsoleListBox.Size = new Size(270, 122);
             ConsoleListBox.TabIndex = 3;
             // 
-            // label6
+            // ConsoleLabel
             // 
-            label6.BackColor = Color.FromArgb(33, 37, 41);
-            label6.Dock = DockStyle.Top;
-            label6.Location = new Point(0, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(295, 28);
-            label6.TabIndex = 2;
-            label6.Text = "Console";
-            label6.TextAlign = ContentAlignment.MiddleCenter;
+            ConsoleLabel.BackColor = Color.FromArgb(33, 37, 41);
+            ConsoleLabel.Dock = DockStyle.Top;
+            ConsoleLabel.Location = new Point(0, 0);
+            ConsoleLabel.Name = "ConsoleLabel";
+            ConsoleLabel.Size = new Size(295, 28);
+            ConsoleLabel.TabIndex = 2;
+            ConsoleLabel.Text = "Console";
+            ConsoleLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // ManagerListBox
             // 
@@ -441,7 +450,7 @@
             // 
             menuStrip1.BackColor = Color.FromArgb(33, 37, 41);
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, mapToolStripMenuItem, gameObjectToolStripMenuItem, helpToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, viewToolStripMenuItem, mapToolStripMenuItem, gameObjectToolStripMenuItem, helpToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(1600, 28);
@@ -461,7 +470,7 @@
             NewButton_TSM.BackColor = Color.FromArgb(33, 37, 41);
             NewButton_TSM.ForeColor = Color.White;
             NewButton_TSM.Name = "NewButton_TSM";
-            NewButton_TSM.Size = new Size(224, 26);
+            NewButton_TSM.Size = new Size(141, 26);
             NewButton_TSM.Text = "New";
             NewButton_TSM.Click += NewButton_TSM_Click;
             // 
@@ -470,14 +479,14 @@
             OpenButton_TSM.BackColor = Color.FromArgb(33, 37, 41);
             OpenButton_TSM.ForeColor = Color.White;
             OpenButton_TSM.Name = "OpenButton_TSM";
-            OpenButton_TSM.Size = new Size(224, 26);
+            OpenButton_TSM.Size = new Size(141, 26);
             OpenButton_TSM.Text = "Open";
             OpenButton_TSM.Click += OpenButton_TSM_Click;
             // 
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(221, 6);
+            toolStripSeparator1.Size = new Size(138, 6);
             toolStripSeparator1.Paint += toolStripSeparator1_Paint;
             // 
             // SaveButton_TSM
@@ -486,7 +495,7 @@
             SaveButton_TSM.Enabled = false;
             SaveButton_TSM.ForeColor = Color.White;
             SaveButton_TSM.Name = "SaveButton_TSM";
-            SaveButton_TSM.Size = new Size(224, 26);
+            SaveButton_TSM.Size = new Size(141, 26);
             SaveButton_TSM.Text = "Save";
             SaveButton_TSM.Click += SaveButton_TSM_Click;
             // 
@@ -496,14 +505,14 @@
             SaveAsButton_TSM.Enabled = false;
             SaveAsButton_TSM.ForeColor = Color.White;
             SaveAsButton_TSM.Name = "SaveAsButton_TSM";
-            SaveAsButton_TSM.Size = new Size(224, 26);
+            SaveAsButton_TSM.Size = new Size(141, 26);
             SaveAsButton_TSM.Text = "Save as";
             SaveAsButton_TSM.Click += SaveAsButton_TSM_Click;
             // 
             // toolStripSeparator2
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(221, 6);
+            toolStripSeparator2.Size = new Size(138, 6);
             toolStripSeparator2.Paint += toolStripSeparator2_Paint;
             // 
             // CloseButton_TSM
@@ -512,14 +521,14 @@
             CloseButton_TSM.Enabled = false;
             CloseButton_TSM.ForeColor = Color.White;
             CloseButton_TSM.Name = "CloseButton_TSM";
-            CloseButton_TSM.Size = new Size(224, 26);
+            CloseButton_TSM.Size = new Size(141, 26);
             CloseButton_TSM.Text = "Close";
             CloseButton_TSM.Click += CloseButton_TSM_Click;
             // 
             // toolStripSeparator3
             // 
             toolStripSeparator3.Name = "toolStripSeparator3";
-            toolStripSeparator3.Size = new Size(221, 6);
+            toolStripSeparator3.Size = new Size(138, 6);
             toolStripSeparator3.Paint += toolStripSeparator3_Paint;
             // 
             // ExitButton_TSM
@@ -527,13 +536,56 @@
             ExitButton_TSM.BackColor = Color.FromArgb(33, 37, 41);
             ExitButton_TSM.ForeColor = Color.White;
             ExitButton_TSM.Name = "ExitButton_TSM";
-            ExitButton_TSM.Size = new Size(224, 26);
+            ExitButton_TSM.Size = new Size(141, 26);
             ExitButton_TSM.Text = "Exit";
             ExitButton_TSM.Click += ExitButton_TSM_Click;
             // 
+            // viewToolStripMenuItem
+            // 
+            viewToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { ShowConsole_TSM, toolStripSeparator7, ShowFPS_TSM, ResetCSize_TSM });
+            viewToolStripMenuItem.ForeColor = Color.White;
+            viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            viewToolStripMenuItem.Size = new Size(55, 24);
+            viewToolStripMenuItem.Text = "View";
+            // 
+            // ShowConsole_TSM
+            // 
+            ShowConsole_TSM.BackColor = Color.FromArgb(33, 37, 41);
+            ShowConsole_TSM.Checked = true;
+            ShowConsole_TSM.CheckState = CheckState.Checked;
+            ShowConsole_TSM.ForeColor = Color.White;
+            ShowConsole_TSM.Name = "ShowConsole_TSM";
+            ShowConsole_TSM.Size = new Size(214, 26);
+            ShowConsole_TSM.Text = "Show Console";
+            ShowConsole_TSM.Click += ShowConsole_TSM_Click;
+            // 
+            // toolStripSeparator7
+            // 
+            toolStripSeparator7.Name = "toolStripSeparator7";
+            toolStripSeparator7.Size = new Size(211, 6);
+            toolStripSeparator7.Paint += toolStripSeparator7_Paint;
+            // 
+            // ShowFPS_TSM
+            // 
+            ShowFPS_TSM.BackColor = Color.FromArgb(33, 37, 41);
+            ShowFPS_TSM.ForeColor = Color.White;
+            ShowFPS_TSM.Name = "ShowFPS_TSM";
+            ShowFPS_TSM.Size = new Size(214, 26);
+            ShowFPS_TSM.Text = "Show FPS";
+            ShowFPS_TSM.Click += ShowFPS_TSM_Click;
+            // 
+            // ResetCSize_TSM
+            // 
+            ResetCSize_TSM.BackColor = Color.FromArgb(33, 37, 41);
+            ResetCSize_TSM.ForeColor = Color.White;
+            ResetCSize_TSM.Name = "ResetCSize_TSM";
+            ResetCSize_TSM.Size = new Size(214, 26);
+            ResetCSize_TSM.Text = "Reset Camera Size";
+            ResetCSize_TSM.Click += ResetCSize_TSM_Click;
+            // 
             // mapToolStripMenuItem
             // 
-            mapToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { ShowGrid_TSM, gridSettingsToolStripMenuItem, toolStripSeparator6, SpriteManager_TSM });
+            mapToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { ShowGrid_TSM, gridSettingsToolStripMenuItem, toolStripSeparator6, AudioManager_TSM, FontsManager_TSM, PluginsManager_TSM, SpriteManager_TSM });
             mapToolStripMenuItem.ForeColor = Color.White;
             mapToolStripMenuItem.Name = "mapToolStripMenuItem";
             mapToolStripMenuItem.Size = new Size(53, 24);
@@ -546,7 +598,7 @@
             ShowGrid_TSM.CheckState = CheckState.Checked;
             ShowGrid_TSM.ForeColor = Color.White;
             ShowGrid_TSM.Name = "ShowGrid_TSM";
-            ShowGrid_TSM.Size = new Size(194, 26);
+            ShowGrid_TSM.Size = new Size(202, 26);
             ShowGrid_TSM.Text = "Show Grid";
             ShowGrid_TSM.Click += ShowGrid_TSM_Click;
             // 
@@ -556,7 +608,7 @@
             gridSettingsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { sizeToolStripMenuItem, GridColorButton_TSM });
             gridSettingsToolStripMenuItem.ForeColor = Color.White;
             gridSettingsToolStripMenuItem.Name = "gridSettingsToolStripMenuItem";
-            gridSettingsToolStripMenuItem.Size = new Size(194, 26);
+            gridSettingsToolStripMenuItem.Size = new Size(202, 26);
             gridSettingsToolStripMenuItem.Text = "Grid Settings";
             // 
             // sizeToolStripMenuItem
@@ -643,15 +695,42 @@
             // toolStripSeparator6
             // 
             toolStripSeparator6.Name = "toolStripSeparator6";
-            toolStripSeparator6.Size = new Size(191, 6);
+            toolStripSeparator6.Size = new Size(199, 6);
             toolStripSeparator6.Paint += toolStripSeparator6_Paint;
+            // 
+            // AudioManager_TSM
+            // 
+            AudioManager_TSM.BackColor = Color.FromArgb(33, 37, 41);
+            AudioManager_TSM.ForeColor = Color.White;
+            AudioManager_TSM.Name = "AudioManager_TSM";
+            AudioManager_TSM.Size = new Size(202, 26);
+            AudioManager_TSM.Text = "Audio Manager";
+            AudioManager_TSM.Click += AudioManager_TSM_Click;
+            // 
+            // FontsManager_TSM
+            // 
+            FontsManager_TSM.BackColor = Color.FromArgb(33, 37, 41);
+            FontsManager_TSM.ForeColor = Color.White;
+            FontsManager_TSM.Name = "FontsManager_TSM";
+            FontsManager_TSM.Size = new Size(202, 26);
+            FontsManager_TSM.Text = "Fonts Manager";
+            FontsManager_TSM.Click += FontsManager_TSM_Click;
+            // 
+            // PluginsManager_TSM
+            // 
+            PluginsManager_TSM.BackColor = Color.FromArgb(33, 37, 41);
+            PluginsManager_TSM.ForeColor = Color.White;
+            PluginsManager_TSM.Name = "PluginsManager_TSM";
+            PluginsManager_TSM.Size = new Size(202, 26);
+            PluginsManager_TSM.Text = "Plugins Manager";
+            PluginsManager_TSM.Click += PluginsManager_TSM_Click;
             // 
             // SpriteManager_TSM
             // 
             SpriteManager_TSM.BackColor = Color.FromArgb(33, 37, 41);
             SpriteManager_TSM.ForeColor = Color.White;
             SpriteManager_TSM.Name = "SpriteManager_TSM";
-            SpriteManager_TSM.Size = new Size(194, 26);
+            SpriteManager_TSM.Size = new Size(202, 26);
             SpriteManager_TSM.Text = "Sprite Manager";
             SpriteManager_TSM.Click += SpriteManager_TSM_Click;
             // 
@@ -670,7 +749,7 @@
             AddGameObjectButton_TSM.Enabled = false;
             AddGameObjectButton_TSM.ForeColor = Color.White;
             AddGameObjectButton_TSM.Name = "AddGameObjectButton_TSM";
-            AddGameObjectButton_TSM.Size = new Size(146, 26);
+            AddGameObjectButton_TSM.Size = new Size(224, 26);
             AddGameObjectButton_TSM.Text = "Add";
             // 
             // AddPlugGameObjectButton_TSM
@@ -679,7 +758,7 @@
             AddPlugGameObjectButton_TSM.DropDownItems.AddRange(new ToolStripItem[] { noneToolStripMenuItem });
             AddPlugGameObjectButton_TSM.ForeColor = Color.White;
             AddPlugGameObjectButton_TSM.Name = "AddPlugGameObjectButton_TSM";
-            AddPlugGameObjectButton_TSM.Size = new Size(202, 26);
+            AddPlugGameObjectButton_TSM.Size = new Size(224, 26);
             AddPlugGameObjectButton_TSM.Text = "Plugin";
             // 
             // noneToolStripMenuItem
@@ -693,7 +772,7 @@
             // toolStripSeparator5
             // 
             toolStripSeparator5.Name = "toolStripSeparator5";
-            toolStripSeparator5.Size = new Size(199, 6);
+            toolStripSeparator5.Size = new Size(221, 6);
             toolStripSeparator5.Paint += toolStripSeparator5_Paint;
             // 
             // AddASGameObjectButton_TSM
@@ -701,7 +780,7 @@
             AddASGameObjectButton_TSM.BackColor = Color.FromArgb(33, 37, 41);
             AddASGameObjectButton_TSM.ForeColor = Color.White;
             AddASGameObjectButton_TSM.Name = "AddASGameObjectButton_TSM";
-            AddASGameObjectButton_TSM.Size = new Size(202, 26);
+            AddASGameObjectButton_TSM.Size = new Size(224, 26);
             AddASGameObjectButton_TSM.Text = "Audio Source";
             AddASGameObjectButton_TSM.Click += AddASGameObjectButton_TSM_Click;
             // 
@@ -710,7 +789,7 @@
             AddAGameObjectButton_TSM.BackColor = Color.FromArgb(33, 37, 41);
             AddAGameObjectButton_TSM.ForeColor = Color.White;
             AddAGameObjectButton_TSM.Name = "AddAGameObjectButton_TSM";
-            AddAGameObjectButton_TSM.Size = new Size(202, 26);
+            AddAGameObjectButton_TSM.Size = new Size(224, 26);
             AddAGameObjectButton_TSM.Text = "Animation";
             // 
             // AddDLGameObjectButton_TSM
@@ -718,7 +797,7 @@
             AddDLGameObjectButton_TSM.BackColor = Color.FromArgb(33, 37, 41);
             AddDLGameObjectButton_TSM.ForeColor = Color.White;
             AddDLGameObjectButton_TSM.Name = "AddDLGameObjectButton_TSM";
-            AddDLGameObjectButton_TSM.Size = new Size(202, 26);
+            AddDLGameObjectButton_TSM.Size = new Size(224, 26);
             AddDLGameObjectButton_TSM.Text = "Dialog";
             AddDLGameObjectButton_TSM.Click += AddDLGameObjectButton_TSM_Click;
             // 
@@ -727,7 +806,7 @@
             AddLGGameObjectButton_TSM.BackColor = Color.FromArgb(33, 37, 41);
             AddLGGameObjectButton_TSM.ForeColor = Color.White;
             AddLGGameObjectButton_TSM.Name = "AddLGGameObjectButton_TSM";
-            AddLGGameObjectButton_TSM.Size = new Size(202, 26);
+            AddLGGameObjectButton_TSM.Size = new Size(224, 26);
             AddLGGameObjectButton_TSM.Text = "Logic";
             AddLGGameObjectButton_TSM.Click += AddLGGameObjectButton_TSM_Click;
             // 
@@ -736,7 +815,7 @@
             AddPCGameObjectButton_TSM.BackColor = Color.FromArgb(33, 37, 41);
             AddPCGameObjectButton_TSM.ForeColor = Color.White;
             AddPCGameObjectButton_TSM.Name = "AddPCGameObjectButton_TSM";
-            AddPCGameObjectButton_TSM.Size = new Size(202, 26);
+            AddPCGameObjectButton_TSM.Size = new Size(224, 26);
             AddPCGameObjectButton_TSM.Text = "Player Controller";
             AddPCGameObjectButton_TSM.Click += AddPCGameObjectButton_TSM_Click;
             // 
@@ -745,7 +824,7 @@
             AddPrefabGameObjectButton_TSM.BackColor = Color.FromArgb(33, 37, 41);
             AddPrefabGameObjectButton_TSM.ForeColor = Color.White;
             AddPrefabGameObjectButton_TSM.Name = "AddPrefabGameObjectButton_TSM";
-            AddPrefabGameObjectButton_TSM.Size = new Size(202, 26);
+            AddPrefabGameObjectButton_TSM.Size = new Size(224, 26);
             AddPrefabGameObjectButton_TSM.Text = "Prefab";
             AddPrefabGameObjectButton_TSM.Click += AddPrefabGameObjectButton_TSM_Click;
             // 
@@ -754,7 +833,7 @@
             AddSpriteGameObjectButton_TSM.BackColor = Color.FromArgb(33, 37, 41);
             AddSpriteGameObjectButton_TSM.ForeColor = Color.White;
             AddSpriteGameObjectButton_TSM.Name = "AddSpriteGameObjectButton_TSM";
-            AddSpriteGameObjectButton_TSM.Size = new Size(202, 26);
+            AddSpriteGameObjectButton_TSM.Size = new Size(224, 26);
             AddSpriteGameObjectButton_TSM.Text = "Sprite";
             AddSpriteGameObjectButton_TSM.Click += AddSpriteGameObjectButton_TSM_Click;
             // 
@@ -763,15 +842,16 @@
             AddSGameObjectButton_TSM.BackColor = Color.FromArgb(33, 37, 41);
             AddSGameObjectButton_TSM.ForeColor = Color.White;
             AddSGameObjectButton_TSM.Name = "AddSGameObjectButton_TSM";
-            AddSGameObjectButton_TSM.Size = new Size(202, 26);
+            AddSGameObjectButton_TSM.Size = new Size(224, 26);
             AddSGameObjectButton_TSM.Text = "Script";
+            AddSGameObjectButton_TSM.Click += AddSGameObjectButton_TSM_Click;
             // 
             // AddTextGameObjectButton_TSM
             // 
             AddTextGameObjectButton_TSM.BackColor = Color.FromArgb(33, 37, 41);
             AddTextGameObjectButton_TSM.ForeColor = Color.White;
             AddTextGameObjectButton_TSM.Name = "AddTextGameObjectButton_TSM";
-            AddTextGameObjectButton_TSM.Size = new Size(202, 26);
+            AddTextGameObjectButton_TSM.Size = new Size(224, 26);
             AddTextGameObjectButton_TSM.Text = "Text";
             AddTextGameObjectButton_TSM.Click += AddTextGameObjectButton_TSM_Click;
             // 
@@ -780,7 +860,7 @@
             AddTargetGameObjectButton_TSM.BackColor = Color.FromArgb(33, 37, 41);
             AddTargetGameObjectButton_TSM.ForeColor = Color.White;
             AddTargetGameObjectButton_TSM.Name = "AddTargetGameObjectButton_TSM";
-            AddTargetGameObjectButton_TSM.Size = new Size(202, 26);
+            AddTargetGameObjectButton_TSM.Size = new Size(224, 26);
             AddTargetGameObjectButton_TSM.Text = "Target";
             AddTargetGameObjectButton_TSM.Click += AddTargetGameObjectButton_TSM_Click;
             // 
@@ -790,8 +870,9 @@
             RemoveGameObjectButton_TSM.Enabled = false;
             RemoveGameObjectButton_TSM.ForeColor = Color.White;
             RemoveGameObjectButton_TSM.Name = "RemoveGameObjectButton_TSM";
-            RemoveGameObjectButton_TSM.Size = new Size(146, 26);
+            RemoveGameObjectButton_TSM.Size = new Size(224, 26);
             RemoveGameObjectButton_TSM.Text = "Remove";
+            RemoveGameObjectButton_TSM.Click += RemoveGameObjectButton_TSM_Click;
             // 
             // helpToolStripMenuItem
             // 
@@ -921,7 +1002,7 @@
         private ToolStripMenuItem AddPlugGameObjectButton_TSM;
         private ToolStripMenuItem noneToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator5;
-        private Label label6;
+        private Label ConsoleLabel;
         private Panel panel2;
         private ListBox ConsoleListBox;
         private ToolStripMenuItem AddSpriteGameObjectButton_TSM;
@@ -934,5 +1015,13 @@
         public ToolStripMenuItem CloseButton_TSM;
         public ToolStripMenuItem AddGameObjectButton_TSM;
         public ToolStripMenuItem RemoveGameObjectButton_TSM;
+        private ToolStripMenuItem PluginsManager_TSM;
+        private ToolStripMenuItem viewToolStripMenuItem;
+        private ToolStripMenuItem ShowFPS_TSM;
+        private ToolStripMenuItem ShowConsole_TSM;
+        private ToolStripSeparator toolStripSeparator7;
+        private ToolStripMenuItem ResetCSize_TSM;
+        private ToolStripMenuItem AudioManager_TSM;
+        private ToolStripMenuItem FontsManager_TSM;
     }
 }

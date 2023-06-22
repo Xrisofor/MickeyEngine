@@ -1,4 +1,4 @@
-﻿namespace Editor.Forms.Components
+﻿namespace Editor.Components
 {
     partial class ScriptComponent
     {
@@ -28,112 +28,100 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScriptComponent));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.FileTextBox = new System.Windows.Forms.TextBox();
-            this.ScriptTextBox = new FastColoredTextBoxNS.FastColoredTextBox();
-            this.EditButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ScriptTextBox)).BeginInit();
-            this.SuspendLayout();
+            pictureBox1 = new PictureBox();
+            FileTextBox = new TextBox();
+            ScriptTextBox = new FastColoredTextBoxNS.FastColoredTextBox();
+            EditButton = new Button();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ScriptTextBox).BeginInit();
+            SuspendLayout();
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::Editor.ImageList.file;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(27, 27);
-            this.pictureBox1.TabIndex = 25;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.BackgroundImage = ImageList.file;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox1.Location = new Point(12, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(27, 27);
+            pictureBox1.TabIndex = 25;
+            pictureBox1.TabStop = false;
             // 
             // FileTextBox
             // 
-            this.FileTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.FileTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FileTextBox.Enabled = false;
-            this.FileTextBox.ForeColor = System.Drawing.Color.White;
-            this.FileTextBox.Location = new System.Drawing.Point(45, 12);
-            this.FileTextBox.Name = "FileTextBox";
-            this.FileTextBox.ReadOnly = true;
-            this.FileTextBox.Size = new System.Drawing.Size(220, 27);
-            this.FileTextBox.TabIndex = 24;
+            FileTextBox.BackColor = Color.FromArgb(33, 37, 41);
+            FileTextBox.BorderStyle = BorderStyle.FixedSingle;
+            FileTextBox.Enabled = false;
+            FileTextBox.ForeColor = Color.White;
+            FileTextBox.Location = new Point(45, 12);
+            FileTextBox.Name = "FileTextBox";
+            FileTextBox.ReadOnly = true;
+            FileTextBox.Size = new Size(238, 27);
+            FileTextBox.TabIndex = 24;
             // 
             // ScriptTextBox
             // 
-            this.ScriptTextBox.AutoCompleteBracketsList = new char[] {
-        '(',
-        ')',
-        '{',
-        '}',
-        '[',
-        ']',
-        '\"',
-        '\"',
-        '\'',
-        '\''};
-            this.ScriptTextBox.AutoIndentCharsPatterns = "\r\n^\\s*[\\w\\.]+(\\s\\w+)?\\s*(?<range>=)\\s*(?<range>.+)\r\n";
-            this.ScriptTextBox.AutoScrollMinSize = new System.Drawing.Size(31, 18);
-            this.ScriptTextBox.BackBrush = null;
-            this.ScriptTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.ScriptTextBox.BracketsHighlightStrategy = FastColoredTextBoxNS.BracketsHighlightStrategy.Strategy2;
-            this.ScriptTextBox.CharHeight = 18;
-            this.ScriptTextBox.CharWidth = 10;
-            this.ScriptTextBox.CommentPrefix = "--";
-            this.ScriptTextBox.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.ScriptTextBox.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ScriptTextBox.IndentBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.ScriptTextBox.IsReplaceMode = false;
-            this.ScriptTextBox.Language = FastColoredTextBoxNS.Language.Lua;
-            this.ScriptTextBox.LeftBracket = '(';
-            this.ScriptTextBox.LeftBracket2 = '{';
-            this.ScriptTextBox.LineNumberColor = System.Drawing.Color.White;
-            this.ScriptTextBox.Location = new System.Drawing.Point(12, 45);
-            this.ScriptTextBox.Name = "ScriptTextBox";
-            this.ScriptTextBox.Paddings = new System.Windows.Forms.Padding(0);
-            this.ScriptTextBox.ReadOnly = true;
-            this.ScriptTextBox.RightBracket = ')';
-            this.ScriptTextBox.RightBracket2 = '}';
-            this.ScriptTextBox.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
-            this.ScriptTextBox.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("ScriptTextBox.ServiceColors")));
-            this.ScriptTextBox.Size = new System.Drawing.Size(253, 297);
-            this.ScriptTextBox.TabIndex = 26;
-            this.ScriptTextBox.Zoom = 100;
-            this.ScriptTextBox.Load += new System.EventHandler(this.ScriptTextBox_Load);
+            ScriptTextBox.AutoCompleteBracketsList = (new char[] { '(', ')', '{', '}', '[', ']', '"', '"', '\'', '\'' });
+            ScriptTextBox.AutoIndentCharsPatterns = "\r\n^\\s*[\\w\\.]+(\\s\\w+)?\\s*(?<range>=)\\s*(?<range>.+)\r\n";
+            ScriptTextBox.AutoScrollMinSize = new Size(31, 18);
+            ScriptTextBox.BackBrush = null;
+            ScriptTextBox.BackColor = Color.FromArgb(33, 37, 41);
+            ScriptTextBox.BracketsHighlightStrategy = FastColoredTextBoxNS.BracketsHighlightStrategy.Strategy2;
+            ScriptTextBox.CharHeight = 18;
+            ScriptTextBox.CharWidth = 10;
+            ScriptTextBox.CommentPrefix = "--";
+            ScriptTextBox.DisabledColor = Color.FromArgb(100, 180, 180, 180);
+            ScriptTextBox.IndentBackColor = Color.FromArgb(33, 37, 41);
+            ScriptTextBox.IsReplaceMode = false;
+            ScriptTextBox.Language = FastColoredTextBoxNS.Language.Lua;
+            ScriptTextBox.LeftBracket = '(';
+            ScriptTextBox.LeftBracket2 = '{';
+            ScriptTextBox.LineNumberColor = Color.White;
+            ScriptTextBox.Location = new Point(12, 45);
+            ScriptTextBox.Name = "ScriptTextBox";
+            ScriptTextBox.Paddings = new Padding(0);
+            ScriptTextBox.ReadOnly = true;
+            ScriptTextBox.RightBracket = ')';
+            ScriptTextBox.RightBracket2 = '}';
+            ScriptTextBox.SelectionColor = Color.FromArgb(60, 0, 0, 255);
+            ScriptTextBox.ServiceColors = (FastColoredTextBoxNS.ServiceColors)resources.GetObject("ScriptTextBox.ServiceColors");
+            ScriptTextBox.Size = new Size(271, 276);
+            ScriptTextBox.TabIndex = 26;
+            ScriptTextBox.Zoom = 100;
+            ScriptTextBox.Load += ScriptTextBox_Load;
             // 
             // EditButton
             // 
-            this.EditButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EditButton.Location = new System.Drawing.Point(12, 348);
-            this.EditButton.Name = "EditButton";
-            this.EditButton.Size = new System.Drawing.Size(253, 29);
-            this.EditButton.TabIndex = 27;
-            this.EditButton.Text = "Edit";
-            this.EditButton.UseVisualStyleBackColor = false;
-            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
+            EditButton.BackColor = Color.FromArgb(33, 37, 41);
+            EditButton.FlatStyle = FlatStyle.Flat;
+            EditButton.Location = new Point(12, 327);
+            EditButton.Name = "EditButton";
+            EditButton.Size = new Size(271, 29);
+            EditButton.TabIndex = 27;
+            EditButton.Text = "Edit";
+            EditButton.UseVisualStyleBackColor = false;
+            EditButton.Click += EditButton_Click;
             // 
             // ScriptComponent
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(277, 389);
-            this.Controls.Add(this.EditButton);
-            this.Controls.Add(this.ScriptTextBox);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.FileTextBox);
-            this.ForeColor = System.Drawing.Color.White;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ScriptComponent";
-            this.Text = "ScriptComponent";
-            this.Shown += new System.EventHandler(this.ScriptComponent_Shown);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ScriptTextBox)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(52, 58, 64);
+            ClientSize = new Size(295, 364);
+            Controls.Add(EditButton);
+            Controls.Add(ScriptTextBox);
+            Controls.Add(pictureBox1);
+            Controls.Add(FileTextBox);
+            ForeColor = Color.White;
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "ScriptComponent";
+            Text = "ScriptComponent";
+            Shown += ScriptComponent_Shown;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ScriptTextBox).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

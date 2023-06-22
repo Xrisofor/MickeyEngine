@@ -1,4 +1,4 @@
-﻿namespace Editor.Forms.Components
+﻿namespace Editor.Components
 {
     partial class LogicComponent
     {
@@ -45,7 +45,7 @@
             comboBox1.Items.AddRange(new object[] { "Auto", "Trigger" });
             comboBox1.Location = new Point(45, 13);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(220, 28);
+            comboBox1.Size = new Size(238, 28);
             comboBox1.TabIndex = 0;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
@@ -69,16 +69,17 @@
             listBox1.ItemHeight = 20;
             listBox1.Location = new Point(12, 45);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(253, 262);
+            listBox1.Size = new Size(271, 242);
             listBox1.TabIndex = 30;
             // 
             // EditButton
             // 
             EditButton.BackColor = Color.FromArgb(33, 37, 41);
+            EditButton.Enabled = false;
             EditButton.FlatStyle = FlatStyle.Flat;
-            EditButton.Location = new Point(12, 348);
+            EditButton.Location = new Point(12, 330);
             EditButton.Name = "EditButton";
-            EditButton.Size = new Size(253, 29);
+            EditButton.Size = new Size(271, 29);
             EditButton.TabIndex = 31;
             EditButton.Text = "Edit";
             EditButton.UseVisualStyleBackColor = false;
@@ -86,10 +87,11 @@
             // NewButton
             // 
             NewButton.BackColor = Color.FromArgb(33, 37, 41);
+            NewButton.Enabled = false;
             NewButton.FlatStyle = FlatStyle.Flat;
-            NewButton.Location = new Point(12, 313);
+            NewButton.Location = new Point(12, 295);
             NewButton.Name = "NewButton";
-            NewButton.Size = new Size(123, 29);
+            NewButton.Size = new Size(133, 29);
             NewButton.TabIndex = 32;
             NewButton.Text = "New";
             NewButton.UseVisualStyleBackColor = false;
@@ -98,10 +100,11 @@
             // RemoveButton
             // 
             RemoveButton.BackColor = Color.FromArgb(33, 37, 41);
+            RemoveButton.Enabled = false;
             RemoveButton.FlatStyle = FlatStyle.Flat;
-            RemoveButton.Location = new Point(142, 313);
+            RemoveButton.Location = new Point(151, 295);
             RemoveButton.Name = "RemoveButton";
-            RemoveButton.Size = new Size(123, 29);
+            RemoveButton.Size = new Size(133, 29);
             RemoveButton.TabIndex = 33;
             RemoveButton.Text = "Remove";
             RemoveButton.UseVisualStyleBackColor = false;
@@ -111,7 +114,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(52, 58, 64);
-            ClientSize = new Size(277, 389);
+            ClientSize = new Size(295, 364);
             Controls.Add(RemoveButton);
             Controls.Add(NewButton);
             Controls.Add(EditButton);

@@ -1,4 +1,5 @@
 using Editor.Project;
+using System.Threading;
 
 namespace Editor.App
 {
@@ -16,6 +17,7 @@ namespace Editor.App
 
         //Bool
         public static bool ShowGrid = true;
+        public static bool ShowFPS = false;
 
         //Удалить
         public static Inspector Form = new Inspector();
@@ -28,6 +30,7 @@ namespace Editor.App
         {
             ApplicationConfiguration.Initialize();
             MainForm = new MainForm(args);
+
             Application.Run(MainForm);
         }
     }

@@ -70,6 +70,7 @@ namespace Engine.App
                 RenderWindow.DispatchEvents();
                 RenderWindow.Clear();
 
+
                 foreach (Script script in Scripts)
                 {
                     #pragma warning disable

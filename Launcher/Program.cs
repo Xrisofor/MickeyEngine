@@ -1,10 +1,13 @@
 using System.Net;
+using System.Reflection;
 using Newtonsoft.Json;
 
 namespace Launcher
 {
     public static class Program
     {
+        public static string ServerLauncherVersion;
+
         public static List<Versions> Versions = new List<Versions>();
         public static List<EngineVersions> EngineVersions = new List<EngineVersions>(); 
         public static List<Project> Projects = new List<Project>();
@@ -12,6 +15,15 @@ namespace Launcher
         [STAThread]
         static void Main()
         {
+            #pragma warning disable SYSLIB0014
+            using (WebClient wc = new WebClient())
+            {
+                wc.DownloadFile("https://www.dropbox.com/s/qkop33r01jcspte/lanversions.txt?dl=1", @$"{Environment.CurrentDirectory}\launcher_versions.txt");
+                ServerLauncherVersion = File.ReadAllText(@$"{Environment.CurrentDirectory}\launcher_versions.txt");
+                File.Delete(@$"{Environment.CurrentDirectory}\launcher_versions.txt");
+            }
+            #pragma warning restore SYSLIB0014
+
             #pragma warning disable SYSLIB0014
             using (WebClient wc = new WebClient())
             {

@@ -1,0 +1,103 @@
+﻿<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="imageList1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="imageList1.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAEZTeXN0ZW0uV2luZG93cy5Gb3JtcywgQ3VsdHVyZT1uZXV0cmFs
+        LCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BQEAAAAmU3lzdGVtLldpbmRvd3MuRm9ybXMu
+        SW1hZ2VMaXN0U3RyZWFtZXIBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA7gYAAAJNU0Z0AUkBTAMBAQAB
+        MAEAATABAAFAAQABQAEABP8BIQEACP8BQgFNATYHAAE2AwABKAQAAQECAAFAAwABAQEAASAHAAEB/wD/
+        AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8AoQAc/wPxAf//AP8A/wDf
+        AAPxKf//AP8A/wDTADT//wD/AP8AywAD8TX//wD/AP8AywAU/xAAA/ER/wPxAf//AP8A/wDDAAPxEf8Y
+        AAPxEf//AP8A/wDDAAPxDf8D8QH/HAAQ//8A/wD/AMMAFP8cABD//wD/AP8AkwBA/yAAQP//AP8A/wBj
+        AED/IABA//8A/wD/AGMAQP8gAED//wD/AP8AYwBA/yAAQP//AP8A/wBjABD/gAAQ//8A/wD/AGMAEP+A
+        ABD//wD/AP8AYwAQ/4AAEP//AP8A/wBjABD/gAAQ//8A/wD/AGMAEP+AABD//wD/AP8AYwAQ/4AAEP//
+        AP8A/wBTACD/cAAg//8A/wD/AE8AA/Eh/2wAA/Eh//8A/wD/AEsAKP9oACj//wD/AP8ARwAD8Sn/ZAAD
+        8Sn//wD/AP8ARwAU/3wAFP//AP8A/wBbAAPxEf98AAPxEf//AP8A/wBfAAPxDf8D8QH/fAAD8Q3/A/EB
+        //8A/wD/AF8AFP98ABT//wD/AP8AXwAU/3wAFP//AP8A/wBfAAPxDf8D8QH/fAAD8Q3/A/EB//8A/wD/
+        AF8AGP94ABj//wD/AP8AXwAU/wPxBf90ABT/A/EF//8A/wD/AFcALP9kACz//wD/AP8ASwAo/2gAKP//
+        AP8A/wBPACT/bAAk//8A/wD/AFcABP8D8RX/dAAE/wPxFf//AP8A/wBjABD/gAAQ//8A/wD/AGMAEP+A
+        ABD//wD/AP8AYwAQ/4AAEP//AP8A/wBjABD/gAAQ//8A/wD/AGMAEP+AABD//wD/AP8AYwAQ/4AAEP//
+        AP8A/wBjAED/IABA//8A/wD/AGMAQP8gAED//wD/AP8AYwBA/yAAQP//AP8A/wBjAED/IABA//8A/wD/
+        AJMAFP8cABD//wD/AP8AwwAD8Q3/A/EB/xwAEP//AP8A/wDDABj/FAAU//8A/wD/AMcAFP8D8Qn/A/EZ
+        //8A/wD/AMcAOP//AP8A/wDPADD//wD/AP8A1wAk/wPxAf//AP8A/wDjAAT/A/EJ/wPxAf8D8QH//wD/
+        AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8AhwABQgFNAT4H
+        AAE+AwABKAQAAQECAAFAAwABAQEAAQEGAAEIFgAD/wEACP8YAAj/GAAI/xgACP8YAAj/GAAI/xgAA/8B
+        /AEDA/8YAAP/AfgBAAP/GAAD/wHwAQABfwL/GAAD/wHgAQABfwL/GAAD/wHgAfABPwL/GAAD/wHBAfgB
+        PwL/GAAD/wHBAfwBPwL/GAAD/wHBAfwBPwL/GAAB/wH8AQABAwH8AQABAwH/GAAB/wH8AQABAwH8AQAB
+        AwH/GAAB/wH8AQABAwH8AQABAwH/GAAB/wH8AQABAwH8AQABAwH/GAAB/wH8AT8D/wHDAf8YAAH/AfwB
+        PwP/AcMB/xgAAf8B/AE/A/8BwwH/GAAB/wH8AT8D/wHDAf8YAAH/AfwBPwP/AcMB/xgAAf8B/AE/A/8B
+        wwH/GAAB/wHAAT8C/wH8AQMB/xgAAf8BgAE/Av8B+AEDAf8YAAH/AQABPwL/AfABAwH/GAAB/gEAAT8C
+        /wHgAQMB/xgAAf4BDwP/AeAC/xgAAfwBHwP/AcEC/xgAAfwBHwP/AcEC/xgAAfwBHwP/AcEC/xgAAfwB
+        HwP/AcEC/xgAAfwBHwP/AcEC/xgAAfwBDwP/AcAC/xgAAf4BAwP/AeABPwH/GAAB/gEAAT8C/wHgAQMB
+        /xgAAf8BAAE/Av8B8AEDAf8YAAH/AYABPwL/AfgBAwH/GAAB/wHgAT8C/wH+AQMB/xgAAf8B/AE/A/8B
+        wwH/GAAB/wH8AT8D/wHDAf8YAAH/AfwBPwP/AcMB/xgAAf8B/AE/A/8BwwH/GAAB/wH8AT8D/wHDAf8Y
+        AAH/AfwBPwP/AcMB/xgAAf8B/AEAAQMB/AEAAQMB/xgAAf8B/AEAAQMB/AEAAQMB/xgAAf8B/AEAAQMB
+        /AEAAQMB/xgAAf8B/AEAAQMB/AEAAQMB/xgAA/8BwQH8AT8C/xgAA/8BwQH8AT8C/xgAA/8BwAH4AT8C
+        /xgAA/8B4AEAAT8C/xgAA/8B4AEAAX8C/xgAA/8B8AEAA/8YAAP/AfgBAQP/GAAD/wH+AQcD/xgACP8Y
+        AAj/GAAI/xgACP8YAAj/GAAI/xgACw==
+</value>
+  </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>73</value>
+  </metadata>
+</root>

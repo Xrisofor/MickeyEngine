@@ -5676,7 +5676,7 @@
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
-    "version": "0.1.0.2",
+    "version": "0.1.1",
     "restore": {
       "projectUniqueName": "C:\\Users\\arabo\\Documents\\Visual Studio 2022\\Engine\\Editor\\Editor.csproj",
       "projectName": "Mickey Editor",

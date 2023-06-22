@@ -107,7 +107,8 @@ namespace Editor.App
                             break;
                         case "GUIText":
                             string GuiDisplayedString = comp.Text.DisplayedString; uint GuiCharacterSize = comp.Text.CharacterSize;
-                            Engine.Classes.Components.GUIText guiText = new Engine.Classes.Components.GUIText(GuiDisplayedString, Program.EditorFont, GuiCharacterSize);
+                            string FontName = comp.FontName; SFML.Graphics.Font font = new SFML.Graphics.Font(MainForm.Fonts.Find(font => Path.GetFileName(font.Path) == FontName).Path);
+                            Engine.Classes.Components.GUIText guiText = new Engine.Classes.Components.GUIText(GuiDisplayedString, font, GuiCharacterSize); guiText.FontName = FontName;
                             gameObject.AddComponent(guiText);
                             break;
                         case "Prefab":

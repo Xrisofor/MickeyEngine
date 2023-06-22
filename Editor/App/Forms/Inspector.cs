@@ -50,7 +50,7 @@ namespace Editor
                 switch (Components[i])
                 {
                     case Engine.Classes.Components.AudioSource:
-                        ComponentLabel.Visible = false;
+                        /*ComponentLabel.Visible = false;
                         Forms.Components.AudioSound AudioSoundForm = new Forms.Components.AudioSound();
                         AudioSoundForm.TopLevel = false;
                         AudioSoundForm.AutoScroll = true;
@@ -60,11 +60,11 @@ namespace Editor
                         AudioSoundForm.Show();
                         ComponentNameLabel.Text = "Audio Source";
                         ObjectPictureBox.BackgroundImage = ImageList.audio;
-                        DisabledAll(1);
+                        DisabledAll(1);*/
                         break;
                     case Engine.Classes.Components.GUIText:
                         ComponentLabel.Visible = false;
-                        Forms.Components.GUIText GUITextForm = new Forms.Components.GUIText();
+                        /*Forms.Components.GUIText GUITextForm = new Forms.Components.GUIText();
                         GUITextForm.TopLevel = false;
                         GUITextForm.AutoScroll = true;
                         GUITextForm.guiText = (Engine.Classes.Components.GUIText)Components[i];
@@ -73,11 +73,11 @@ namespace Editor
                         GUITextForm.Show();
                         ComponentNameLabel.Text = "Text";
                         ObjectPictureBox.BackgroundImage = ImageList.text;
-                        DisabledAll(2);
+                        DisabledAll(2);*/
                         break;
                     case Engine.Classes.Components.PrefabComp:
                         ComponentLabel.Visible = false;
-                        Forms.Components.PrefabComp PrefabCompForm = new Forms.Components.PrefabComp();
+                        /*Forms.Components.PrefabComp PrefabCompForm = new Forms.Components.PrefabComp();
                         PrefabCompForm.TopLevel = false;
                         PrefabCompForm.AutoScroll = true;
                         PrefabCompForm.prefabComp = (Engine.Classes.Components.PrefabComp)Components[i];
@@ -86,23 +86,23 @@ namespace Editor
                         PrefabCompForm.Show();
                         ComponentNameLabel.Text = "Prefab";
                         ObjectPictureBox.BackgroundImage = ImageList.prefabhouse;
-                        DisabledAll(2);
+                        DisabledAll(2);*/
                         break;
                     case Engine.Classes.Components.PlayerController:
                         ComponentLabel.Visible = false;
-                        Forms.Components.PlayerController PlayerControllerForm = new Forms.Components.PlayerController();
+                        /*Forms.Components.PlayerController PlayerControllerForm = new Forms.Components.PlayerController();
                         PlayerControllerForm.TopLevel = false;
                         PlayerControllerForm.AutoScroll = true;
                         PlayerControllerForm.playerController = (Engine.Classes.Components.PlayerController)Components[i];
                         ComponentPanel.Controls.Add(PlayerControllerForm);
                         PlayerControllerForm.Dock = DockStyle.Fill;
                         PlayerControllerForm.Show();
-                        ComponentNameLabel.Text = "Player Controller";
+                        ComponentNameLabel.Text = "Player Controller";*/
                         //ObjectPictureBox.BackgroundImage = ImageList.audio;
                         break;
                     case Engine.Classes.Components.ScriptComponent:
                         ComponentLabel.Visible = false;
-                        Forms.Components.ScriptComponent ScriptComponentForm = new Forms.Components.ScriptComponent();
+                        /*Forms.Components.ScriptComponent ScriptComponentForm = new Forms.Components.ScriptComponent();
                         ScriptComponentForm.TopLevel = false;
                         ScriptComponentForm.AutoScroll = true;
                         ScriptComponentForm.scriptComponent = (Engine.Classes.Components.ScriptComponent)Components[i];
@@ -111,11 +111,11 @@ namespace Editor
                         ScriptComponentForm.Show();
                         ComponentNameLabel.Text = "Script Component";
                         ObjectPictureBox.BackgroundImage = ImageList.script;
-                        DisabledAll(1);
+                        DisabledAll(1);*/
                         break;
                     case Engine.Classes.Components.LogicComponent:
                         ComponentLabel.Visible = false;
-                        Forms.Components.LogicComponent LogicComponentForm = new Forms.Components.LogicComponent();
+                        /*Forms.Components.LogicComponent LogicComponentForm = new Forms.Components.LogicComponent();
                         LogicComponentForm.TopLevel = false;
                         LogicComponentForm.AutoScroll = true;
                         LogicComponentForm.logicComponent = (Engine.Classes.Components.LogicComponent)Components[i];
@@ -124,11 +124,11 @@ namespace Editor
                         LogicComponentForm.Show();
                         ComponentNameLabel.Text = "Logic Component";
                         ObjectPictureBox.BackgroundImage = ImageList.cube_ryb;
-                        DisabledAll(1);
+                        DisabledAll(1);*/
                         break;
                     case Engine.DialogSystem:
                         ComponentLabel.Visible = false;
-                        Forms.Components.DialogSystem DialogSystemForm = new Forms.Components.DialogSystem();
+                        /*Forms.Components.DialogSystem DialogSystemForm = new Forms.Components.DialogSystem();
                         DialogSystemForm.TopLevel = false;
                         DialogSystemForm.AutoScroll = true;
                         DialogSystemForm.dialogSystem = (Engine.DialogSystem)Components[i];
@@ -136,7 +136,7 @@ namespace Editor
                         DialogSystemForm.Dock = DockStyle.Fill;
                         DialogSystemForm.Show();
                         ComponentNameLabel.Text = "Dialog Component";
-                        ObjectPictureBox.BackgroundImage = ImageList.theatrical_masks;
+                        ObjectPictureBox.BackgroundImage = ImageList.theatrical_masks;*/
                         break;
                 }
             }

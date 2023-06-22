@@ -1,8 +1,7 @@
 ﻿using Editor.App;
-using Engine;
-using Engine.Classes.Components;
+using System.Windows.Forms;
 
-namespace Editor.Forms.Components
+namespace Editor.Components
 {
     public partial class PrefabComp : Form
     {
@@ -21,6 +20,7 @@ namespace Editor.Forms.Components
 
         private void SelectFileButton_Click(object sender, EventArgs e)
         {
+            openFileDialog1.InitialDirectory = Path.GetFullPath($@"{Program.ProjectFolder}\content\maps\");
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 prefabComp.PrefabFile = openFileDialog1.FileName;
